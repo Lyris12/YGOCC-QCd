@@ -25,6 +25,8 @@ function cid.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if ef and ef:CheckCountLimit(tp) then ef:UseCountLimit(tp,1,true) e:Reset() end
 end
 function cid.activate(e,tp,eg,ep,ev,re,r,rp)
+	local ef=Duel.IsPlayerAffectedByEffect(tp,id+1)
+	if ef and ef:CheckCountLimit(tp) then ef:UseCountLimit(tp) end
 	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
 	local c=e:GetHandler()
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)

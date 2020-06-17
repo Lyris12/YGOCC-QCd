@@ -1,6 +1,6 @@
-local cid,id=GetID()--U.A. First Down
+--created by Pina, coded by Lyris
+local cid,id=GetID()
 function cid.initial_effect(c)
-	--Add 1 "U.A. Kickoff!" from your GY to your hand, then add 1 "U.A." Field Spell from your Deck to your hand. This turn, you can activate "U.A. Kickoff!" twice per turn.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -8,13 +8,12 @@ function cid.initial_effect(c)
 	e1:SetTarget(cid.target)
 	e1:SetOperation(cid.activate)
 	c:RegisterEffect(e1)
-	--During your Main Phase 1: You can discard this card; Send 1 "U.A." monster from your Deck to the GY. At the end of this Main Phase 1, Special Summon it.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_QUICK_O)
 	e2:SetCode(EVENT_FREE_CHAIN)
 	e2:SetRange(LOCATION_HAND)
 	e2:SetCategory(CATEGORY_TOGRAVE+CATEGORY_SPECIAL_SUMMON)
-	e2:SetCondition(function() return Duel.GetCurrentPhase()==PHASE_MAIN1 end)
+	e2:SetCondition(function(e,tp) return Duel.GetCurrentPhase()==PHASE_MAIN1 and Duel.GetTurnPlayer()==tp end)
 	e2:SetCost(cid.cost)
 	e2:SetTarget(cid.tg)
 	e2:SetOperation(cid.op)
@@ -30,7 +29,7 @@ end
 function cid.activate(e,tp,eg,ep,ev,re,r,rp)
 	local ef=Duel.CreateToken(tp,id-1):GetActivateEffect()
 	if ef:CheckCountLimit(tp) then
-		local e1=Effect.CreateEffect(c)
+		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_SINGLE)
 		e1:SetCode(id)
 		e1:SetCountLimit(1,id)
@@ -51,7 +50,7 @@ function cid.activate(e,tp,eg,ep,ev,re,r,rp)
 		Duel.ConfirmCards(1-tp,g2)
 	end
 end
-function c14558127.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+function cid.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	if chk==0 then return c:IsDiscardable() end
 	Duel.SendtoGrave(c,REASON_COST+REASON_DISCARD)
@@ -73,10 +72,10 @@ function cid.op(e,tp,eg,ep,ev,re,r,rp)
 	e1:SetCode(EVENT_PHASE+PHASE_MAIN1)
 	e1:SetRange(LOCATION_GRAVE)
 	e1:SetCountLimit(1)
-	e1:SetOperation(c3758046.spop)
+	e1:SetOperation(cid.spop)
 	e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_MAIN1)
 	tc:RegisterEffect(e1)
 end
-function c3758046.spop(e,tp,eg,ep,ev,re,r,rp)
+function cid.spop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.GetLocationCount(tp,LOCATION_MZONE)>0 then Duel.SpecialSummon(e:GetHandler(),0,tp,tp,false,false,POS_FACEUP) end
 end
