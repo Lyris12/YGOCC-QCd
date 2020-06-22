@@ -1,7 +1,6 @@
+--created by Geass, coded by Lyris
 local cid,id=GetID()
---Elixir of the Valiant Souls
 function cid.initial_effect(c)
-	--Add 1 "Valiant Soul" monster from your Deck to your hand, then if you have 2 or more "Valiant Soul" monsters in your GY with different Attributes, draw 1 card. You can only activate 1 "Elixir of the Valiant Souls" per turn.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
