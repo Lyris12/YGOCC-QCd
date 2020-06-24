@@ -1,4 +1,4 @@
-created by Geass, coded by Lyris
+--created by Geass, coded by Lyris
 local cid,id=GetID()
 function cid.initial_effect(c)
 	local e1=Effect.CreateEffect(c)
