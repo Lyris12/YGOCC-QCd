@@ -1,16 +1,14 @@
---Rabbit Hole to the Wondrous Realm
-function c19231213.initial_effect(c)
-	--You can only activate 1 "Rabbit Hole to the Wondrous Realm" effect per turn, and only once that turn.
-	--Toss a coin.
+--created by Thauma, coded by Lyris
+local cid,id=GetID()
+function cid.initial_effect(c)
 	local e1=Effect.CreateEffect(c)
 	e1:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_COIN)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	e1:SetCountLimit(1,id)
-	e1:SetTarget(c37812118.target)
-	e1:SetOperation(c37812118.activate)
+	e1:SetTarget(cid.target)
+	e1:SetOperation(cid.activate)
 	c:RegisterEffect(e1)
-	--During your Main Phase: You can banish this card from your GY: Special Summon 1 "Wondrous Realm" monster from your GY.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_QUICK_O)
 	e2:SetCode(EVENT_FREE_CHAIN)
@@ -35,8 +33,6 @@ function cid.target(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function cid.activate(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	--Heads: Special Summon 1 face-up "Wondrous Realm" Pendulum Monster from your Extra Deck.
-	--Tails: Special Summon 1 "Wondrous Realm" Pendulum Monster from your hand.
 	Duel.SpecialSummon(Duel.SelectMatchingCard(tp,cid.filter,tp,Duel.TossCoin(tp,1)==1 and LOCATION_EXTRA or LOCATION_HAND,0,1,1,nil,e,tp),0,tp,tp,false,false,POS_FACEUP)
 end
 function cid.spfilter(c,e,tp)
