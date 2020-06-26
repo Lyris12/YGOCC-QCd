@@ -56,24 +56,26 @@ function cid.drop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Draw(p,d,REASON_EFFECT)
 end
 function cid.coincon(e,tp,eg,ep,ev,re,r,rp)
-	return re:GetHandler()==e:GetHandler() and Duel.GetFlagEffect(tp,id)==0
+	local c=e:GetHandler()
+	return re:GetHandler()==c and c:GetFlagEffect(id)==0
 end
 function cid.coinop(e,tp,eg,ep,ev,re,r,rp)
-	if Duel.GetFlagEffect(tp,id)==0 and Duel.SelectEffectYesNo(tp,e:GetHandler()) then
+	local c=e:GetHandler()
+	if c:GetFlagEffect(id)==0 and Duel.SelectEffectYesNo(tp,c) then
 		Duel.Hint(HINT_CARD,0,id)
-		Duel.RegisterFlagEffect(tp,id,RESET_PHASE+PHASE_END,0,1)
+		c:RegisterFlagEffect(id,RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END,0,1)
 		Duel.TossCoin(tp,ev)
 	end
 end
 function cid.coincon(e,tp,eg,ep,ev,re,r,rp)
-	return re:GetHandler()==e:GetHandler() and Duel.GetFlagEffect(tp,id)==0
+	local c=e:GetHandler()
+	return re:GetHandler()==c and c:GetFlagEffect(id)==0
 end
 function cid.coinop(e,tp,eg,ep,ev,re,r,rp)
-	if Duel.GetFlagEffect(tp,id)==0 and Duel.SelectEffectYesNo(tp,e:GetHandler()) then
+	local c=e:GetHandler()
+	if c:GetFlagEffect(id)==0 and Duel.SelectEffectYesNo(tp,c) then
 		Duel.Hint(HINT_CARD,0,id)
-		Duel.RegisterFlagEffect(tp,id,RESET_PHASE+PHASE_END,0,1)
-		local ct1=bit.band(ev,0xff)
-		local ct2=bit.rshift(ev,16)
-		Duel.TossDice(ep,ct1,ct2)
+		c:RegisterFlagEffect(id,RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END,0,1)
+		Duel.TossDice(ep,ev&0xff,ev>>16)
 	end
 end
