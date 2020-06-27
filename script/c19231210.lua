@@ -49,7 +49,7 @@ function cid.cfilter(c,tp)
 	return c:IsPreviousLocation(LOCATION_PZONE) and c:GetPreviousControler()==tp
 end
 function cid.spcon(e,tp,eg,ep,ev,re,r,rp)
-	return eg:IsExists(cid.drcfilter,1,nil,tp)
+	return eg:IsExists(cid.cfilter,1,nil,tp)
 end
 function cid.filter(c,e,tp)
 	return c:IsFaceup() and c:IsType(TYPE_PENDULUM) and c:IsSetCard(0xa44)
