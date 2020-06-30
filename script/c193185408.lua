@@ -27,16 +27,22 @@ function cid.lvcheck(g)
 	return g:FilterCount(Card.IsLevel,nil,4)==1
 end
 function cid.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.GetMatchingGroup(aux.AND(Card.IsLevelAbove,cid.thfilter,Card.IsAbleToHand),tp,LOCATION_DECK,0,nil,4):CheckSubGroup(cid.lvcheck,2) end
-	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,0,LOCATION_DECK)
+	if chk==0 then
+		aux.GCheckAdditional=cid.lvcheck
+		local res=Duel.GetMatchingGroup(aux.AND(Card.IsLevelAbove,cid.thfilter,Card.IsAbleToHand),tp,LOCATION_DECK,0,nil,4):CheckSubGroup(aux.TRUE,2,2)
+		aux.GCheckAdditional=nil
+		return res
+	end
+	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,0,tp,LOCATION_DECK)
 end
 function cid.thop(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetMatchingGroup(aux.AND(Card.IsLevelAbove,cid.thfilter),tp,LOCATION_DECK,0,nil,4)
-	if #g<2 then return end
+	if not Duel.IsPlayerCanDiscardDeck(tp,1) or #g<2 then return end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
-	local sg=g:SelectSubGroup(tp,cid.lvcheck,false,2)
+	aux.GCheckAdditional=cid.lvcheck
+	local res=g:SelectSubGroup(tp,aux.TRUE,false,2,2)
+	aux.GCheckAdditional=nil
 	Duel.ConfirmCards(1-tp,sg)
-	Duel.ShuffleDeck(tp)
 	local tc=sg:Select(1-tp,1,1,nil):GetFirst()
 	if tc and tc:IsAbleToHand() then
 		Duel.SendtoHand(tc,nil,REASON_EFFECT)
