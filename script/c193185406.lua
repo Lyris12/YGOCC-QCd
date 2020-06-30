@@ -1,5 +1,4 @@
 --created by Swag, coded by Lyris
---! 2nd effect is redundant.
 local cid,id=GetID()
 function cid.initial_effect(c)
 	local e0=Effect.CreateEffect(c)
@@ -15,6 +14,14 @@ function cid.initial_effect(c)
 	e1:SetTarget(aux.TargetBoolFunction(Card.IsSetCard,0xd78))
 	e1:SetValue(function(e) return Duel.GetMatchingGroupCount(cid.filter,e:GetHandlerPlayer(),LOCATION_GRAVE,0,nil)*50 end)
 	c:RegisterEffect(e1)
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_FIELD)
+	e2:SetCode(EFFECT_EXTRA_TIMELEAP_SUMMON)
+	e2:SetRange(LOCATION_FZONE)
+	e2:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e2:SetTargetRange(1,0)
+	e2:SetValue(aux.TargetBoolFunction(Card.IsSetCard,0xd78))
+	c:RegisterEffect(e2)
 	local e3=Effect.CreateEffect(c)
 	e3:SetType(EFFECT_TYPE_IGNITION)
 	e3:SetRange(LOCATION_FZONE)
@@ -30,7 +37,7 @@ function cid.filter(c)
 end
 function cid.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(aux.AND(Card.IsSetCard,Card.IsDiscardable),tp,LOCATION_HAND,0,1,nil,0xd78) end
-	Duel.DiscardHand(tp,Card.IsSetCard,1,1,REASON_COST+REASON_DISCARD,nil,0xd78)
+	Duel.DiscardHand(tp,aux.AND(Card.IsSetCard,Card.IsDiscardable),1,1,REASON_COST+REASON_DISCARD,nil,0xd78)
 end
 function cid.tgfilter(c)
 	return c:IsLevelAbove(5) and c:IsSetCard(0xd78) and c:IsType(TYPE_MONSTER) and c:IsAbleToGrave()

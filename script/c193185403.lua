@@ -1,6 +1,6 @@
-local cid,id=GetID()--One Who Annihilates, Scarlet Red Wings
+--created by Swag, coded by Lyris
+local cid,id=GetID()
 function cid.initial_effect(c)
-	--You can Special Summon this card (from your hand) by sending 1 "Scarlet Red" monster you control to the GY.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
 	e1:SetCode(EFFECT_SPSUMMON_PROC)
@@ -9,8 +9,6 @@ function cid.initial_effect(c)
 	e1:SetCondition(cid.spcon)
 	e1:SetOperation(cid.spop)
 	c:RegisterEffect(e1)
-	--You can only use each effect of "One Who Annihilates, Scarlet Red Wings" once per turn.
-	--If this card is Special Summoned: You can choose 1 "Scarlet Red" card from your Deck and place it on top of your Deck.
 	local e3=Effect.CreateEffect(c)
 	e3:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e3:SetCode(EVENT_SPSUMMON_SUCCESS)
@@ -19,7 +17,6 @@ function cid.initial_effect(c)
 	e3:SetTarget(cid.ttg)
 	e3:SetOperation(cid.top)
 	c:RegisterEffect(e3)
-	--If this card is sent to the GY by the effect of a "Scarlet Red" card: You can send 1 "Scarlet Red" card from your Deck to the GY, except "One Who Annihilates, Scarlet Red Wings".
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e2:SetCode(EVENT_TO_GRAVE)

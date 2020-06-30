@@ -1,9 +1,8 @@
-local cid,id=GetID()--Ruler of the Darkest Night, Scarlet Red Masks
+--created by Swag, coded by Lyris
+local cid,id=GetID()
 function cid.initial_effect(c)
 	c:EnableReviveLimit()
-	--mat=3 Zombie monsters, except Tokens
 	aux.AddLinkProcedure(c,cid.mfilter,3,3)
-	--This card and Zombie monsters it points to gain ATK equal to the number of Time Leap Monsters you control and in your GY x200.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
 	e1:SetCode(EFFECT_UPDATE_ATTACK)
@@ -12,8 +11,6 @@ function cid.initial_effect(c)
 	e1:SetTarget(function(e,tc) return tc==e:GetHandler() or e:GetHandler():GetLinkedGroup():IsContains(tc) end)
 	e1:SetValue(function(e,c) return Duel.GetMatchingGroupCount(cid.afilter,e:GetHandlerPlayer(),LOCATION_MZONE+LOCATION_GRAVE,0,nil)*200 end)
 	c:RegisterEffect(e1)
-	--You can only use each effect of "Ruler of the Darkest Night, Scarlet Red Masks" once per turn.
-	--If this card is Link Summoned: You can target 1 "Scarlet Red" monster in your GY; Special Summon it.
 	local e3=Effect.CreateEffect(c)
 	e3:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e3:SetCode(EVENT_SPSUMMON_SUCCESS)
@@ -24,13 +21,11 @@ function cid.initial_effect(c)
 	e3:SetTarget(cid.sumtg)
 	e3:SetOperation(cid.sumop)
 	c:RegisterEffect(e3)
-	--You can tribute 1 monster this card points to, then target 1 monster your opponent controls that does not have a Level; until the End Phase, replace this effect with that monster's original effects.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_IGNITION)
 	e2:SetRange(LOCATION_MZONE)
 	e2:SetCountLimit(1,id+100)
 	e2:SetProperty(EFFECT_FLAG_CARD_TARGET)
-	e2:SetCategory(CATEGORY_DESTROY)
 	e2:SetCost(cid.cost)
 	e2:SetTarget(cid.copytg)
 	e2:SetOperation(cid.copyop)
