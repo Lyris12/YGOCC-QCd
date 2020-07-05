@@ -15,6 +15,7 @@ function cid.initial_effect(c)
 	e2:SetCountLimit(1)
 	e2:SetCondition(function(e) return e:GetHandler():IsSetCard(0x2ead) end)
 	e2:SetCost(cid.cost)
+	e2:SetTarget(function(e,tp,eg,ep,ev,re,r,rp,chk) if chk==0 then return Duel.GetFieldGroupCount(tp,LOCATION_DECK,0)>0 and Duel.GetFieldGroupCount(tp,0,LOCATION_DECK)>0 end end)
 	e2:SetOperation(cid.operation)
 	c:RegisterEffect(e2)
 end
@@ -38,7 +39,7 @@ end
 function cid.operation(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	local g=Duel.GetDecktopGroup(tp,1)+Duel.GetDecktopGroup(1-tp,1)
-	if not c:IsRelateToEffect(e) or g:GetCount()==0 then return end
+	if not c:IsRelateToEffect(e) then return end
 	Duel.DisableShuffleCheck()
 	Duel.Overlay(c,g)
 end
