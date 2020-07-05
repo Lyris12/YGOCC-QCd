@@ -1,16 +1,14 @@
---Ennigmatic Extrication
-function c80216317.initial_effect(c)
-	--You can only use 1 "Ennigmatic Extrication" effect per turn, and only once that turn.
-	--Target 1 "Ennigmat" monster you control; it is unaffected by other card effects for the rest of this turn, except its own.
+--created by Eaden, coded by Lyris
+local cid,id=GetID()
+function cid.initial_effect(c)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
 	e1:SetCode(EVENT_FREE_CHAIN)
-	e1:SetCountLimit(1,96434581)
-	e1:SetTarget(c96434581.target)
-	e1:SetOperation(c96434581.activate)
+	e1:SetCountLimit(1,id)
+	e1:SetTarget(cid.target)
+	e1:SetOperation(cid.activate)
 	c:RegisterEffect(e1)
-	--During your End Phase, if 8 or more cards were attached to "Ennigmatrix" Xyz Monster(s) you control this turn: You can add this card from your GY to your hand.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
 	e2:SetCode(EVENT_PHASE+PHASE_END)
@@ -37,7 +35,7 @@ function c80216317.initial_effect(c)
 		Duel.RegisterEffect(ge2,0)
 	end
 end
-function c96434581.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+function cid.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(tp) and chkc:IsFaceup() and chkc:IsSetCard(0xead) end
 	if chk==0 then return Duel.IsExistingTarget(aux.AND(Card.IsFaceup,Card.IsSetCard),tp,LOCATION_MZONE,0,1,nil,0xead) end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEUP)
@@ -63,7 +61,7 @@ function cid.thop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if c:IsRelateToEffect(e) and Duel.SendtoHand(c,nil,REASON_EFFECT)>0 then Duel.ConfirmCards(1-tp,c) end
 end
-function c96434581.chkfilter(c,tp)
+function cid.chkfilter(c,tp)
 	local xc=c:GetOverlayTarget()
 	return xc:IsSetCard(0x2ead) and xc:IsControler(tp)
 end

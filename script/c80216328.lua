@@ -1,9 +1,8 @@
---One-Eyed Ennigmatrix
-function c80216328.initial_effect(c)
+--created by Eaden, coded by Lyris
+local cid,id=GetID()
+function cid.initial_effect(c)
 	c:EnableReviveLimit()
-	--mat=1 "Ennigmat" monster
 	aux.AddLinkProcedure(c,aux.FilterBoolFunction(Card.IsSetCard,0xead),1,1)
-	--If this card is Link Summoned: You can target 1 "Ennigmat" monster in your GY; attach it to an "Ennigmatrix" Xyz Monster you control, then you can take 1 material from that card and either Special Summon it (if it's a monster) or add it to your hand (if not). You can only use the effect of "One-Eyed Ennigmatrix" once per turn.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e1:SetCode(EVENT_SPSUMMON_SUCCESS)
