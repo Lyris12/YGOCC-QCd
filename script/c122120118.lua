@@ -1,16 +1,13 @@
---The Wicked Avatar - Awakening Darkness
-function c122120118.initial_effect(c)
-	--Cannot be Normal Summoned/Set.
+--created by Ace, coded by Lyris
+local s,id=GetID()
+function s.initial_effect(c)
 	c:EnableReviveLimit()
-	--Must be Special Summoned by its own effect.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE)
 	e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE)
 	e1:SetCode(EFFECT_SPSUMMON_CONDITION)
 	e1:SetValue(0)
 	c:RegisterEffect(e1)
-	--You can only use each of the following effects of "The Wicked Avatar - Awakening Darkness" once per turn.
-	--You can discard this card; add 1 "The Wicked Avatar" from your Deck or GY[ to your hand], and if you do, you can Tribute Summon it with 1 less Tribute than required this turn.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_IGNITION)
 	e2:SetRange(LOCATION_HAND)
@@ -20,7 +17,6 @@ function c122120118.initial_effect(c)
 	e2:SetTarget(s.thtg)
 	e2:SetOperation(s.thop)
 	c:RegisterEffect(e2)
-	--If a face-up "The Wicked Avatar" you control leaves the field because of an opponent's card, while this card is in your GY: You can Special Summon this card, and if you do, your opponent cannot activate monster effects for the rest of this turn.
 	local e3=Effect.CreateEffect(c)
 	e3:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
 	e3:SetCode(EVENT_LEAVE_FIELD)
@@ -41,7 +37,7 @@ function s.filter(c)
 	return c:IsCode(21208154) and c:IsAbleToHand()
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(s.filter),tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil) end
+	if chk==0 then return Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil) end
 	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK+LOCATION_GRAVE)
 end
 function s.thop(e,tp,eg,ep,ev,re,r,rp)
