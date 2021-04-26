@@ -95,13 +95,12 @@ function s.tg3(e,tp,eg,ep,ev,re,r,rp,chk)
 	local tl=s[0]+s[1]
 	local ct1=Duel.GetDecktopGroup(tp,tl):FilterCount(Card.IsAbleToRemove,nil,tp,POS_FACEDOWN)
 	local ct2=Duel.GetDecktopGroup(1-tp,tl):FilterCount(Card.IsAbleToRemove,nil,1-tp,POS_FACEDOWN)
-	if chk==0 then return (s[tp]>0 or s[1-tp]>0) and Duel.IsPlayerCanDraw(tp,s[tp]) and Duel.IsPlayerCanDraw(1-tp,s[1-tp]) and ct1==tl and ct2==tl end
+	if chk==0 then return (s[0]>0 or s[1]>0) and Duel.IsPlayerCanDraw(tp,s[tp]) and Duel.IsPlayerCanDraw(1-tp,s[1-tp]) and ct1==tl and ct2==tl end
 	Duel.SetOperationInfo(0,CATEGORY_DRAW,nil,0,PLAYER_ALL,1)
 end
 function s.op3(e,tp,eg,ep,ev,re,r,rp)
-	local tl=Duel.Draw(tp,s[tp],REASON_EFFECT)+Duel.Draw(1-tp,s[1-tp],REASON_EFFECT)
-	local rg=Duel.GetDecktopGroup(tp,tl)
+	local rg=Duel.GetDecktopGroup(tp,Duel.Draw(tp,s[tp],REASON_EFFECT)+Duel.Draw(1-tp,s[1-tp],REASON_EFFECT))
 	Duel.BreakEffect()
 	Duel.DisableShuffleCheck()
-	Duel.Remove(tl,POS_FACEDOWN,REASON_EFFECT)
+	Duel.Remove(rg,POS_FACEDOWN,REASON_EFFECT)
 end
