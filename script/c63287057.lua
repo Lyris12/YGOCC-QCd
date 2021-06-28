@@ -1,10 +1,8 @@
+--created by Pina, coded by Lyris
 local s,id=GetID()
---Eggrock
 function s.initial_effect(c)
 	c:EnableReviveLimit()
-	--mat=2 Rock monsters
 	aux.AddLinkProcedure(c,aux.FilterBoolFunction(Card.IsRace,RACE_ROCK),2,2)
-	--Each time a monster is changed to Defense Position, this card gains 200 ATK.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 	e1:SetCode(EVENT_CHANGE_POS)
@@ -12,7 +10,6 @@ function s.initial_effect(c)
 	e1:SetCondition(s.condition)
 	e1:SetOperation(s.operation)
 	c:RegisterEffect(e1)
-	--[During your Main Phase:] You can destroy this face-up card[, then] Special Summon 1 Level 5 or 6 Rock monster from your Deck. You can only use this effect of "Eggrock" once per turn.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_IGNITION)
 	e2:SetRange(LOCATION_MZONE)

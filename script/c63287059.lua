@@ -1,7 +1,6 @@
+--created by Pina, coded by Lyris
 local s,id=GetID()
---Fire/Water Field
 function s.initial_effect(c)
-	--When this card is activated, and once during each Standby Phase: [Toss] a coin and apply 1 of the following effects depending on the result, until the start of the next Standby Phase[ (even if this card leaves the field)].
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -22,8 +21,6 @@ end
 function s.act(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if not c:IsRelateToEffect(e) then return end
-	--Heads: All Pyro monsters gain 700 ATK. Negate the effects of all Aqua monsters on the field this turn.
-	--Tails: All Aqua monsters gain 700 ATK. Negate the effects of all Pyro monsters on the field this turn.
 	local rc1=RACE_AQUA<<Duel.TossCoin(tp,1)
 	local rc2=0xc0~rc1
 	local e1=Effect.CreateEffect(c)

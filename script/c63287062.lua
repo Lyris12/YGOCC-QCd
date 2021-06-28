@@ -1,7 +1,6 @@
+--created by Pina, coded by Lyris
 local s,id=GetID()
---Golden Drops
 function s.initial_effect(c)
-	--Tribute 1 monster with either 1000 ATK or DEF; gain LP equal to that monster's original ATK or DEF, whichever is higher (your choice, if tied).
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
