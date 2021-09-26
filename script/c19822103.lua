@@ -1,5 +1,6 @@
+local s,id=GetID()
 --Shadow NOVA - Mac
-function c19822103.initial_effect(c)
+function s.initial_effect(c)
 	--If you control a "Shadow NOVA" monster: You can send this card from your hand to the GY, then target 1 monster your opponent controls; return it to the hand.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_IGNITION)
@@ -55,7 +56,7 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.operation(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetFirstTarget()
-	if tc:IsRelateToEffect(e) then Duel.SendtoHand(tc,nil,REASON_EFFECT)
+	if tc:IsRelateToEffect(e) then Duel.SendtoHand(tc,nil,REASON_EFFECT) end
 end
 function s.cfilter(c)
 	return c:IsType(TYPE_MONSTER) and c:IsSetCard(0xe1f) and c:IsAbleToGraveAsCost()

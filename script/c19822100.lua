@@ -1,5 +1,6 @@
+local s,id=GetID()
 --Shadow NOVA - Drake
-function c19822100.initial_effect(c)
+function s.initial_effect(c)
 	--You can send this card from your hand to the GY; add 1 "Shadow NOVA" monster from your Deck to your hand, except "Shadow NOVA - Drake".
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_IGNITION)
