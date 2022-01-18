@@ -1,7 +1,5 @@
---Shadow NOVA - Damien
-local s,id=GetID()
+local s,id,off=GetID()
 function s.initial_effect(c)
-	--If a "Shadow NOVA" monster(s) you control would be destroyed by battle or card effect, you can send this card from your hand to the GY instead.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 	e1:SetCode(EFFECT_DESTROY_REPLACE)
@@ -11,7 +9,6 @@ function s.initial_effect(c)
 	e1:SetValue(s.repval)
 	e1:SetOperation(s.repop)
 	c:RegisterEffect(e1)
-	--If this card is in your GY: You can send 1 "Shadow NOVA" monster from your hand to the GY; Special Summon this card.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_IGNITION)
 	e2:SetRange(LOCATION_GRAVE)
@@ -21,14 +18,11 @@ function s.initial_effect(c)
 	e2:SetTarget(s.stg)
 	e2:SetOperation(s.sop)
 	c:RegisterEffect(e2)
-	--You can only use each of the preceding effects of "Shadow NOVA - Damien" once per turn.
-	--If this card is Special Summoned: It gains the following effects.(below)
 	local e3=Effect.CreateEffect(c)
 	e3:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
 	e3:SetCode(EVENT_SPSUMMON_SUCCESS)
 	e3:SetOperation(function() c:RegisterFlagEffect(id,RESET_EVENT+RESETS_STANDARD+RESET_DISABLE,0,1) end)
 	c:RegisterEffect(e3)
-	--All "Shadow NOVA" monsters you control gain 500 ATK/DEF.
 	local e4=Effect.CreateEffect(c)
 	e4:SetType(EFFECT_TYPE_FIELD)
 	e4:SetCode(EFFECT_UPDATE_ATTACK)
@@ -41,10 +35,21 @@ function s.initial_effect(c)
 	local e5=e4:Clone()
 	e5:SetCode(EFFECT_UPDATE_DEFENSE)
 	c:RegisterEffect(e5)
-	--Once per turn: You can target 2 "Shadow NOVA" monsters you control; return the first target to the hand, and if you do, the second target gains the effect(s) that the returned monster would gain when Special Summoned.
 	local e6=Effect.CreateEffect(c)
+	e6:SetType(EFFECT_TYPE_IGNITION)
+	e6:SetRange(LOCATION_MZONE)
+	e6:SetCountLimit(1)
+	e6:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e6:SetCategory(CATEGORY_TOHAND)
 	e6:SetCondition(function() return c:GetFlagEffect(id)>0 end)
+	e6:SetTarget(s.tg)
+	e6:SetOperation(s.op)
 	c:RegisterEffect(e6)
+	if not s.global_check then
+		s.global_check=true
+		if not s.spsum_effects then s.spsum_effects={e4,e5,e6}
+		else table.insert(s.spsum_effects,e4) table.insert(s.spsum_effects,e5) table.insert(s.spsum_effects,e6) end
+	end
 end
 function s.repfilter(c,tp)
 	return c:IsFaceup() and c:IsSetCard(0xe1f) and c:IsLocation(LOCATION_MZONE) and c:IsControler(tp) and c:IsReason(REASON_EFFECT+REASON_BATTLE) and not c:IsReason(REASON_REPLACE)
@@ -77,4 +82,33 @@ end
 function s.sop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if c:IsRelateToEffect(e) then Duel.SpecialSummon(e,0,tp,tp,false,false,POS_FACEUP) end
-en/d
+end
+function s.filter(c)
+	local m=_G["c"..c:GetOriginalCode()]
+	if not m then return end
+	local t=m.spsum_effects
+	return c:IsFaceup() and c:IsSetCard(0xe1f) and c:IsAbleToHand() and t and #t>0
+		and Duel.IsExistingTarget(aux.AND(Card.IsFaceup,Card.IsSetCard),tp,LOCATION_MZONE,0,1,c,0xe1f)
+end
+function s.tg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return false end
+	if chk==0 then return Duel.IsExistingTarget(s.filter,tp,LOCATION_MZONE,0,1,nil,tp) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RTOHAND)
+	local tc=Duel.SelectTarget(tp,s.filter,tp,LOCATION_MZONE,0,1,1,nil,tp):GetFirst()
+	Duel.SetOperationInfo(0,CATEGORY_TOHAND,tc,1,0,0)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEUP)
+	Duel.SelectTarget(tp,aux.AND(Card.IsFaceup,Card.IsSetCard),tp,LOCATION_MZONE,0,1,1,tc,0xe1f)
+end
+function s.op(e,tp,eg,ep,ev,re,r,rp)
+	local ex,tc=Duel.GetOperationInfo(0,CATEGORY_TOHAND)
+	if not (tc and tc:IsRelateToEffect(e) and Duel.SendtoHand(tc,nil,REASON_EFFECT)>0 and tc:IsLocation(LOCATION_HAND)) then return end
+	local g=Duel.GetChainInfo(0,CHAININFO_TARGET_CARDS)
+	if not g or #g<2 then return end
+	local pc=(g-tc):GetFirst()
+	if tc:IsFaceup() and tc:IsRelateToEffect(e) then for ef in ipairs(_G["c"..tc:GetCode()]) do
+		local e1=ef:Clone()
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		tc:RegisterEffect(e1)
+		tc:RegisterFlagEffect(tc:GetCode(),RESET_EVENT+RESETS_STANDARD,0,1)
+	end end
+end
