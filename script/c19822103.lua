@@ -1,4 +1,6 @@
-local s,id,off=GetID()
+--created by Seth, coded by Lyris
+--Shadow NOVA - Mac
+local s,id,o=GetID()
 function s.initial_effect(c)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_IGNITION)
@@ -14,7 +16,7 @@ function s.initial_effect(c)
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_IGNITION)
 	e2:SetRange(LOCATION_GRAVE)
-	e2:SetCountLimit(1,id+off*10)
+	e2:SetCountLimit(1,id+o*10)
 	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
 	e2:SetCost(s.scost)
 	e2:SetTarget(s.stg)

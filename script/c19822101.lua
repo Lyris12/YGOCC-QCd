@@ -1,4 +1,6 @@
-local s,id,off=GetID()
+--created by Seth, coded by Lyris
+--Shadow NOVA - Damien
+local s,id,o=GetID()
 function s.initial_effect(c)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

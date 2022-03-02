@@ -1,4 +1,7 @@
-function c19822112.initial_effect(c)
+--created by Seth, coded by Lyris
+--Shadow NOVA Dragon
+local s,id,o=GetID()
+function s.initial_effect(c)
 	c:EnableReviveLimit()
 	aux.AddLinkProcedure(c,aux.FilterBoolFunction(Card.IsSetCard,0xe1f),3,3)
 	local e5=Effect.CreateEffect(c)
