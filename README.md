@@ -111,7 +111,7 @@ created by Seth, coded by Lyris
 ## `19822107` Shadow NOVA - Jordan
 created by Seth
 ## `19822108` Shadow NOVA - Ultimaia
-created by Seth
+created by Seth, coded by Lyris
 ## `19822109` Shadow NOVA - Dragonlynch
 created by Seth, coded by Lyris
 ## `19822110` Shadow NOVA - Dartylochi
