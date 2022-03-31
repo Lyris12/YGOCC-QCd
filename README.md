@@ -1,3 +1,43 @@
+## `IDX00` Aster, Magitate Ember
+created by LeonDuvall
+## `IDX01` Aster, Magitate Terraemotus
+created by LeonDuvall
+## `IDX02` Elysia, Magitate Pebble
+created by LeonDuvall
+## `IDX03` Elysia, Magitate Megacyma
+created by LeonDuvall
+## `IDX04` Corentin, Magitate Tear
+created by LeonDuvall
+## `IDX05` Corentin, Magitate Tempestas
+created by LeonDuvall
+## `IDX06` Cindy, Magitate Whisper
+created by LeonDuvall
+## `IDX07` Cindy, Magitate Infernum
+created by LeonDuvall
+## `IDX08` Aerin, Magitate Shade
+created by LeonDuvall
+## `IDX09` Aerin, Magitate Divinitatum
+created by LeonDuvall
+## `IDX10` Metallic Concentrated Magitate
+created by LeonDuvall
+## `IDX11` Cloudy Concentrated Magitate
+created by LeonDuvall
+## `IDX12` Verdant Concentrated Magitate
+created by LeonDuvall
+## `IDX13` Radiant Concentrated Magitate
+created by LeonDuvall
+## `IDX14` Shimmering Concentrated Magitate
+created by LeonDuvall
+## `IDX15` On The Practical Applications of Concentrated Magitate
+created by LeonDuvall
+## `IDX16` Concentrating Magitate
+created by LeonDuvall
+## `IDX17` Magitate Flux
+created by LeonDuvall
+## `IDX18` Rapid Reformation of Unstable Magitate
+created by LeonDuvall
+## `IDX19` Magitate Detonation
+created by LeonDuvall
 ## `1020044` Bushido God Lux Dragon
 created by Jake
 ## `1020045` Bushido God Burning Phoenix
@@ -94,6 +134,36 @@ created by ZEN
 created by ZEN
 ## `19782415` Administral Code - Ephesian Tenacity
 created by ZEN
+## `19905900` MMS - Follower
+created by Meed
+## `19905901` MMS - Dealer
+created by Meed
+## `19905902` MMS - Raider
+created by Meed
+## `19905903` MMS - Strider
+created by Meed
+## `19905904` MMS - Ambusher
+created by Meed
+## `19905905` MMS - Slasher
+created by Meed
+## `19905906` MMS - Throne
+created by Meed
+## `19905907` MMS - Jacklyn Alltrades
+created by Meed
+## `19905908` MMS - Sherlock Holmes
+created by Meed
+## `19905909` MMS - Typhon, Father of Monsters
+created by Meed
+## `19905910` MMS - Mystic Monster Summoner
+created by Meed
+## `19905911` MMS - Multi Magic Spark
+created by Meed
+## `19905912` MMS - Axis Gate
+created by Meed
+## `19905913` MMS - Monotonous Monster Scavenging
+created by Meed
+## `19905914` MMS - That's A Wrap!
+created by Meed
 ## `19822100` Shadow NOVA - Drake
 created by Seth, coded by Lyris
 ## `19822101` Shadow NOVA - Damien
