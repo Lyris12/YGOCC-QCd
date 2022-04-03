@@ -134,6 +134,32 @@ created by ZEN
 created by ZEN
 ## `19782415` Administral Code - Ephesian Tenacity
 created by ZEN
+## `19822100` Shadow NOVA - Drake
+created by Seth, coded by Lyris
+## `19822101` Shadow NOVA - Damien
+created by Seth, coded by Lyris
+## `19822102` Shadow NOVA - Rush
+created by Seth, coded by Lyris
+## `19822103` Shadow NOVA - Mac
+created by Seth, coded by Lyris
+## `19822104` Shadow NOVA - Duster
+created by Seth
+## `19822105` Shadow NOVA - Fare
+created by Seth, coded by Lyris
+## `19822106` Shadow NOVA - Gaz
+created by Seth, coded by Lyris
+## `19822107` Shadow NOVA - Jordan
+created by Seth
+## `19822108` Shadow NOVA - Ultimaia
+created by Seth, coded by Lyris
+## `19822109` Shadow NOVA - Dragonlynch
+created by Seth, coded by Lyris
+## `19822110` Shadow NOVA - Dartylochi
+created by Seth, coded by Lyris
+## `19822111` Shadow NOVA - Yamoloxi
+created by Seth
+## `19822112` Shadow NOVA Dragon
+created by Seth, coded by Lyris
 ## `19905900` MMS - Follower
 created by Meed
 ## `19905901` MMS - Dealer
@@ -164,32 +190,6 @@ created by Meed
 created by Meed
 ## `19905914` MMS - That's A Wrap!
 created by Meed
-## `19822100` Shadow NOVA - Drake
-created by Seth, coded by Lyris
-## `19822101` Shadow NOVA - Damien
-created by Seth, coded by Lyris
-## `19822102` Shadow NOVA - Rush
-created by Seth, coded by Lyris
-## `19822103` Shadow NOVA - Mac
-created by Seth, coded by Lyris
-## `19822104` Shadow NOVA - Duster
-created by Seth
-## `19822105` Shadow NOVA - Fare
-created by Seth
-## `19822106` Shadow NOVA - Gaz
-created by Seth, coded by Lyris
-## `19822107` Shadow NOVA - Jordan
-created by Seth
-## `19822108` Shadow NOVA - Ultimaia
-created by Seth, coded by Lyris
-## `19822109` Shadow NOVA - Dragonlynch
-created by Seth, coded by Lyris
-## `19822110` Shadow NOVA - Dartylochi
-created by Seth, coded by Lyris
-## `19822111` Shadow NOVA - Yamoloxi
-created by Seth
-## `19822112` Shadow NOVA Dragon
-created by Seth, coded by Lyris
 ## `41593800` Skypiercer BF-109
 created by LeonDuvall
 ## `41593801` Skypiercer BF-110
