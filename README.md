@@ -1,43 +1,3 @@
-## `IDX00` Aster, Magitate Ember
-created by LeonDuvall
-## `IDX01` Aster, Magitate Terraemotus
-created by LeonDuvall
-## `IDX02` Elysia, Magitate Pebble
-created by LeonDuvall
-## `IDX03` Elysia, Magitate Megacyma
-created by LeonDuvall
-## `IDX04` Corentin, Magitate Tear
-created by LeonDuvall
-## `IDX05` Corentin, Magitate Tempestas
-created by LeonDuvall
-## `IDX06` Cindy, Magitate Whisper
-created by LeonDuvall
-## `IDX07` Cindy, Magitate Infernum
-created by LeonDuvall
-## `IDX08` Aerin, Magitate Shade
-created by LeonDuvall
-## `IDX09` Aerin, Magitate Divinitatum
-created by LeonDuvall
-## `IDX10` Metallic Concentrated Magitate
-created by LeonDuvall
-## `IDX11` Cloudy Concentrated Magitate
-created by LeonDuvall
-## `IDX12` Verdant Concentrated Magitate
-created by LeonDuvall
-## `IDX13` Radiant Concentrated Magitate
-created by LeonDuvall
-## `IDX14` Shimmering Concentrated Magitate
-created by LeonDuvall
-## `IDX15` On The Practical Applications of Concentrated Magitate
-created by LeonDuvall
-## `IDX16` Concentrating Magitate
-created by LeonDuvall
-## `IDX17` Magitate Flux
-created by LeonDuvall
-## `IDX18` Rapid Reformation of Unstable Magitate
-created by LeonDuvall
-## `IDX19` Magitate Detonation
-created by LeonDuvall
 ## `1020044` Bushido God Lux Dragon
 created by Jake
 ## `1020045` Bushido God Burning Phoenix
@@ -348,6 +308,46 @@ created & coded by Walrus
 created & coded by Walrus
 ## `99998880` Voidictator Servant - Shield of Corvus
 created & coded by Walrus
+## `131792000` Aster, Magitate Ember
+created by LeonDuvall
+## `131792001` Aster, Magitate Terraemotus
+created by LeonDuvall
+## `131792002` Elysia, Magitate Pebble
+created by LeonDuvall
+## `131792003` Elysia, Magitate Megacyma
+created by LeonDuvall
+## `131792004` Corentin, Magitate Tear
+created by LeonDuvall
+## `131792005` Corentin, Magitate Tempestas
+created by LeonDuvall
+## `131792006` Cindy, Magitate Whisper
+created by LeonDuvall
+## `131792007` Cindy, Magitate Infernum
+created by LeonDuvall
+## `131792008` Aerin, Magitate Shade
+created by LeonDuvall
+## `131792009` Aerin, Magitate Divinitatum
+created by LeonDuvall
+## `131792010` Metallic Concentrated Magitate
+created by LeonDuvall
+## `131792011` Cloudy Concentrated Magitate
+created by LeonDuvall
+## `131792012` Verdant Concentrated Magitate
+created by LeonDuvall
+## `131792013` Radiant Concentrated Magitate
+created by LeonDuvall
+## `131792014` Shimmering Concentrated Magitate
+created by LeonDuvall
+## `131792015` On The Practical Applications of Concentrated Magitate
+created by LeonDuvall
+## `131792016` Concentrating Magitate
+created by LeonDuvall
+## `131792017` Magitate Flux
+created by LeonDuvall
+## `131792018` Rapid Reformation of Unstable Magitate
+created by LeonDuvall
+## `131792019` Magitate Detonation
+created by LeonDuvall
 ## `221594300` Voidictator Energy - Origin Essence
 created by Walrus, coded by Lyris
 ## `221594301` Voidictator Energy - Revolution Essence
