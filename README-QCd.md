@@ -209,6 +209,32 @@ created by ZEN, coded by ZEN & Lyris
 created by ZEN, coded by Lyris
 ## `19782411` Aenatoa, Administral of the Universe
 created by ZEN, coded by Lyris
+## `19822100` Shadow NOVA - Drake
+created by Seth, coded by Lyris
+## `19822101` Shadow NOVA - Damien
+created by Seth, coded by Lyris
+## `19822102` Shadow NOVA - Rush
+created by Seth, coded by Lyris
+## `19822103` Shadow NOVA - Mac
+created by Seth, coded by Lyris
+## `19822104` Shadow NOVA - Duster
+created by Seth
+## `19822105` Shadow NOVA - Fare
+created by Seth, coded by Lyris
+## `19822106` Shadow NOVA - Gaz
+created by Seth, coded by Lyris
+## `19822107` Shadow NOVA - Jordan
+created by Seth
+## `19822108` Shadow NOVA - Ultimaia
+created by Seth, coded by Lyris
+## `19822109` Shadow NOVA - Dragonlynch
+created by Seth, coded by Lyris
+## `19822110` Shadow NOVA - Dartylochi
+created by Seth, coded by Lyris
+## `19822111` Shadow NOVA - Yamoloxi
+created by Seth
+## `19822112` Shadow NOVA Dragon
+created by Seth, coded by Lyris
 ## `20157300` Azrael, The Origin Dragon
 created by Ace, coded by Lyris
 ## `20157301` Saruves, The Origin Dragon
