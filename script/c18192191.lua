@@ -33,17 +33,17 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 	local sg=g:Filter(Card.IsAbleToGrave,nil)
 	if #sg>0 and Duel.SelectEffectYesNo(tp,c) then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
-		local tc=sg:Select(tp,1,1,nil):GetFirst()
+		local tg=sg:Select(tp,1,1,nil)
+		Duel.HintSelection(tg)
 		Duel.BreakEffect()
-		if Duel.SendtoGrave(tc,REASON_EFFECT)>0 and tc:IsLocation(LOCATION_GRAVE) then
-			local e1=Effect.CreateEffect(c)
-			e1:SetType(EFFECT_TYPE_SINGLE)
-			e1:SetCode(EFFECT_CANNOT_TRIGGER)
-			e1:SetRange(LOCATION_GRAVE)
-			e1:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
-			e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
-			tc:RegisterEffect(e1)
-			Duel.BreakEffect()
-		else return end
-	else return end
+		local tc=tg:GetFirst()
+		Duel.SendtoGrave(tc,REASON_EFFECT)
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_CANNOT_TRIGGER)
+		e1:SetRange(LOCATION_GRAVE)
+		e1:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
+		tc:RegisterEffect(e1)
+	end
 end
