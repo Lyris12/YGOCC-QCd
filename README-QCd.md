@@ -75,6 +75,12 @@ created by Zerry, coded by Lyris, art from Shadowverse's "Mail of Obliteration"
 created by Zerry, coded by Lyris, art from Shadowverse's "Enervating Mail"
 ## `11111036` Golden Skies - Brandon the Fluid Blade
 created by Zerry, coded by Lyris, art from Shadowverse's "Dyne, Master Swordsman"
+## `18192190` Star Dance Pegasus
+created by RespectBlindfolds, coded by Lyris
+## `18192191` The Mystic's Successor
+created by RespectBlindfolds, coded by Lyris
+## `18192192` Extraterrestrial Battleship Yamato
+created by RespectBlindfolds, coded by Lyris
 ## `19141500` Snowstorm Princess Sun'oh
 created by Windy Gurls, coded by Lyris
 ## `19141501` Snowstorm Princess Taiga

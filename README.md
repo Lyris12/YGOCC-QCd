@@ -80,12 +80,6 @@ created by LeonDuvall
 created by LeonDuvall
 ## `14151814` Sverdånd Fleet
 created by LeonDuvall
-## `18192190` Star Dance Pegasus
-created by RespectBlindfolds, coded by Lyris
-## `18192191` The Mystic's Successor
-created by RespectBlindfolds, coded by Lyris
-## `18192192` Extraterrestrial Battleship Yamato
-created by RespectBlindfolds, coded by Lyris
 ## `19782412` Johanna, The Enlightened Administral
 created by ZEN
 ## `19782413` Administral Code - Thyatrian Charity
