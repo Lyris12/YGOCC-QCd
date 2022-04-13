@@ -1,4 +1,4 @@
---created by RespectBlindfolds
+--created by RespectBlindfolds, coded by Lyris
 --Star Dance Pegasus
 local s,id,o=GetID()
 function s.initial_effect(c)

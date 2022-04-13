@@ -1,4 +1,4 @@
---created by RespectBlindfolds
+--created by RespectBlindfolds, coded by Lyris
 --The Mystic's Successor
 local s,id,o=GetID()
 function s.initial_effect(c)

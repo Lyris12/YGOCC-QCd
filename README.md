@@ -85,7 +85,7 @@ created by RespectBlindfolds, coded by Lyris
 ## `18192191` The Mystic's Successor
 created by RespectBlindfolds, coded by Lyris
 ## `18192192` Extraterrestrial Battleship Yamato
-created by RespectBlindfolds
+created by RespectBlindfolds, coded by Lyris
 ## `19782412` Johanna, The Enlightened Administral
 created by ZEN
 ## `19782413` Administral Code - Thyatrian Charity
