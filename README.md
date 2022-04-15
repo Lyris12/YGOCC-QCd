@@ -40,14 +40,8 @@ created by Jake
 created by Jake
 ## `1020961` Bushido Legend Midnight Werewolf
 created by Jake
-## `1365381` Elohim, Ængelic Zenith
-created by Swag
-## `1365382` Adam Kadmon, the Ængelic Paradise
-created by Swag
-## `1365398` Ængelic Commandment
-created by Swag
 ## `1365399` The Ængelic Final Battlefield
-created by Swag
+created by Swag, coded by Lyris
 ## `14151800` Sverdånd Berserker
 created by LeonDuvall
 ## `14151801` Sverdånd Navigator
