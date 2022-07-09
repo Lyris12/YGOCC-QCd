@@ -1,4 +1,6 @@
 
+## `1365399` The Ængelic Final Battlefield
+created by Swag, coded by Lyris
 ## `4200100` Gorgeous Gift of Heaven - The Godspark
 created & coded by Swag
 ## `4200101` Godspark of Elysium - Imperia
@@ -75,6 +77,36 @@ created by Zerry, coded by Lyris, art from Shadowverse's "Mail of Obliteration"
 created by Zerry, coded by Lyris, art from Shadowverse's "Enervating Mail"
 ## `11111036` Golden Skies - Brandon the Fluid Blade
 created by Zerry, coded by Lyris, art from Shadowverse's "Dyne, Master Swordsman"
+## `14151800` Sverdånd Berserker
+created by LeonDuvall
+## `14151801` Sverdånd Navigator
+created by LeonDuvall
+## `14151802` Sverdånd Sailor
+created by LeonDuvall
+## `14151803` Sverdånd Viking
+created by LeonDuvall
+## `14151804` Sverdånd Mariner
+created by LeonDuvall
+## `14151805` Sverdånd Raider
+created by LeonDuvall
+## `14151806` Legendary Sverdånd - Hrólfr
+created by LeonDuvall
+## `14151807` Legendary Sverdånd - Harald
+created by LeonDuvall
+## `14151808` Sverdånd Livsvåpen - Sköfnung
+created by LeonDuvall
+## `14151809` Sverdånd Festning - Jómsburg
+created by LeonDuvall
+## `14151810` Sverdånd Funerary Pyre
+created by LeonDuvall
+## `14151811` Sverdånd Fury
+created by LeonDuvall
+## `14151812` Sverdånd Leidang
+created by LeonDuvall
+## `14151813` Sverdånd Endurance
+created by LeonDuvall
+## `14151814` Sverdånd Fleet
+created by LeonDuvall
 ## `18192190` Star Dance Pegasus
 created by RespectBlindfolds, coded by Lyris
 ## `18192191` The Mystic's Successor
