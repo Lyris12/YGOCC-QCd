@@ -5,7 +5,7 @@ created by Jake
 ## `1020046` Bushido God Burning Phoenix
 created by Jake
 ## `1020047` A Bushido Beast's War
-created by Jake
+created by Jake, coded by Lyris
 ## `1020049` Bushido Dog
 created by Jake
 ## `1020050` Bushido God Terra Dragon
@@ -21,13 +21,13 @@ created by Jake
 ## `1020055` Bushido Legend Griffin
 created by Jake
 ## `1020056` Bushido Legend Cerberus
-created by Jake
+created by Jake, coded by Lyris
 ## `1020057` Bushido Legend Minotaur
 created by Jake
 ## `1020059` Bushido Rat
 created by Jake
 ## `1020060` Bushido Lizard
-created by Jake
+created by Jake, coded by Lyris
 ## `1020061` Bushido Eagle
 created by Jake
 ## `1020062` Bushido God Ventus Dragon
@@ -35,8 +35,10 @@ created by Jake
 ## `1020063` Bushido Legend Harambe
 created by Jake
 ## `1020064` Bushido Legend Archimedes
-created by Jake
+created by Jake, coded by Lyris
 ## `1020065` Bushido God Hopeful Evolved Phoenix
+created by Jake
+## `1020099` A Bushido Beast's Recruitment
 created by Jake
 ## `1020961` Bushido Legend Midnight Werewolf
 created by Jake
@@ -136,6 +138,12 @@ created by Seth
 created by Seth
 ## `47511813` Deltagears Recovery Machine
 created by Seth
+## `58558815` Flibberty Hungbalongalogus
+created by LeonDuvall
+## `58558816` Flibberty Schizmaspatleblap
+created by LeonDuvall
+## `58558817` Dixy Nix, Flibberty Cartoonist
+created by LeonDuvall
 ## `61811400` Dread Bastille - Cantata
 created by Swag
 ## `61811401` Dread Bastille - Oratorio
@@ -229,13 +237,33 @@ created by LeonDuvall
 ## `85120913` Reawakening of the Primordial Sun
 created by LeonDuvall
 ## `99998876` Voidictator Rune - Energy Renewal
-created & coded by Walrus
-## `99998878` Voidictator Rune - Greater Gating Art
-created & coded by Walrus
-## `99998879` Voidictator Rune - Inverse Gating Art
-created & coded by Walrus
+created by Walrus
+## `99998878` Voidictator Rune - Gating Art
+created by Walrus
+## `99998879` Voidictator Rune - Execution of the Divine
+created by Walrus
 ## `99998880` Voidictator Servant - Shield of Corvus
-created & coded by Walrus
+created by Walrus
+## `100111050` Armored Terrabiter
+created by Jake
+## `100111051` Emerald Veins Dragon
+created by Jake
+## `100111052` Stopwatch Knight
+created by Jake
+## `100111053` Overload Artificial Intelligence
+created by Jake
+## `100111054` Crush Cyberse Virus
+created by Jake
+## `100111055` No Survivors
+created by Jake
+## `100111056` Novavoid Dragon
+created by Jake
+## `100111057` Synchrobanger
+created by Jake
+## `100111058` Rapid Fire Bat
+created by Jake
+## `100111059` Essence Synthesizer
+created by Jake
 ## `131792000` Aster, Magitate Ember
 created by LeonDuvall
 ## `131792001` Aster, Magitate Terraemotus
@@ -277,82 +305,82 @@ created by LeonDuvall
 ## `131792019` Magitate Detonation
 created by LeonDuvall
 ## `221594300` Voidictator Energy - Origin Essence
-created by Walrus, coded by Lyris
+created by Walrus
 ## `221594301` Voidictator Energy - Revolution Essence
-created by Walrus, coded by Lyris
+created by Walrus
 ## `221594302` Voidictator Servant - Gate Architect
-created by Walrus, coded by Lyris
-## `221594303` Voidictator Servant - Gate Sorcerer
-created by Walrus, coded by Lyris
+created by Walrus
+## `221594303` Voidictator Servant - Gate Sorceress
+created by Walrus
 ## `221594304` Voidictator Servant - Rune Artist
-created by Walrus, coded by Lyris
+created by Walrus
 ## `221594305` Voidictator Servant - Knight of Corvus
-created by Walrus, coded by Lyris
-## `221594306` Voidictator Demon - Gate Keeper
-created by Walrus, coded by Lyris
+created by Walrus
+## `221594306` Voidictator Demon - The Gate Keeper
+created by Walrus
 ## `221594307` Voidictator Deity - Jezebel the Dark Angel
-created by Walrus, coded by Lyris
-## `221594308` Voidictator Deity - Vera the Soul Guardian
-created by Walrus, coded by Lyris
+created by Walrus
+## `221594308` Voidictator Deity - Vera the Grand Judge
+created by Walrus
 ## `221594309` Voidictator Demon - The Unending Flame
-created by Walrus, coded by Lyris
-## `221594310` Voidictator Demon - Void-Eyes Null Dragon
-created by Walrus, coded by Lyris
-## `221594311` Voidictator Rune - Origins' Realm
-created by Walrus, coded by Lyris
-## `221594312` Voidictator Rune - Judgement of the Deities
-created by Walrus, coded by Lyris
+created by Walrus
+## `221594310` Voidictator Rune - Guiding Eulogy
+created by Walrus
+## `221594311` Voidictator Rune - Origin's Realm
+created by Walrus
+## `221594312` Voidictator Rune - Final Verdict
+created by Walrus
 ## `221594313` Voidictator Rune - Chains of Torment
-created by Walrus, coded by Lyris
-## `221594314` Voidictator Servant - Guardian of Corvus
-created by Walrus, coded by Lyris
-## `221594315` Voidictator Rune - Wrath of Zanyris
-created by Walrus, coded by Lyris
-## `221594316` Voidictator Servant - Rune Sorceress
-created by Walrus, coded by Lyris
+created by Walrus
+## `221594314` Voidictator Demon - Guardian of Corvus
+created by Walrus
+## `221594315` Voidictator Rune - The Goddess's Wrath
+created by Walrus
+## `221594316` Voidictator Rune - Ultimate Gating Art
+created by Walrus
 ## `221594318` Voidictator Servant - Gate Magician
-created by Walrus, coded by Lyris
+created by Walrus
 ## `221594319` Voidictator Servant - Gate Attendant
-created by Walrus, coded by Lyris
+created by Walrus
 ## `221594320` Voidictator Servant - Rune Priestess
-created by Walrus, coded by Lyris
+created by Walrus
 ## `221594321` Voidictator Energy - Ritual Essence
-created by Walrus, coded by Lyris
-## `221594322` Voidictator Rune - Oath of the Demons
-created by Walrus, coded by Lyris
-## `221594323` Voidictator Deity - Sauriel the Luna Arbiter
-created by Walrus, coded by Lyris
-## `221594324` Voidictator Demon - Lichguard of Corvus
-created by Walrus, coded by Lyris
-## `221594326` Voidictator Rune - Unstable Gating Art
-created by Walrus, coded by Lyris
+created by Walrus
+## `221594322` Voidictator Rune - Raging Flames
+created by Walrus
+## `221594323` Voidictator Deity - Sauriel the Cosmic Arbiter
+created by Walrus
+## `221594324` Voidictator Demon - Paladin of Corvus
+created by Walrus
+## `221594326` Voidictator Rune - Gates of Perdition
+created by Walrus
 ## `412314200` Dawn-Eyes Violet Dragon
-created by Jake, coded by Lyris, art from Cardfight!! Vanguard's "Dragonic Overlord"
+created by Jake, art from Cardfight!! Vanguard's "Dragonic Overlord"
 ## `412314205` Dawn Blader - Future King
-created by Jake, coded by Lyris
+created by Jake
 ## `412314207` Dawn Blader - Bane & Sky
-created by Jake, coded by Glitchy
+created by Jake
 ## `412314208` Dawn Blader - King of Heroes
-created by Jake, coded by Lyris
+created by Jake
 ## `412314211` Dawn Blader - Vortex Divider
-created by Jake, coded by Lyris, art from Cardfight!! Vanguard's "Incandescent Lion, Blond Ezel"
+created by Jake, art from Cardfight!! Vanguard's "Incandescent Lion, Blond Ezel"
 ## `412314212` Dawn Blader - Panther
-created by Jake, coded by Lyris, art by BachEric1461 of DeviantArt
+created by Jake, art by BachEric1461 of DeviantArt
 ## `412314213` Dawn Blader - Lion
-created by Jake, coded by Lyris, art from Cardfight!! Vanguard's "Battlefield Storm, Sagramore"
+created by Jake, art from Cardfight!! Vanguard's "Battlefield Storm, Sagramore"
 ## `412314214` Dawn Blader - Eroko
-created by Jake, coded by Glitchy
+created by Jake
 ## `412314216` Dawn Blader - Dragonic King
-created by Jake, coded by Lyris
+created by Jake
 ## `412314219` Dawn Blader - Tiger
-created by Jake, coded by Lyris, art from Cardfight!! Vanguard's "Beast Knight, Garmore"
+created by Jake, art from Cardfight!! Vanguard's "Beast Knight, Garmore"
 ## `412314222` Dawn Blader - Saber
-created by Jake, coded by Lyris, art from Cardfight!! Vanguard's "Great Silver Wolf, Garmore"
+created by Jake, art from Cardfight!! Vanguard's "Great Silver Wolf, Garmore"
 ## `412314225` A Soldier's Resting Place
-created by Jake, coded by Lyris, art from "The Sanctuary in the Sky"
+created by Jake, art from "The Sanctuary in the Sky"
 ## `412314226` Bond Between Dawn
-created by Jake, coded by Lyris
+created by Jake
 ## `412314227` Survival of The Bravest
-created by Jake, coded by Lyris
+created by Jake
 ## `412314228` Wrath at Dawn
-created by Jake, coded by Lyris
+created by Jake
