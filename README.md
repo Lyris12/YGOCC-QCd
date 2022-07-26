@@ -39,7 +39,7 @@ created by Jake, coded by Lyris
 ## `1020065` Bushido God Hopeful Evolved Phoenix
 created by Jake
 ## `1020099` A Bushido Beast's Recruitment
-created by Jake
+created by Jake, coded by Lyris
 ## `1020961` Bushido Legend Midnight Werewolf
 created by Jake
 ## `19782412` Johanna, The Enlightened Administral

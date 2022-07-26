@@ -1,4 +1,4 @@
---created by Jake
+--created by Jake, coded by Lyris
 --A Bushido Beast's Recruitment
 local s,id,o=GetID()
 function s.initial_effect(c)
@@ -13,7 +13,6 @@ function s.initial_effect(c)
 		Duel.SendtoDeck(tk,0,SEQ_DECKTOP,REASON_RULE)
 	end)
 	Duel.RegisterEffect(e0,0)
-	--Activate one of the following effects.(below) You can only activate 1 "A Bushido Beast's Recruitment" per turn.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -35,7 +34,6 @@ function s.filter(c,e,tp)
 	return c:IsLevel(4) and c:IsSetCard(0x4b0) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
-	--Fusion Summon 1 "Bushido" Fusion Monster by banishing monsters from your field, hand or GY as material.
 	local chkf=tp
 	local mg1=Duel.GetFusionMaterial(tp):Filter(Card.IsAbleToRemove,nil)+Duel.GetMatchingGroup(s.mfilter1,tp,LOCATION_GRAVE,0,nil)
 	local b1=Duel.IsExistingMatchingCard(s.ffilter,tp,LOCATION_EXTRA,0,1,nil,e,tp,mg1,nil,chkf)
@@ -48,7 +46,6 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 			b1=Duel.IsExistingMatchingCard(s.ffilter,tp,LOCATION_EXTRA,0,1,nil,e,tp,mg2,mf,chkf)
 		end
 	end
-	--Special Summon 2 Level 4 "Bushido" monsters from your hand and/or GY, and if you do, you cannot Special Summon monsters for the rest of the turn, except Beast, Beast-Warrior, Winged Beast or "Bushido" monsters.
 	local b2=Duel.GetLocationCount(tp,LOCATION_MZONE)>1 and Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_HAND+LOCATION_GRAVE,0,2,nil,e,tp) and not Duel.IsPlayerAffectedByEffect(tp,CARD_BLUEEYES_SPIRIT)
 	if chk==0 then return b1 or b2 end
 	local off=1
