@@ -1,4 +1,47 @@
-
+## `1020044` Bushido God Lux Dragon
+created by Jake
+## `1020045` Bushido God Burning Phoenix
+created by Jake
+## `1020046` Bushido God Burning Phoenix
+created by Jake
+## `1020047` A Bushido Beast's War
+created by Jake, coded by Lyris
+## `1020049` Bushido Dog
+created by Jake
+## `1020050` Bushido God Terra Dragon
+created by Jake
+## `1020051` Bushido Legend Leviathan
+created by Jake
+## `1020052` Bushido Legend Behemoth
+created by Jake
+## `1020053` Bushido God Ignis Dragon
+created by Jake
+## `1020054` Bushido Legend Cyclops
+created by Jake
+## `1020055` Bushido Legend Griffin
+created by Jake
+## `1020056` Bushido Legend Cerberus
+created by Jake, coded by Lyris
+## `1020057` Bushido Legend Minotaur
+created by Jake
+## `1020059` Bushido Rat
+created by Jake
+## `1020060` Bushido Lizard
+created by Jake, coded by Lyris
+## `1020061` Bushido Eagle
+created by Jake
+## `1020062` Bushido God Ventus Dragon
+created by Jake
+## `1020063` Bushido Legend Harambe
+created by Jake
+## `1020064` Bushido Legend Archimedes
+created by Jake, coded by Lyris
+## `1020065` Bushido God Hopeful Evolved Phoenix
+created by Jake
+## `1020099` A Bushido Beast's Recruitment
+created by Jake, coded by Lyris
+## `1020961` Bushido Legend Midnight Werewolf
+created by Jake
 ## `1365399` The Ængelic Final Battlefield
 created by Swag, coded by Lyris
 ## `4200100` Gorgeous Gift of Heaven - The Godspark
@@ -247,6 +290,14 @@ created by ZEN, coded by ZEN & Lyris
 created by ZEN, coded by Lyris
 ## `19782411` Aenatoa, Administral of the Universe
 created by ZEN, coded by Lyris
+## `19782412` Johanna, The Enlightened Administral
+created by ZEN, coded by Glitchy
+## `19782413` Administral Code - Thyatrian Charity
+created by ZEN, coded by Glitchy
+## `19782414` Administral Code - Laodichean Sword of Rage "Ikari"
+created by ZEN, coded by Glitchy
+## `19782415` Administral Code - Ephesian Tenacity
+created by ZEN, coded by Glitchy
 ## `19822100` Shadow NOVA - Drake
 created by Seth, coded by Lyris
 ## `19822101` Shadow NOVA - Damien
@@ -429,6 +480,34 @@ created by Walrus, coded by Lyris, art from Shadowverse's "Restless Parish"
 created by Walrus, coded by Lyris, art from Shadowverse's "Plagued City"
 ## `42745698` Rapid Cosmotron
 created by Meedogh, coded by Lyris
+## `47511800` Deltagears Scout
+created by Seth, coded by Glitchy
+## `47511801` Deltagears Mercenary
+created by Seth, coded by Glitchy
+## `47511802` Deltagears Mindbreaker
+created by Seth, coded by Glitchy
+## `47511803` Deltagears Soldier
+created by Seth, coded by Glitchy
+## `47511804` Deltagears Medic
+created by Seth, coded by Glitchy
+## `47511805` Deltagears Pyromaniac
+created by Seth, coded by Glitchy
+## `47511806` Deltagears Researcher
+created by Seth, coded by Glitchy
+## `47511807` Deltagears Alpha
+created by Seth, coded by Glitchy
+## `47511808` Deltagears Omega
+created by Seth, coded by Glitchy
+## `47511809` Deltagears Base of Operations
+created by Seth, coded by Glitchy
+## `47511810` Deltagears Machine Plant
+created by Seth, coded by Glitchy
+## `47511811` Deltagears Research Lab
+created by Seth, coded by Glitchy
+## `47511812` Deltagears Suprise
+created by Seth, coded by Glitchy
+## `47511813` Deltagears Recovery Machine
+created by Seth, coded by Glitchy
 ## `48022718` Space-Time Wizard
 created by Meedogh, coded by Lyris
 ## `50848364` Infinitesmal Dragon
@@ -557,6 +636,46 @@ created by Pina, coded by Lyris
 created by Pina, coded by Lyris
 ## `63287063` Domino Bomb
 created by Pina, coded by Lyris
+## `63287064` Shark Spine
+created by Pina, coded by Glitchy
+## `63287065` Frog Soldier
+created by Pina, coded by Glitchy
+## `63287066` Poison Frog
+created by Pina, coded by Glitchy
+## `63287067` Heat-Headed Liar Frog
+created by Pina, coded by Glitchy
+## `63287068` O. Number 119: Frog King Squath
+created by Pina, coded by Glitchy
+## `63287069` Cup of Victory
+created by Pina, coded by Glitchy
+## `63287070` Undead Fusion
+created by Pina, coded by Glitchy
+## `63287071` Painful Cup Choice
+created by Pina, coded by Glitchy
+## `63287072` Ring of the Water Goddesses
+created by Pina, coded by Glitchy
+## `63287073` Frog Plague
+created by Pina, coded by Glitchy
+## `63287074` Bloodthirsty Black Sheep
+created by Pina, coded by Glitchy
+## `63287075` Gariscpa, The Chained Ghost
+created by Pina, coded by Glitchy
+## `63287076` Voltech Boomerang
+created by Pina, coded by Glitchy
+## `63287077` Hydro Boomerang
+created by Pina, coded by Glitchy
+## `63287078` Space Boomerang
+created by Pina, coded by Glitchy
+## `63287079` Totems of the Beasts of War
+created by Pina, coded by Glitchy
+## `63287080` Totems of the Winged Entities
+created by Pina, coded by Glitchy
+## `63287081` Totems of the Magical Swords
+created by Pina, coded by Glitchy
+## `63287082` Totems of the Forgotten Lizards
+created by Pina, coded by Glitchy
+## `63287083` Cursed Totems of the Ancient World
+created by Pina, coded by Glitchy
 ## `64226943` Shelled Shieldon
 created by Meedogh, coded by Lyris
 ## `67943723` Sonic Ninja

@@ -1,55 +1,3 @@
-## `1020044` Bushido God Lux Dragon
-created by Jake
-## `1020045` Bushido God Burning Phoenix
-created by Jake
-## `1020046` Bushido God Burning Phoenix
-created by Jake
-## `1020047` A Bushido Beast's War
-created by Jake, coded by Lyris
-## `1020049` Bushido Dog
-created by Jake
-## `1020050` Bushido God Terra Dragon
-created by Jake
-## `1020051` Bushido Legend Leviathan
-created by Jake
-## `1020052` Bushido Legend Behemoth
-created by Jake
-## `1020053` Bushido God Ignis Dragon
-created by Jake
-## `1020054` Bushido Legend Cyclops
-created by Jake
-## `1020055` Bushido Legend Griffin
-created by Jake
-## `1020056` Bushido Legend Cerberus
-created by Jake, coded by Lyris
-## `1020057` Bushido Legend Minotaur
-created by Jake
-## `1020059` Bushido Rat
-created by Jake
-## `1020060` Bushido Lizard
-created by Jake, coded by Lyris
-## `1020061` Bushido Eagle
-created by Jake
-## `1020062` Bushido God Ventus Dragon
-created by Jake
-## `1020063` Bushido Legend Harambe
-created by Jake
-## `1020064` Bushido Legend Archimedes
-created by Jake, coded by Lyris
-## `1020065` Bushido God Hopeful Evolved Phoenix
-created by Jake
-## `1020099` A Bushido Beast's Recruitment
-created by Jake, coded by Lyris
-## `1020961` Bushido Legend Midnight Werewolf
-created by Jake
-## `19782412` Johanna, The Enlightened Administral
-created by ZEN
-## `19782413` Administral Code - Thyatrian Charity
-created by ZEN
-## `19782414` Administral Code - Laodichean Sword of Rage "Ikari"
-created by ZEN
-## `19782415` Administral Code - Ephesian Tenacity
-created by ZEN
 ## `19905900` MMS - Follower
 created by Meed
 ## `19905901` MMS - Dealer
@@ -110,34 +58,6 @@ created by LeonDuvall
 created by LeonDuvall
 ## `41593814` Skypiercer Ingenieurkorps
 created by LeonDuvall
-## `47511800` Deltagears Scout
-created by Seth
-## `47511801` Deltagears Mercenary
-created by Seth
-## `47511802` Deltagears Mindbreaker
-created by Seth
-## `47511803` Deltagears Soldier
-created by Seth
-## `47511804` Deltagears Medic
-created by Seth
-## `47511805` Deltagears Pyromaniac
-created by Seth
-## `47511806` Deltagears Researcher
-created by Seth
-## `47511807` Deltagears Alpha
-created by Seth
-## `47511808` Deltagears Omega
-created by Seth
-## `47511809` Deltagears Base of Operations
-created by Seth
-## `47511810` Deltagears Machine Plant
-created by Seth
-## `47511811` Deltagears Research Lab
-created by Seth
-## `47511812` Deltagears Suprise
-created by Seth
-## `47511813` Deltagears Recovery Machine
-created by Seth
 ## `58558815` Flibberty Hungbalongalogus
 created by LeonDuvall
 ## `58558816` Flibberty Schizmaspatleblap
@@ -168,46 +88,6 @@ created by Swag
 created by Swag
 ## `61811411` Dread Bastille's Intermezzo
 created by Swag
-## `63287064` Shark Spine
-created by Pina
-## `63287065` Frog Soldier
-created by Pina
-## `63287066` Poison Frog
-created by Pina
-## `63287067` Heat-Headed Liar Frog
-created by Pina
-## `63287068` O. Number 119: Frog King Squath
-created by Pina
-## `63287069` Cup of Victory
-created by Pina
-## `63287070` Undead Fusion
-created by Pina
-## `63287071` Painful Cup Choice
-created by Pina
-## `63287072` Ring of the Water Goddesses
-created by Pina
-## `63287073` Frog Plague
-created by Pina
-## `63287074` Bloodthirsty Black Sheep
-created by Pina
-## `63287075` Gariscpa, The Chained Ghost
-created by Pina
-## `63287076` Voltech Boomerang
-created by Pina
-## `63287077` Hydro Boomerang
-created by Pina
-## `63287078` Space Boomerang
-created by Pina
-## `63287079` Totems of the Beasts of War
-created by Pina
-## `63287080` Totems of the Winged Entities
-created by Pina
-## `63287081` Totems of the Magical Swords
-created by Pina
-## `63287082` Totems of the Forgotten Lizards
-created by Pina
-## `63287083` Cursed Totems of the Ancient World
-created by Pina
 ## `85120900` Spark of the Primordial Sun
 created by LeonDuvall
 ## `85120901` Helios - Majesty of Dawn
