@@ -234,33 +234,3 @@ created by Walrus
 created by Walrus
 ## `221594326` Voidictator Rune - Gates of Perdition
 created by Walrus
-## `412314200` Dawn-Eyes Violet Dragon
-created by Jake, art from Cardfight!! Vanguard's "Dragonic Overlord"
-## `412314205` Dawn Blader - Future King
-created by Jake
-## `412314207` Dawn Blader - Bane & Sky
-created by Jake
-## `412314208` Dawn Blader - King of Heroes
-created by Jake
-## `412314211` Dawn Blader - Vortex Divider
-created by Jake, art from Cardfight!! Vanguard's "Incandescent Lion, Blond Ezel"
-## `412314212` Dawn Blader - Panther
-created by Jake, art by BachEric1461 of DeviantArt
-## `412314213` Dawn Blader - Lion
-created by Jake, art from Cardfight!! Vanguard's "Battlefield Storm, Sagramore"
-## `412314214` Dawn Blader - Eroko
-created by Jake
-## `412314216` Dawn Blader - Dragonic King
-created by Jake
-## `412314219` Dawn Blader - Tiger
-created by Jake, art from Cardfight!! Vanguard's "Beast Knight, Garmore"
-## `412314222` Dawn Blader - Saber
-created by Jake, art from Cardfight!! Vanguard's "Great Silver Wolf, Garmore"
-## `412314225` A Soldier's Resting Place
-created by Jake, art from "The Sanctuary in the Sky"
-## `412314226` Bond Between Dawn
-created by Jake
-## `412314227` Survival of The Bravest
-created by Jake
-## `412314228` Wrath at Dawn
-created by Jake
