@@ -1,5 +1,5 @@
---created by Meed
---MMS - Slasher
+--created by LeonDuvall
+--Exodice Physhe
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

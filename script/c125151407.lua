@@ -1,5 +1,5 @@
---created by Meed
---MMS - Dealer
+--created by LeonDuvall
+--Exodice Fyshe
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

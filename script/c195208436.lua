@@ -1,5 +1,5 @@
---created by Meed
---MMS - Sherlock Holmes
+--created by Seth
+--Mextro Dark Empress
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

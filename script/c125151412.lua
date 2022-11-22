@@ -1,5 +1,5 @@
---created by Meed
---MMS - Throne
+--created by LeonDuvall
+--Exodicey Gourmet Fusion
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

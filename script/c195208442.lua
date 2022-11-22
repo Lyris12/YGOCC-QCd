@@ -1,5 +1,5 @@
---created by Meed
---MMS - Follower
+--created by Seth
+--Mextro Gathering
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

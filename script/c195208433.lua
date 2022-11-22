@@ -1,5 +1,5 @@
---created by Meed
---MMS - Multi Magic Spark
+--created by Seth
+--Mextro Observer
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

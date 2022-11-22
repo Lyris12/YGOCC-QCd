@@ -1,5 +1,5 @@
---created by Meed
---MMS - Strider
+--created by Seth
+--Mextro Assassin
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

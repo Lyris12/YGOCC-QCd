@@ -1,5 +1,5 @@
---created by Meed
---MMS - Mystic Monster Summoner
+--created by Seth
+--Mextropolis City
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

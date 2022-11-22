@@ -1,33 +1,3 @@
-## `19905900` MMS - Follower
-created by Meed
-## `19905901` MMS - Dealer
-created by Meed
-## `19905902` MMS - Raider
-created by Meed
-## `19905903` MMS - Strider
-created by Meed
-## `19905904` MMS - Ambusher
-created by Meed
-## `19905905` MMS - Slasher
-created by Meed
-## `19905906` MMS - Throne
-created by Meed
-## `19905907` MMS - Jacklyn Alltrades
-created by Meed
-## `19905908` MMS - Sherlock Holmes
-created by Meed
-## `19905909` MMS - Typhon, Father of Monsters
-created by Meed
-## `19905910` MMS - Mystic Monster Summoner
-created by Meed
-## `19905911` MMS - Multi Magic Spark
-created by Meed
-## `19905912` MMS - Axis Gate
-created by Meed
-## `19905913` MMS - Monotonous Monster Scavenging
-created by Meed
-## `19905914` MMS - That's A Wrap!
-created by Meed
 ## `41593800` Skypiercer BF-109
 created by LeonDuvall
 ## `41593801` Skypiercer BF-110
@@ -144,6 +114,36 @@ created by Jake
 created by Jake
 ## `100111059` Essence Synthesizer
 created by Jake
+## `125151400` Exodice Pheeche
+created by LeonDuvall
+## `125151401` Exodice Physhe
+created by LeonDuvall
+## `125151402` Exodice Feesh
+created by LeonDuvall
+## `125151403` Exodice Fiche
+created by LeonDuvall
+## `125151404` Exodice Fishe
+created by LeonDuvall
+## `125151405` Exodice Phich
+created by LeonDuvall
+## `125151406` Exodice Phish
+created by LeonDuvall
+## `125151407` Exodice Fyshe
+created by LeonDuvall
+## `125151408` Exodice Phiche
+created by LeonDuvall
+## `125151409` The Legendary Fisherman of Lake Exodice
+created by LeonDuvall
+## `125151410` Exodice Fish
+created by LeonDuvall
+## `125151411` Exodice Bob
+created by LeonDuvall
+## `125151412` Exodicey Gourmet Fusion
+created by LeonDuvall
+## `125151413` The Floating Village Atop Lake Exodice
+created by LeonDuvall
+## `125151414` Exodice Premier Wrangling
+created by LeonDuvall
 ## `131792000` Aster, Magitate Ember
 created by LeonDuvall
 ## `131792001` Aster, Magitate Terraemotus
@@ -184,6 +184,46 @@ created by LeonDuvall
 created by LeonDuvall
 ## `131792019` Magitate Detonation
 created by LeonDuvall
+## `195208430` Mextro Sightseeker
+created by Seth
+## `195208431` Mextro Hopeseeker
+created by Seth
+## `195208432` Mextro Citizen
+created by Seth
+## `195208433` Mextro Observer
+created by Seth
+## `195208434` Mextro Assassin
+created by Seth
+## `195208435` Mextro Trick-or-Slayer
+created by Seth
+## `195208436` Mextro Dark Empress
+created by Seth
+## `195208437` Mextro Axtreem
+created by Seth
+## `195208438` Mextro Darxstorm
+created by Seth
+## `195208439` Mextro Diatron
+created by Seth
+## `195208440` Mextropolis City
+created by Seth
+## `195208441` Mextro Factory
+created by Seth
+## `195208442` Mextro Gathering
+created by Seth
+## `195208443` Mextro Laboratory
+created by Seth
+## `195208444` Mextro Dextras
+created by Seth
+## `195208445` Mextro Gigarex
+created by Seth
+## `195208446` Mextro Trixia
+created by Seth
+## `195208447` Mextro Blaxtres
+created by Seth
+## `195208448` Mextro Midas
+created by Seth
+## `195208449` Mextro Pistis Sophia
+created by Seth
 ## `221594300` Voidictator Energy - Origin Essence
 created by Walrus
 ## `221594301` Voidictator Energy - Revolution Essence

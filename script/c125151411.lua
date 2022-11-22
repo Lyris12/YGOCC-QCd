@@ -1,5 +1,5 @@
---created by Meed
---MMS - Jacklyn Alltrades
+--created by LeonDuvall
+--Exodice Bob
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

@@ -1,5 +1,5 @@
---created by Meed
---MMS - Axis Gate
+--created by Seth
+--Mextro Axtreem
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

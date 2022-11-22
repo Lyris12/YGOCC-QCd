@@ -1,5 +1,5 @@
---created by Meed
---MMS - That's A Wrap!
+--created by LeonDuvall
+--Exodice Phiche
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

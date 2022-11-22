@@ -324,6 +324,36 @@ created by Seth, coded by Lyris
 created by Seth, coded by Lyris
 ## `19822112` Shadow NOVA Dragon
 created by Seth, coded by Lyris
+## `19905900` MMS - Follower
+created by Meed
+## `19905901` MMS - Dealer
+created by Meed
+## `19905902` MMS - Raider
+created by Meed
+## `19905903` MMS - Strider
+created by Meed
+## `19905904` MMS - Ambusher
+created by Meed
+## `19905905` MMS - Slasher
+created by Meed
+## `19905906` MMS - Throne
+created by Meed
+## `19905907` MMS - Jacklyn Alltrades
+created by Meed
+## `19905908` MMS - Sherlock Holmes
+created by Meed
+## `19905909` MMS - Typhon, Father of Monsters
+created by Meed
+## `19905910` MMS - Mystic Monster Summoner
+created by Meed
+## `19905911` MMS - Multi Magic Spark
+created by Meed
+## `19905912` MMS - Axis Gate
+created by Meed
+## `19905913` MMS - Monotonous Monster Scavenging
+created by Meed
+## `19905914` MMS - That's A Wrap!
+created by Meed
 ## `20157300` Azrael, The Origin Dragon
 created by Ace, coded by Lyris
 ## `20157301` Saruves, The Origin Dragon

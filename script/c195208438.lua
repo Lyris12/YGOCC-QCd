@@ -1,5 +1,5 @@
---created by Meed
---MMS - Typhon, Father of Monsters
+--created by Seth
+--Mextro Darxstorm
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

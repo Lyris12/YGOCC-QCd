@@ -1,5 +1,5 @@
---created by Meed
---MMS - Raider
+--created by Seth
+--Mextro Factory
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()

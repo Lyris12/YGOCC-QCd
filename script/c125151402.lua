@@ -1,5 +1,5 @@
---created by Meed
---MMS - Monotonous Monster Scavenging
+--created by LeonDuvall
+--Exodice Feesh
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local tp=c:GetControler()
