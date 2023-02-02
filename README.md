@@ -1,47 +1,47 @@
 ## `1020044` Bushido God Lux Dragon
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020045` Bushido God Burning Phoenix
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020046` Bushido God Burning Phoenix
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020047` A Bushido Beast's War
 created by Jake, coded by Lyris
 ## `1020049` Bushido Dog
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020050` Bushido God Terra Dragon
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020051` Bushido Legend Leviathan
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020052` Bushido Legend Behemoth
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020053` Bushido God Ignis Dragon
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020054` Bushido Legend Cyclops
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020055` Bushido Legend Griffin
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020056` Bushido Legend Cerberus
 created by Jake, coded by Lyris
 ## `1020057` Bushido Legend Minotaur
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020059` Bushido Rat
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020060` Bushido Lizard
 created by Jake, coded by Lyris
 ## `1020061` Bushido Eagle
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020062` Bushido God Ventus Dragon
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020063` Bushido Legend Harambe
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020064` Bushido Legend Archimedes
 created by Jake, coded by Lyris
 ## `1020065` Bushido God Hopeful Evolved Phoenix
-created by Jake
+created by Jake, coded by Glitchy
 ## `1020099` A Bushido Beast's Recruitment
 created by Jake, coded by Lyris
 ## `1020961` Bushido Legend Midnight Werewolf
-created by Jake
+created by Jake, coded by Glitchy
 ## `1365399` The Ængelic Final Battlefield
 created by Swag, coded by Lyris
 ## `4200100` Gorgeous Gift of Heaven - The Godspark
@@ -121,35 +121,35 @@ created by Zerry, coded by Lyris, art from Shadowverse's "Enervating Mail"
 ## `11111036` Golden Skies - Brandon the Fluid Blade
 created by Zerry, coded by Lyris, art from Shadowverse's "Dyne, Master Swordsman"
 ## `14151800` Sverdånd Berserker
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151801` Sverdånd Navigator
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151802` Sverdånd Sailor
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151803` Sverdånd Viking
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151804` Sverdånd Mariner
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151805` Sverdånd Raider
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151806` Legendary Sverdånd - Hrólfr
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151807` Legendary Sverdånd - Harald
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151808` Sverdånd Livsvåpen - Sköfnung
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151809` Sverdånd Festning - Jómsburg
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151810` Sverdånd Funerary Pyre
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151811` Sverdånd Fury
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151812` Sverdånd Leidang
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151813` Sverdånd Endurance
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `14151814` Sverdånd Fleet
-created by LeonDuvall
+created by LeonDuvall, coded by Glitchy
 ## `18192190` Star Dance Pegasus
 created by RespectBlindfolds, coded by Lyris
 ## `18192191` The Mystic's Successor
@@ -325,35 +325,35 @@ created by Seth, coded by Lyris
 ## `19822112` Shadow NOVA Dragon
 created by Seth, coded by Lyris
 ## `19905900` MMS - Follower
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905901` MMS - Dealer
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905902` MMS - Raider
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905903` MMS - Strider
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905904` MMS - Ambusher
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905905` MMS - Slasher
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905906` MMS - Throne
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905907` MMS - Jacklyn Alltrades
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905908` MMS - Sherlock Holmes
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905909` MMS - Typhon, Father of Monsters
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905910` MMS - Mystic Monster Summoner
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905911` MMS - Multi Magic Spark
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905912` MMS - Axis Gate
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905913` MMS - Monotonous Monster Scavenging
-created by Meed
+created by Meed, coded by Glitchy
 ## `19905914` MMS - That's A Wrap!
-created by Meed
+created by Meed, coded by Glitchy
 ## `20157300` Azrael, The Origin Dragon
 created by Ace, coded by Lyris
 ## `20157301` Saruves, The Origin Dragon
@@ -1201,32 +1201,32 @@ created by Eaden, coded by Lyris
 ## `802163270` Eros Ennigmatrix
 created by Eaden, coded by Lyris
 ## `412314200` Dawn-Eyes Violet Dragon
-created by Jake, art from Cardfight!! Vanguard's "Dragonic Overlord"
+created by Jake, coded by Glitchy, art from Cardfight!! Vanguard's "Dragonic Overlord"
 ## `412314205` Dawn Blader - Future King
-created by Jake
+created by Jake, coded by Glitchy
 ## `412314207` Dawn Blader - Bane & Sky
-created by Jake
+created by Jake, coded by Glitchy
 ## `412314208` Dawn Blader - King of Heroes
-created by Jake
+created by Jake, coded by Glitchy
 ## `412314211` Dawn Blader - Vortex Divider
-created by Jake, art from Cardfight!! Vanguard's "Incandescent Lion, Blond Ezel"
+created by Jake, coded by Glitchy, art from Cardfight!! Vanguard's "Incandescent Lion, Blond Ezel"
 ## `412314212` Dawn Blader - Panther
-created by Jake, art by BachEric1461 of DeviantArt
+created by Jake, coded by Glitchy, art by BachEric1461 of DeviantArt
 ## `412314213` Dawn Blader - Lion
-created by Jake, art from Cardfight!! Vanguard's "Battlefield Storm, Sagramore"
+created by Jake, coded by Glitchy, art from Cardfight!! Vanguard's "Battlefield Storm, Sagramore"
 ## `412314214` Dawn Blader - Eroko
-created by Jake
+created by Jake, coded by Glitchy
 ## `412314216` Dawn Blader - Dragonic King
-created by Jake
+created by Jake, coded by Glitchy
 ## `412314219` Dawn Blader - Tiger
-created by Jake, art from Cardfight!! Vanguard's "Beast Knight, Garmore"
+created by Jake, coded by Glitchy, art from Cardfight!! Vanguard's "Beast Knight, Garmore"
 ## `412314222` Dawn Blader - Saber
-created by Jake, art from Cardfight!! Vanguard's "Great Silver Wolf, Garmore"
+created by Jake, coded by Glitchy, art from Cardfight!! Vanguard's "Great Silver Wolf, Garmore"
 ## `412314225` A Soldier's Resting Place
-created by Jake, art from "The Sanctuary in the Sky"
+created by Jake, coded by Glitchy, art from "The Sanctuary in the Sky"
 ## `412314226` Bond Between Dawn
-created by Jake
+created by Jake, coded by Glitchy
 ## `412314227` Survival of The Bravest
-created by Jake
+created by Jake, coded by Glitchy
 ## `412314228` Wrath at Dawn
-created by Jake
+created by Jake, coded by Glitchy
