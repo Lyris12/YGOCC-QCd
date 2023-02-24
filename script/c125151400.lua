@@ -11,6 +11,7 @@ function s.initial_effect(c)
 	e0:SetOperation(function()
 		local tk=Duel.CreateToken(tp,5000)
 		Duel.SendtoDeck(tk,nil,SEQ_DECKBOTTOM,REASON_RULE)
+		c5000.ops(f0,tp)
 	end)
 	Duel.RegisterEffect(e0,tp)
 end
