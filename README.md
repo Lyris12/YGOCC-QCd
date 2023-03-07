@@ -934,6 +934,8 @@ created by Zolanark, coded by Glitchy
 created by Zolanark, coded by Glitchy
 ## `122120118` The Wicked Avatar - Awakening Darkness
 created by Ace, coded by Lyris
+## `125151400` Exodice Pheeche
+created by LeonDuvall, coded by Lyris
 ## `132221145` Multiverse Barricade
 created by Slick, coded by Lyris
 ## `151991819` Slifer's Drake

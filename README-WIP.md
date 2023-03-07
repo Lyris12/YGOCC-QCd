@@ -94,8 +94,6 @@ created by Jake
 created by Jake
 ## `100111059` Essence Synthesizer
 created by Jake
-## `125151400` Exodice Pheeche
-created by LeonDuvall
 ## `125151401` Exodice Physhe
 created by LeonDuvall
 ## `125151402` Exodice Feesh
