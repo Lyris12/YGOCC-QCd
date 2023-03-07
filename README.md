@@ -488,6 +488,24 @@ created by Alastar Rainford, coded by Lyris
 created by Alastar Rainford, coded by Lyris
 ## `41251213` Sorceress of the Daylilly
 created by Alastar Rainford, coded by Lyris
+## `41593800` Skypiercer BF-109
+created by LeonDuvall, coded by Lyris w/ ChatGPT
+## `41593801` Skypiercer BF-110
+created by LeonDuvall, coded by Lyris & ChatGPT
+## `41593802` Skypiercer ME-410
+created by LeonDuvall, coded by Lyris & ChatGPT
+## `41593803` Skypiercer FW-190
+created by LeonDuvall, coded by Lyris & ChatGPT
+## `41593804` Skypiercer Stuka
+created by LeonDuvall, coded by Lyris & ChatGPT
+## `41593805` Skypiercer JU-88
+created by LeonDuvall, coded by Lyris & ChatGPT
+## `41593806` Skypiercer HE-111
+created by LeonDuvall, coded by Lyris & ChatGPT
+## `41593807` Skypiercer ME-262
+created by LeonDuvall, coded by Lyris & ChatGPT
+## `41593808` Skypiercer AR-234
+created by LeonDuvall, coded by Lyris
 ## `41851400` Vendread Decay
 created by Walrus, coded by Lyris, art from Shadowverse's "Ghoul"
 ## `41851401` Vendread Banshee

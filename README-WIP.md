@@ -1,21 +1,3 @@
-## `41593800` Skypiercer BF-109
-created by LeonDuvall, coded by Lyris w/ ChatGPT
-## `41593801` Skypiercer BF-110
-created by LeonDuvall, coded by Lyris & ChatGPT
-## `41593802` Skypiercer ME-410
-created by LeonDuvall, coded by Lyris & ChatGPT
-## `41593803` Skypiercer FW-190
-created by LeonDuvall, coded by Lyris & ChatGPT
-## `41593804` Skypiercer Stuka
-created by LeonDuvall, coded by Lyris & ChatGPT
-## `41593805` Skypiercer JU-88
-created by LeonDuvall, coded by Lyris & ChatGPT
-## `41593806` Skypiercer HE-111
-created by LeonDuvall, coded by Lyris & ChatGPT
-## `41593807` Skypiercer ME-262
-created by LeonDuvall, coded by Lyris & ChatGPT
-## `41593808` Skypiercer AR-234
-created by LeonDuvall
 ## `41593809` Skypiercer Zeppelin
 created by LeonDuvall
 ## `41593810` Skypiercer Airfield
