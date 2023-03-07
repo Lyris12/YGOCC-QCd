@@ -58,8 +58,6 @@ created by LeonDuvall
 created by LeonDuvall
 ## `85120908` Primordial Singularity
 created by LeonDuvall
-## `85120909` Approaching the Event Horizon
-created by LeonDuvall
 ## `85120910` Primordial Cubicle
 created by LeonDuvall
 ## `85120911` Praise the Immortal Sun

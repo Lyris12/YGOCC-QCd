@@ -790,6 +790,8 @@ created by Meedogh, coded by Meedogh & Lyris
 created by Meedogh, coded by Meedogh & Lyris
 ## `81455790` Sonic Cosmo'n
 created by Meedogh, coded by Meedogh & Lyris
+## `85120909` Approaching the Event Horizon
+created by LeonDuvall, coded by Lyris
 ## `88816160` Imperial Machine Solemn Gearframe
 created by Dragonecro, coded by Slient Knight
 ## `88816161` Imperial Machine Steel Booster
