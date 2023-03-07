@@ -188,8 +188,6 @@ created by Seth
 created by Seth
 ## `195208441` Mextro Factory
 created by Seth
-## `195208442` Mextro Gathering
-created by Seth
 ## `195208443` Mextro Laboratory
 created by Seth
 ## `195208444` Mextro Dextras
