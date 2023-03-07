@@ -1,4 +1,4 @@
---created by LeonDuvall
+--created by LeonDuvall, coded by Lyris
 --Skypiercer BF-109
 local s,id,o=GetID()
 function s.initial_effect(c)
@@ -31,7 +31,6 @@ function s.initial_effect(c)
 	e4:SetCode(EVENT_SPSUMMON_SUCCESS)
 	c:RegisterEffect(e4)
 end
--- Check if the monster can be Special Summoned from the hand by discarding another "Skypiercer" card
 function s.cfilter(c)
 	return c:IsSetCard(0x3bb) and c:IsDiscardable()
 end
@@ -43,7 +42,6 @@ end
 function s.spop(e, tp, eg, ep, ev, re, r, rp, c)
 	Duel.DiscardHand(tp, s.cfilter, 1, 1, REASON_DISCARD+REASON_COST, c)
 end
--- Add a "Skypiercer" card from the Deck to the hand
 function s.filter(c)
 	return c:IsSetCard(0x3bb) and c:IsAbleToHand()
 end

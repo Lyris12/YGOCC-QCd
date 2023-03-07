@@ -1,4 +1,4 @@
---created by LeonDuvall
+--created by LeonDuvall, coded by Lyris
 --Skypiercer FW-190
 local s,id,o=GetID()
 function s.initial_effect(c)
@@ -10,7 +10,6 @@ function s.initial_effect(c)
 	e2:SetCondition(s.spcon)
 	e2:SetOperation(s.spop)
 	c:RegisterEffect(e2)
-	-- gain 1000 ATK and cannot be destroyed by card effects
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE)
 	e1:SetCode(EFFECT_UPDATE_ATTACK)
@@ -26,7 +25,6 @@ function s.initial_effect(c)
 	e2:SetValue(1)
 	e2:SetCondition(s.con)
 	c:RegisterEffect(e2)
-	-- Normal/Special Summon effect
 	local e3=Effect.CreateEffect(c)
 	e3:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e3:SetCode(EVENT_SUMMON_SUCCESS)
@@ -62,7 +60,6 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoGrave(g,REASON_COST)
 end
 function s.operation(e,tp,eg,ep,ev,re,r,rp)
-	-- send "Skypiercer" card from Deck to GY and destroy 1 opponent's monster
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
 	local dg=Duel.SelectMatchingCard(tp,nil,tp,0,LOCATION_MZONE,1,1,nil)
 	Duel.HintSelection(dg)

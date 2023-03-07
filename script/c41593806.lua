@@ -1,8 +1,7 @@
---created by LeonDuvall
+--created by LeonDuvall, coded by Lyris
 --Skypiercer HE-111
 local s,id,o=GetID()
 function s.initial_effect(c)
-	-- Special Summon from hand
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
 	e1:SetCode(EFFECT_SPSUMMON_PROC)
@@ -11,7 +10,6 @@ function s.initial_effect(c)
 	e1:SetCondition(s.sprcon)
 	e1:SetOperation(s.sprop)
 	c:RegisterEffect(e1)
-	-- destroy S/T once per turn
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
 	e1:SetCategory(CATEGORY_DESTROY)
@@ -21,7 +19,6 @@ function s.initial_effect(c)
 	e1:SetTarget(s.destg)
 	e1:SetOperation(s.desop)
 	c:RegisterEffect(e1)
-	-- Special Summon from GY once per turn
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,1))
 	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)

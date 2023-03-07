@@ -1,8 +1,7 @@
---created by LeonDuvall
+--created by LeonDuvall, coded by Lyris
 --Skypiercer BF-110
 local s,id,o=GetID()
 function s.initial_effect(c)
-	-- Unaffected by your opponent's monster effects the turn it is Special Summoned
 	local e1 = Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE)
 	e1:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
@@ -29,7 +28,6 @@ function s.initial_effect(c)
 	e3:SetOperation(s.thop)
 	c:RegisterEffect(e3)
 end
--- Check if the monster can be Special Summoned from the hand by discarding another "Skypiercer" card
 function s.cfilter(c)
 	return c:IsSetCard(0x3bb) and c:IsDiscardable()
 end
@@ -41,7 +39,6 @@ end
 function s.spop(e, tp, eg, ep, ev, re, r, rp, c)
 	Duel.DiscardHand(tp, s.cfilter, 1, 1, REASON_DISCARD+REASON_COST, c)
 end
--- Add a "Skypiercer" card from the Deck to the hand
 function s.thcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.cfilter, tp, LOCATION_HAND, 0, 1, nil) end
 	Duel.DiscardHand(tp, s.cfilter, 1, 1, REASON_DISCARD+REASON_COST)
@@ -62,7 +59,6 @@ function s.thop(e, tp)
 	Duel.SendtoHand(g, nil, REASON_EFFECT)
 	Duel.ConfirmCards(1-tp, g)
 	local tc = g:GetFirst()
-	-- If you control another "Skypiercer" monster, draw 1 card
 	if tc and tc:IsLocation(LOCATION_HAND) and Duel.IsExistingMatchingCard(s.dfilter, tp, LOCATION_MZONE, 0, 1, e:GetHandler()) then
 		Duel.Draw(tp, 1, REASON_EFFECT)
 	end

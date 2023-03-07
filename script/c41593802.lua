@@ -1,4 +1,4 @@
---created by LeonDuvall
+--created by LeonDuvall, coded by Lyris
 --Skypiercer ME-410
 local s,id,o=GetID()
 function s.initial_effect(c)
