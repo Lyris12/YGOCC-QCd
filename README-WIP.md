@@ -142,8 +142,6 @@ created by LeonDuvall
 created by LeonDuvall
 ## `131792009` Aerin, Magitate Divinitatum
 created by LeonDuvall
-## `131792010` Metallic Concentrated Magitate
-created by LeonDuvall
 ## `131792011` Cloudy Concentrated Magitate
 created by LeonDuvall
 ## `131792012` Verdant Concentrated Magitate

@@ -936,6 +936,8 @@ created by Zolanark, coded by Glitchy
 created by Ace, coded by Lyris
 ## `125151400` Exodice Pheeche
 created by LeonDuvall, coded by Lyris
+## `131792010` Metallic Concentrated Magitate
+created by LeonDuvall, coded by Lyris
 ## `132221145` Multiverse Barricade
 created by Slick, coded by Lyris
 ## `151991819` Slifer's Drake
