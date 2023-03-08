@@ -1110,6 +1110,8 @@ created by Seth, coded by Lyris
 created by Seth, coded by Lyris & Rawstone
 ## `195208442` Mextro Gathering
 created by Seth, coded by Lyris
+## `195208445` Mextro Gigarex
+created by Seth, coded by Lyris
 ## `202114501` Sireknight
 created by Xeno, coded by Lyris
 ## `202114502` Holyvern

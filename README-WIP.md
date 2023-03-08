@@ -190,8 +190,6 @@ created by Seth
 created by Seth
 ## `195208444` Mextro Dextras
 created by Seth
-## `195208445` Mextro Gigarex
-created by Seth
 ## `195208446` Mextro Trixia
 created by Seth
 ## `195208447` Mextro Blaxtres
