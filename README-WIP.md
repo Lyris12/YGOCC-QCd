@@ -114,8 +114,6 @@ created by LeonDuvall
 created by LeonDuvall
 ## `125151410` Exodice Fish
 created by LeonDuvall
-## `125151411` Exodice Bob
-created by LeonDuvall
 ## `125151412` Exodicey Gourmet Fusion
 created by LeonDuvall
 ## `125151413` The Floating Village Atop Lake Exodice
