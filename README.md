@@ -1,3 +1,23 @@
+## `34859` Progression Via Automation
+created by Zerry, coded by Glitchy
+## `34860` Preservation Via Automation
+created by Zerry, coded by Glitchy
+## `34861` Destruction Via Automation
+created by Zerry, coded by Glitchy
+## `34862` Continuation Via Automation
+created by Zerry, coded by Glitchy
+## `34863` Database Driver
+created by Zerry, coded by Glitchy
+## `34864` Hyperdrive Continuation
+created by Zerry, coded by Glitchy
+## `34865` Hyperdrive Progression
+created by Zerry, coded by Glitchy
+## `34866` Hyperdrive Preservation
+created by Zerry, coded by Glitchy
+## `34867` Hyperdrive Destruction
+created by Zerry, coded by Glitchy
+## `34868` Tengu of the Piledriver Lance
+created by Zerry, coded by Glitchy
 ## `1020044` Bushido God Lux Dragon
 created by Jake, coded by Glitchy
 ## `1020045` Bushido God Burning Phoenix
@@ -458,6 +478,20 @@ created by manu, coded by Lyris
 created by manu, coded by Lyris
 ## `24715207` Beast Forgotten-Ogre
 created by manu, coded by Lyris
+## `29935985` Tellurium Operator
+created by Zerry, coded by Glitchy
+## `29935986` Anti-Doomsday Unit, Valstasis
+created by Zerry, coded by Glitchy
+## `29935987` Lazy Overseer of the Pits
+created by Zerry, coded by Glitchy
+## `29935988` Anomaly from the Deep
+created by Zerry, coded by Glitchy & Lyris
+## `29935989` Hyperdrive Mercenary
+created by Zerry, coded by Glitchy
+## `29935990` Deus Automata
+created by Zerry, coded by Glitchy
+## `29935991` One With The Chaos
+created by Zerry, coded by Lyris
 ## `30378298` Genesis Pegasus
 created by Meedogh, coded by Lyris
 ## `37920475` Evolution Paladin
