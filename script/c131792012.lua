@@ -22,7 +22,8 @@ function s.mfilter(c)
 	return c:IsLevelBelow(4) and c:IsNonAttribute(ATTRIBUTE_EARTH) and c:IsSetCard(0xd16)
 end
 function s.cfilter(c)
-	return c:IsPreviousPosition(POS_FACEUP) and c:GetPreviousLevelOnField()==5 and c:IsPreviousSetCard(0xd16)
+	return (not c:IsPreviousLocation(LOCATION_ONFIELD) or c:IsPreviousPosition(POS_FACEUP))
+		and c:GetPreviousLevelOnField()==5 and c:IsPreviousSetCard(0xd16)
 end
 function s.con(e,tp,eg)
 	return eg:IsExists(s.cfilter,1,nil)

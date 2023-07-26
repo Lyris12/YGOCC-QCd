@@ -2,7 +2,7 @@
 --Aerin, Magitate Shade
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--You can discard 1 card; draw 1 card and reveal it, then if that card is a "Magitate" card, draw 1 more card. You can tribute 1 LIGHT "Concentrated Magitate" monster; Special Summon this card from your GY, and if you do, transform it to [REVERSE] side. You can only use each effect of "Aerin, Magitate Shade" once per turn.
+	--You can discard 1 card; draw 1 card and reveal it, then if that card is a "Magitate" card, draw 1 more card. You can Tribute 1 LIGHT "Concentrated Magitate" monster; Special Summon this card from your GY, and if you do, transform it to [REVERSE] side. You can only use each effect of "Aerin, Magitate Shade" once per turn.
 	local tp=c:GetControler()
 	local ef=Effect.CreateEffect(c)
 	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
