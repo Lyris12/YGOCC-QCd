@@ -2,7 +2,7 @@
 --Praise the Immortal Sun
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--When your opponent activates a card or effect while you control "Helios - The Primordial Sun" and "Macro Cosmos": Negate the activation, and if you do, destroy it. While this card is banished, except the turn it was banished: You can shuffle this card into the Deck; Set 1 Spell/Trap which specifically lists "Helios - The Primordial Sun" directly from your Deck, except "Praise the Immortal Sun". You can only activate 1 "Praise the Immortal Sun" per turn.
+	--When your opponent activates a card or effect while you control "Helios - The Primordial Sun" and "Macro Cosmos": Negate the activation, and if you do, destroy it. While this card is banished, except the turn it was banished: You can shuffle this card into the Deck; Set 1 Spell/Trap that mentions "Helios - The Primordial Sun" directly from your Deck, except "Praise the Immortal Sun". You can only activate 1 "Praise the Immortal Sun" per turn.
 	local tp=c:GetControler()
 	local ef=Effect.CreateEffect(c)
 	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

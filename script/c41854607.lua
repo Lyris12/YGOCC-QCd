@@ -29,7 +29,7 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_DECK,0,1,nil) end
 	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK)
 end
-function s.activate(e,tp,eg,ep,ev,re,r,rp)
+function s.activate(e,tp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
 	local g=Duel.SelectMatchingCard(tp,s.filter,tp,LOCATION_DECK,0,1,1,nil)
 	Duel.SendtoHand(g,nil,REASON_EFFECT)
@@ -38,7 +38,7 @@ end
 function s.cfilter(c,tp)
 	return c:IsSetCard(0xd43,0xd44) and c:IsLocation(LOCATION_MZONE) and c:IsControler(tp)
 end
-function s.condition(e,tp,eg,ep,ev,re,r,rp)
+function s.condition(e,tp,eg)
 	return eg:FilterCount(s.cfilter,nil,tp)==1
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
@@ -46,7 +46,7 @@ function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return c:IsAbleToHand() end
 	Duel.SetOperationInfo(0,CATEGORY_TOHAND,c,1,0,0)
 end
-function s.thop(e,tp,eg,ep,ev,re,r,rp)
+function s.thop(e)
 	local c=e:GetHandler()
 	if c:IsRelateToEffect(e) then Duel.SendtoHand(c,nil,REASON_EFFECT) end
 end

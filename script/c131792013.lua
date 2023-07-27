@@ -12,13 +12,13 @@ function s.initial_effect(c)
 	e1:SetProperty(EFFECT_FLAG_DELAY)
 	e1:SetDescription(1152)
 	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
-	e1:SetCondition(s.con)
-	e1:SetCost(s.cost)
-	e1:SetTarget(s.tg)
-	e1:SetOperation(s.op)
+	e1:SetCondition(s.spcon)
+	e1:SetCost(s.spcost)
+	e1:SetTarget(s.sptg)
+	e1:SetOperation(s.spop)
 	c:RegisterEffect(e1)
 end
-Card.IsConcentratedMagitate=Card.IsConcentratedMagitate or function(c) return c:GetCode()>131792009 and c:GetCode()<131792017 end
+Card.IsConcentratedMagitate=Card.IsConcentratedMagitate or function(c) return c:GetCode()>131792009 and c:GetCode()<131792017 and c:IsSetCard(0xd16) end
 function s.mfilter(c)
 	return c:IsLevelBelow(4) and c:IsNonAttribute(ATTRIBUTE_WIND) and c:IsSetCard(0xd16)
 end
@@ -26,10 +26,10 @@ function s.cfilter(c)
 	return (not c:IsPreviousLocation(LOCATION_ONFIELD) or c:IsPreviousPosition(POS_FACEUP))
 		and c:GetPreviousLevelOnField()==5 and c:IsPreviousSetCard(0xd16)
 end
-function s.con(e,tp,eg)
+function s.spcon(e,tp,eg)
 	return eg:IsExists(s.cfilter,1,nil)
 end
-function s.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+function s.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	if chk==0 then return c:IsAbleToExtraAsCost() end
 	Duel.SendtoDeck(c,nil,SEQ_DECKTOP,REASON_COST)
@@ -38,12 +38,12 @@ function s.filter(c,e,tp)
 	return c:IsSetCard(0xd16) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 		and c:IsCanTransform(SIDE_REVERSE)
 end
-function s.tg(e,tp,eg,ep,ev,re,r,rp,chk)
+function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
 		and Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_GRAVE,0,1,nil,e,tp) end
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_GRAVE)
 end
-function s.op(e,tp,eg,ep,ev,re,r,rp)
+function s.spop(e,tp)
 	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 	local tc=Duel.SelectMatchingCard(tp,1,nil,e,tp):GetFirst()

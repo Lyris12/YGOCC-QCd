@@ -2,7 +2,7 @@
 --Voidictator Demon - Guardian of Corvus
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--Must be Ritual Summoned with "Voidictator Energy - Ritual Essence". This card cannot be used as a material for the Summon of a monster from the Extra Deck while it is on the field. This effect cannot be negated. You can only use the ① and ② effects of "Voidictator Demon - Guardian of Corvus" once per turn. ① If this card is Ritual Summoned: Banish all Special Summoned monsters your opponent controls, and if you do, this card's original ATK and DEF both become 800 x the number of cards banished this way. ② If this card is banished by a "Voidictator" card you own: You can banish 1 random face-down card from your Extra Deck, face-up; add this card to your hand. ③ Your opponent cannot activate the effects of Special Summoned monsters during the Battle Phase.
+	--Must be Ritual Summoned with "Voidictator Energy - Ritual Essence". This card cannot be used as a material for the Summon of a monster from the Extra Deck while it is on the field. This effect cannot be negated. Your opponent cannot activate the effects of Special Summoned monsters during the Battle Phase. You can only use each of the following effects of "Voidictator Demon - Guardian of Corvus" once per turn. If this card is Ritual Summoned: Banish all Special Summoned monsters your opponent controls, and if you do, this card's original ATK and DEF both become 800 x the number of cards banished this way. If this card is banished by a "Voidictator" card you own: You can banish 1 random face-down card from your Extra Deck, face-up; add this card to your hand.
 	local tp=c:GetControler()
 	local ef=Effect.CreateEffect(c)
 	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

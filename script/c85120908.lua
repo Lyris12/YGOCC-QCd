@@ -2,7 +2,7 @@
 --Primordial Singularity
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--Shuffle 1 banished "Helios - The Primordial Sun", "Helios Duo Megistus", and "Helios Thrice Megistus" into the Deck; Shuffle all banished cards into the Deck(s), also destroy all cards on the field, except "Macro Cosmos". If this card is banished, except the turn it was banished: you can shuffle this card into the Deck; Set 1 Spell/Trap which specifically lists "Helios - The Primordial Sun" directly from your Deck, then, if you control "Macro Cosmos", it can be activated this turn. You can only use each effect of "Primordial Singularity" once per turn.
+	--Shuffle 1 banished "Helios - The Primordial Sun", "Helios Duo Megistus", and "Helios Thrice Megistus" into the Deck; Shuffle all banished cards into the Deck(s), also destroy all cards on the field, except "Macro Cosmos". If this card is banished, except the turn it was banished: You can shuffle this card into the Deck; Set 1 Spell/Trap that mentions "Helios - The Primordial Sun" directly from your Deck, then, if you control "Macro Cosmos", it can be activated this turn. You can only use each effect of "Primordial Singularity" once per turn.
 	local tp=c:GetControler()
 	local ef=Effect.CreateEffect(c)
 	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

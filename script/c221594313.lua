@@ -2,7 +2,7 @@
 --Voidictator Rune - Chains of Torment
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--You can only use each effect of "Voidictator Rune - Chains of Torment" once per turn. ① Activate this card only when a monster is Ritual Summoned or Summoned from the Extra Deck to your opponent's side of the field while you control a "Voidictator" monster. Equip this card to that monster. The equipped monster cannot attack, be Tributed, or used as a material for the Summon of a monster from the Extra Deck, also its ATK and DEF become 0. ② If this card is banished because of a "Voidictator" card you own: You can send the top 5 cards of your Deck to the GY, and if you do, place this card on the top of your Deck.
+	--Activate this card only when a monster is Ritual Summoned or Summoned from the Extra Deck to your opponent's side of the field while you control a "Voidictator" monster. Equip this card to that monster. The equipped monster cannot attack, be Tributed, or used as a material for the Summon of a monster from the Extra Deck, also its ATK and DEF become 0. If this card is banished because of a "Voidictator" card you own: You can send the top 5 cards of your Deck to the GY, and if you do, place this card on the top of your Deck. You can only use each effect of "Voidictator Rune - Chains of Torment" once per turn.
 	local tp=c:GetControler()
 	local ef=Effect.CreateEffect(c)
 	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

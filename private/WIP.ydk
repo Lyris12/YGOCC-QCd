@@ -10,37 +10,23 @@
 --Synchrobanger	286	100111057
 --Verdant Concentrated Magitate	289	131792012
 --Cindy, Magitate Whisper	290	131792006
---Aster, Magitate Ember	293	131792000
+--Aster, Magitate Ember	292	131792000
 --Corentin, Magitate Tear	304	131792004
 --Radiant Concentrated Magitate	312	131792013
---Radiant Child of Light	315	
-85120902
---Aerin, Magitate Shade	322	
-131792008
---Mextro Blaxtres	322	
-195208447
---Exodice Physhe	323	
-125151401
---Concentrating Magitate	323	
-131792016
---Elysia, Magitate Pebble	329	
-131792002
---Aster, Magitate Terraemotus	330	
-131792001
---Cindy, Magitate Infernum	334	
-131792007
---On The Practical Applications of Concentrated Magitate	338	
-131792015
---Shimmering Concentrated Magitate	344	
-131792014
---Cloudy Concentrated Magitate	345	
-131792011
---Corentin, Magitate Tempestas	355	
-131792005
---Exodice Fiche	360	
-125151403
---Cosmic Conversion	371	
-85120907
+--Radiant Child of Light	315	85120902
+--Mextro Blaxtres	321	195208447
+--Aerin, Magitate Shade	322	131792008
+--Concentrating Magitate	323	131792016
+--Exodice Physhe	324	125151401
+--Elysia, Magitate Pebble	330	131792002
+--Aster, Magitate Terraemotus	331	131792001
+--Cindy, Magitate Infernum	335	131792007
+--On The Practical Applications of Concentrated Magitate	338	131792015
+--Shimmering Concentrated Magitate	345	131792014
+--Cloudy Concentrated Magitate	344	131792011
+--Corentin, Magitate Tempestas	355	131792005
+--Exodice Fiche	360	125151403
+--Cosmic Conversion	360	85120907
 --Mextro Trixia	371	
 195208446
 --Magitate Detonation	375	
@@ -69,20 +55,20 @@
 195208432
 --Magitate Flux	415	
 131792017
+--Alignment of the Cosmos	419	
+85120912
 --Mextro Darxstorm	427	
 195208438
 --Exodice Phish	429	
 125151406
 --Dread Bastille - Oratorio	430	
 61811401
---Alignment of the Cosmos	430	
-85120912
 --Dread Bastille - Étude	431	
 61811402
---Armored Terrabiter	452	
-100111050
---Praise the Immortal Sun	457	
+--Praise the Immortal Sun	446	
 85120911
+--Armored Terrabiter	449	
+100111050
 --Helios - Reformation of the Sun	458	
 85120904
 --Crush Cyberse Virus	461	
@@ -133,18 +119,18 @@
 100111059
 --Mextro Pistis Sophia	545	
 195208449
+--Primordial Singularity	547	
+85120908
+--Reawakening of the Primordial Sun	553	
+85120913
+--Rapid Fire Bat	554	
+100111058
 --Voidictator Energy - Ritual Essence	554	
 221594321
---Rapid Fire Bat	555	
-100111058
---Primordial Singularity	558	
-85120908
 --Exodice Phich	562	
 125151405
 --The Surprises of the Dreamy Forest	564	
 41854613
---Reawakening of the Primordial Sun	565	
-85120913
 --Mextro Observer	565	
 195208433
 --Skypiercer Airfield	568	
@@ -165,26 +151,28 @@
 195208440
 --Skypiercer Zeppelin	586	
 41593809
---Primordial Cubicle	597	
+--Primordial Cubicle	586	
 85120910
+--Birth of the Sun	594	
+85120906
 --Voidictator Rune - Energy Renewal	599	
 99998876
 --Voidictator Rune - Origin''s Realm	599	
 221594311
 --Voidictator Servant - Gate Attendant	605	
 221594319
+--Spark of the Primordial Sun	609	
+85120900
 --Voidictator Servant - Knight of Corvus	610	
 221594305
 --Dread Bastille''s Intermezzo	612	
 61811411
 --Dread Bastille - Serenado	614	
 61811405
---Birth of the Sun	616	
-85120906
+--Skypiercer Tactical Strike	618	
+41593811
 --Voidictator Rune - Chains of Torment	618	
 221594313
---Skypiercer Tactical Strike	621	
-41593811
 --Exodice Premier Wrangling	621	
 125151414
 --Dread Bastille - Concerto	633	
@@ -193,8 +181,6 @@
 61811410
 --Voidictator Rune - Final Verdict	655	
 221594312
---Spark of the Primordial Sun	656	
-85120900
 --Mextro Midas	656	
 195208448
 --Dread Bastille''s Overture	675	

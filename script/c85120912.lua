@@ -2,7 +2,7 @@
 --Alignment of the Cosmos
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--If you control "Helios - The Primordial Sun": Destroy 1 card your opponent controls in this card's column. If this card is banished, except the turn it was banished: You can shuffle this card into the Deck, and if you do, Set 1 Spell/Trap which specifically lists "Helios - The Primordial Sun" or "Macro Cosmos" directly from your Deck, except "Alignment of the Cosmos". You can only activate 1 "Alignment of the Cosmos" per turn.
+	--If you control "Helios - The Primordial Sun": Destroy 1 card your opponent controls in this card's column. If this card is banished, except the turn it was banished: You can shuffle this card into the Deck, and if you do, Set 1 Spell/Trap that mentions "Helios - The Primordial Sun" or "Macro Cosmos" directly from your Deck, except "Alignment of the Cosmos". You can only activate 1 "Alignment of the Cosmos" per turn.
 	local tp=c:GetControler()
 	local ef=Effect.CreateEffect(c)
 	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

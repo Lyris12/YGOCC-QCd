@@ -3,7 +3,7 @@
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddOrigDoubleSidedType(c)
-	aux.AddDoubleSidedProc(c.SIDE_OBVERSE,id+1)
+	aux.AddDoubleSidedProc(c.SIDE_OBVERSE,131792001)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
@@ -36,14 +36,14 @@ function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_DECK,0,1,nil) end
 	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK)
 end
-function s.thop(e,tp,eg,ep,ev,re,r,rp)
+function s.thop(e,tp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
 	local g=Duel.SelectMatchingCard(tp,s.filter,tp,LOCATION_DECK,0,1,1,nil)
 	Duel.SendtoHand(g,nil,REASON_EFFECT)
 	Duel.ConfirmCards(1-tp,g)
 end
 function s.cfilter(c)
-	return c:IsConcentratedMagitate() and c:IsAttribute(ATTRIBUTE_EARTH) and Duel.GetMZoneCount(tp,c)>0
+	return Card.IsConcentratedMagitate and c:IsConcentratedMagitate() and c:IsAttribute(ATTRIBUTE_EARTH) and Duel.GetMZoneCount(tp,c)>0
 end
 function s.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.CheckReleaseGroup(tp,s.cfilter,1,nil,tp) end
@@ -55,7 +55,7 @@ function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 		and c:IsCanBeSpecialSummoned(e,0,tp,false,false) and c:IsCanTransform(SIDE_REVERSE) end
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,c,1,0,0)
 end
-function s.spop(e,tp,eg,ep,ev,re,r,rp)
+function s.spop(e,tp)
 	local c=e:GetHandler()
 	if c:IsRelateToEffect(e) and Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)>0 then
 		Duel.Transform(c,SIDE_REVERSE,e,tp)
