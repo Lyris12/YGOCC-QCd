@@ -5,41 +5,35 @@
 --Mextro Gigarex	195208445
 --Metallic Concentrated Magitate	131792010
 --Exodice Bob	125151411
---Synchrobanger	285	100111057
 --Elysia, Magitate Megacyma	279	131792003
---Synchrobanger	286	100111057
---Verdant Concentrated Magitate	289	131792012
+--Synchrobanger	285	100111057
+--Verdant Concentrated Magitate	288	131792012
 --Cindy, Magitate Whisper	290	131792006
 --Aster, Magitate Ember	292	131792000
 --Corentin, Magitate Tear	304	131792004
---Radiant Concentrated Magitate	312	131792013
+--Radiant Concentrated Magitate	311	131792013
 --Radiant Child of Light	315	85120902
---Mextro Blaxtres	321	195208447
+--Mextro Blaxtres	320	195208447
 --Aerin, Magitate Shade	322	131792008
+--Exodice Physhe	323	125151401
 --Concentrating Magitate	323	131792016
---Exodice Physhe	324	125151401
 --Elysia, Magitate Pebble	330	131792002
 --Aster, Magitate Terraemotus	331	131792001
---Cindy, Magitate Infernum	335	131792007
---On The Practical Applications of Concentrated Magitate	338	131792015
---Shimmering Concentrated Magitate	345	131792014
---Cloudy Concentrated Magitate	344	131792011
---Corentin, Magitate Tempestas	355	131792005
---Exodice Fiche	360	125151403
+--Cindy, Magitate Infernum	338	131792007
+--On The Practical Applications of Concentrated Magitate	339	131792015
+--Cloudy Concentrated Magitate	343	131792011
+--Shimmering Concentrated Magitate	344	131792014
+--Corentin, Magitate Tempestas	346	131792005
 --Cosmic Conversion	360	85120907
---Mextro Trixia	371	
-195208446
---Magitate Detonation	375	
-131792019
---Mextro Hopeseeker	375	
-195208431
---Skypiercer Blitzkrieg	376	
-41593812
---Mextro Trick-or-Slayer	378	
-195208435
+--Exodice Fiche	360	125151403
+--Magitate Detonation	368	131792019
+--Mextro Trixia	370	195208446
+--Skypiercer Blitzkrieg	374	41593812
+--Mextro Hopeseeker	374	195208431
+--Mextro Trick-or-Slayer	377	195208435
 --Dread Bastille''s Composition	388	
 61811409
---Mextro Axtreem	392	
+--Mextro Axtreem	391	
 195208437
 --Mextro Assassin	393	
 195208434
@@ -49,49 +43,47 @@
 125151408
 --The Reforged Cosmos	401	
 85120905
+--Mextro Citizen	403	
+195208432
 --Rapid Reformation of Unstable Magitate	404	
 131792018
---Mextro Citizen	404	
-195208432
 --Magitate Flux	415	
 131792017
 --Alignment of the Cosmos	419	
 85120912
---Mextro Darxstorm	427	
+--Mextro Darxstorm	426	
 195208438
 --Exodice Phish	429	
 125151406
 --Dread Bastille - Oratorio	430	
 61811401
---Dread Bastille - Étude	431	
+--Dread Bastille - Étude	430	
 61811402
 --Praise the Immortal Sun	446	
 85120911
 --Armored Terrabiter	449	
 100111050
---Helios - Reformation of the Sun	458	
+--Helios - Reformation of the Sun	457	
 85120904
 --Crush Cyberse Virus	461	
 100111054
 --Stopwatch Knight	464	
 100111052
 --Safety, Deep in the Dreary Forest''s Lies	478	
-41854617
---Slumber, Deep in the Dreary Forest''s Cradle	479	
-41854614
+100000058
 --Helios - Majesty of Dawn	479	
 85120901
---Exodice Fishe	481	
+--Exodice Fishe	480	
 125151404
+--Mextro Sightseeker	482	
+195208430
 --Aerin, Magitate Divinitatum	483	
 131792009
---Mextro Sightseeker	483	
-195208430
 --Voidictator Servant - Rune Artist	483	
 221594304
---Novavoid Dragon	485	
+--Novavoid Dragon	484	
 100111056
---Exodice Fish	485	
+--Exodice Fish	484	
 125151410
 --Exodicey Gourmet Fusion	491	
 125151412
@@ -99,29 +91,29 @@
 100111051
 --Overload Artificial Intelligence	502	
 100111053
+--Mextro Dextras	512	
+195208444
+--Skypiercer Air Superiority	513	
+41593813
 --Mextro Factory	513	
 195208441
---Mextro Dextras	514	
-195208444
---Skypiercer Air Superiority	516	
-41593813
 --Dread Bastille - Rondo	526	
 61811404
 --The Floating Village Atop Lake Exodice	527	
 125151413
---Mextro Laboratory	531	
+--Mextro Laboratory	529	
 195208443
+--Champion of The Primordial Sun - Solaire	539	
+85120903
 --Exodice Feesh	539	
 125151402
---Champion of The Primordial Sun - Solaire	540	
-85120903
---Essence Synthesizer	542	
+--Essence Synthesizer	541	
 100111059
---Mextro Pistis Sophia	545	
+--Mextro Pistis Sophia	544	
 195208449
 --Primordial Singularity	547	
 85120908
---Reawakening of the Primordial Sun	553	
+--Reawakening of the Primordial Sun	550	
 85120913
 --Rapid Fire Bat	554	
 100111058
@@ -129,8 +121,6 @@
 221594321
 --Exodice Phich	562	
 125151405
---The Surprises of the Dreamy Forest	564	
-41854613
 --Mextro Observer	565	
 195208433
 --Skypiercer Airfield	568	
@@ -139,24 +129,24 @@
 41593814
 --Dread Bastille - Rhapsodie	569	
 61811403
---Mextro Diatron	572	
+--Voidictator Rune - Energy Renewal	571	
+99998876
+--Mextro Diatron	571	
 195208439
---The Legendary Fisherman of Lake Exodice	574	
+--The Legendary Fisherman of Lake Exodice	573	
 125151409
+--Voidictator Rune - Gating Art	579	
+99998878
 --Voidictator Servant - Shield of Corvus	580	
 99998880
---Voidictator Rune - Gating Art	584	
-99998878
+--Primordial Cubicle	583	
+85120910
 --Mextropolis City	584	
 195208440
---Skypiercer Zeppelin	586	
+--Skypiercer Zeppelin	585	
 41593809
---Primordial Cubicle	586	
-85120910
---Birth of the Sun	594	
+--Birth of the Sun	591	
 85120906
---Voidictator Rune - Energy Renewal	599	
-99998876
 --Voidictator Rune - Origin''s Realm	599	
 221594311
 --Voidictator Servant - Gate Attendant	605	
@@ -167,45 +157,45 @@
 221594305
 --Dread Bastille''s Intermezzo	612	
 61811411
---Dread Bastille - Serenado	614	
+--Dread Bastille - Serenado	613	
 61811405
+--Voidictator Rune - Chains of Torment	614	
+221594313
 --Skypiercer Tactical Strike	618	
 41593811
---Voidictator Rune - Chains of Torment	618	
-221594313
 --Exodice Premier Wrangling	621	
 125151414
---Dread Bastille - Concerto	633	
+--Dread Bastille - Concerto	632	
 61811407
 --Dread Bastille''s Cadence	642	
 61811410
+--Mextro Midas	653	
+195208448
 --Voidictator Rune - Final Verdict	655	
 221594312
---Mextro Midas	656	
-195208448
---Dread Bastille''s Overture	675	
+--Dread Bastille''s Overture	672	
 61811408
 --Voidictator Energy - Origin Essence	678	
 221594300
---Dread Bastille - Cantata	690	
+--Dread Bastille - Cantata	687	
 61811400
 --Voidictator Demon - The Gate Keeper	690	
 221594306
 --Voidictator Servant - Rune Priestess	696	
 221594320
---Deep, Deep in the Dreary Forest''s Maze	722	
-41854615
+--Deep, Deep in the Dreary Forest''s Maze	723	
+100000057
 --Voidictator Energy - Revolution Essence	730	
 221594301
---No Survivors	732	
+--No Survivors	731	
 100111055
---Dread Bastille - Fugue	734	
+--Dread Bastille - Fugue	733	
 61811406
---Voidictator Rune - The Goddess''s Wrath	745	
+--Voidictator Rune - The Goddess''s Wrath	738	
 221594315
 --Mextro Dark Empress	755	
 195208436
---Voidictator Demon - Guardian of Corvus	764	
+--Voidictator Demon - Guardian of Corvus	768	
 221594314
 --Voidictator Rune - Gates of Perdition	772	
 221594326
@@ -221,15 +211,15 @@
 221594308
 --Voidictator Deity - Jezebel the Dark Angel	804	
 221594307
---Voidictator Rune - Ultimate Gating Art	834	
+--Voidictator Rune - Ultimate Gating Art	830	
 221594316
 --Voidictator Deity - Sauriel the Cosmic Arbiter	897	
 221594323
---Voidictator Servant - Gate Magician	949	
+--Voidictator Servant - Gate Magician	948	
 221594318
 --Voidictator Rune - Execution of the Divine	976	
 99998879
---Voidictator Servant - Gate Sorceress	1089	
+--Voidictator Servant - Gate Sorceress	1088	
 221594303
---Voidictator Servant - Gate Architect	1149	
+--Voidictator Servant - Gate Architect	1148	
 221594302
