@@ -17,7 +17,7 @@ function s.initial_effect(c)
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_IGNITION)
 	e2:SetRange(LOCATION_GRAVE)
-	e2:SetCountLimit(1,id+o)
+	e2:HOPT()
 	e2:SetDescription(1152)
 	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
 	e2:SetCost(s.spcost)
@@ -57,7 +57,8 @@ function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function s.spop(e,tp)
 	local c=e:GetHandler()
-	if c:IsRelateToEffect(e) and Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)>0 then
+	if c:IsRelateToEffect(e) and Duel.SpecialSummonStep(c,0,tp,tp,false,false,POS_FACEUP) then
 		Duel.Transform(c,SIDE_REVERSE,e,tp)
 	end
+	Duel.SpecialSummonComplete()
 end

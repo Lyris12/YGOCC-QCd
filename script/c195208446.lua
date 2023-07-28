@@ -17,7 +17,7 @@ function s.initial_effect(c)
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_IGNITION)
 	e2:SetRange(LOCATION_MZONE)
-	e2:SetCountLimit(1,id+o)
+	e2:HOPT()
 	e2:SetProperty(EFFECT_FLAG_CARD_TARGET)
 	e2:SetCost(s.mlcost)
 	e2:SetTarget(s.mltg)
@@ -42,7 +42,7 @@ function s.initial_effect(c)
 	end
 end
 function s.mfilter(c)
-	return c:IsSetCard(0xee5) and not c:IsType(TYPE_LINK)
+	return c:IsSetCard(0xee5) and not c:IsLinkType(TYPE_LINK)
 end
 function s.atkcon(e)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_LINK)
@@ -58,7 +58,7 @@ function s.atktg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.atkop(e)
 	local tc=Duel.GetFirstTarget()
-	if tc and tc:IsRelateToEffect(e) and tc:IsFaceup() then
+	if tc and tc:IsRelateToEffect(e) then
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_SINGLE)
 		e1:SetCode(EFFECT_UPDATE_ATTACK)

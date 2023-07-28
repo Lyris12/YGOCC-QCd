@@ -51,7 +51,7 @@ function s.tffilter(c,tp,re)
 	return c:IsFaceup() and c:IsOnField() and c:IsControler(tp) and c:IsSetCard(ARCHE_DREAMY_FOREST,ARCHE_DREARY_FOREST)
 end
 function s.tfcon(e,tp,eg,ep,ev,re,r,rp)
-    return eg:IsExists(s.tffilter,1,nil,tp,re)
+	return eg:IsExists(s.tffilter,1,nil,tp,re)
 end
 function s.handcon(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetFlagEffect(tp,id)>=1
@@ -60,7 +60,7 @@ function s.confilter(c,tp)
 	return c:IsFaceup() and c:IsSetCard(ARCHE_DREARY_FOREST)
 end
 function s.condition(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.GetTurnPlayer()==1-tp and Duel.IsExistingMatchingCard(s.confilter,tp,LOCATION_MMZONE,0,1,nil)
+	return Duel.GetTurnPlayer()==1-tp and Duel.IsExistingMatchingCard(s.confilter,tp,LOCATION_MZONE,0,1,nil)
 end
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then return chkc:IsLocation(LOCATION_GRAVE) and chkc:IsAbleToRemove() end

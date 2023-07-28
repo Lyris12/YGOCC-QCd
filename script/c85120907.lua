@@ -42,13 +42,13 @@ function s.activate(e,tp)
 	if tc:IsRelateToEffect(e) then Duel.Remove(tc,POS_FACEUP,REASON_EFFECT) end
 end
 function s.filter(c)
-	return aux.IsCodeListed(c,54493213) and c:IsAbleToHand() and not c:IsCode(id)
+	return (aux.IsCodeListed(c,54493213) or c:IsCode(30241314,80887952)) and c:IsAbleToHand() and not c:IsCode(id)
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_DECK,0,1,nil) end
 	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK)
 end
-function s.thop(e,tp,eg,ep,ev,re,r,rp)
+function s.thop(e,tp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
 	local g=Duel.SelectMatchingCard(tp,s.filter,tp,LOCATION_DECK,0,1,1,nil)
 	Duel.SendtoHand(g,nil,REASON_EFFECT)

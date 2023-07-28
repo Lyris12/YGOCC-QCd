@@ -2,7 +2,7 @@
 --Mextro Dextras
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--1 "Mextro " non-Link monster If this card is Link Summoned: Add 1 "Mextro" monster from your Deck to your hand. During the Main Phase (Quick Effect): You can banish 1 "Mextro" card in your GY; Special Summon 1 Link 2 or lower "Mextro" Link Monster from your GY, but it's effects are negated, then that monster is treated as being co-linked to this card. You cannot Special Summon monsters the turn you activate this effect, except "Mextro" monsters. You can only use each effect of "Mextro Dextras" once per turn.
+	--1 "Mextro" non-Link monster If this card is Link Summoned: Add 1 "Mextro" monster from your Deck to your hand. During the Main Phase (Quick Effect): You can banish 1 "Mextro" card in your GY; Special Summon 1 Link 2 or lower "Mextro" Link Monster from your GY, but its effects are negated, then that monster is treated as being co-linked to this card. You cannot Special Summon monsters the turn you activate this effect, except "Mextro" monsters. You can only use each effect of "Mextro Dextras" once per turn.
 	local tp=c:GetControler()
 	local ef=Effect.CreateEffect(c)
 	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

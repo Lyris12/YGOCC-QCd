@@ -23,8 +23,6 @@ function s.initial_effect(c)
 	e2:SetValue(s.statval)
 	c:RegisterEffect(e2)
 	local e2x=e2:UpdateDefenseClone(c)
-	● Banish 1 "Dreary Forest" card from your GY, then target 1 Level 3 or higher "Dreamy Forest" monster you control; Transform it into its [Reverse] Side.
-	● Banish 1 "Dreary Forest" card from your GY, then target 1 Level 3 or higher "Dreary Forest" monster you control; Transform it into its [Obverse] Side.]]
 	local e3=Effect.CreateEffect(c)
 	e3:Desc(1)
 	e3:SetType(EFFECT_TYPE_QUICK_O)

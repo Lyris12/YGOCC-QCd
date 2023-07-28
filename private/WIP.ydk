@@ -31,34 +31,20 @@
 --Skypiercer Blitzkrieg	374	41593812
 --Mextro Hopeseeker	374	195208431
 --Mextro Trick-or-Slayer	377	195208435
---Dread Bastille''s Composition	388	
-61811409
---Mextro Axtreem	391	
-195208437
---Mextro Assassin	393	
-195208434
---Exodice Fyshe	397	
-125151407
---Exodice Phiche	399	
-125151408
---The Reforged Cosmos	401	
-85120905
---Mextro Citizen	403	
-195208432
---Rapid Reformation of Unstable Magitate	404	
-131792018
---Magitate Flux	415	
-131792017
---Alignment of the Cosmos	419	
-85120912
---Mextro Darxstorm	426	
-195208438
---Exodice Phish	429	
-125151406
---Dread Bastille - Oratorio	430	
-61811401
---Dread Bastille - Étude	430	
-61811402
+--Dread Bastille''s Composition	388	61811409
+--Mextro Axtreem	391	195208437
+--Mextro Assassin	393	195208434
+--Exodice Fyshe	397	125151407
+--Exodice Phiche	399	125151408
+--The Reforged Cosmos	401	85120905
+--Rapid Reformation of Unstable Magitate	404	131792018
+--Mextro Citizen	405	195208432
+--Magitate Flux	415	131792017
+--Alignment of the Cosmos	419	85120912
+--Mextro Darxstorm	426	195208438
+--Exodice Phish	429	125151406
+--Dread Bastille - Oratorio	430	61811401
+--Dread Bastille - Étude	432	61811402
 --Praise the Immortal Sun	446	
 85120911
 --Armored Terrabiter	449	
@@ -91,7 +77,7 @@
 100111051
 --Overload Artificial Intelligence	502	
 100111053
---Mextro Dextras	512	
+--Mextro Dextras	511	
 195208444
 --Skypiercer Air Superiority	513	
 41593813
@@ -221,5 +207,5 @@
 99998879
 --Voidictator Servant - Gate Sorceress	1088	
 221594303
---Voidictator Servant - Gate Architect	1148	
+--Voidictator Servant - Gate Architect	1154	
 221594302

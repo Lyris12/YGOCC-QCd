@@ -19,14 +19,14 @@ function s.initial_effect(c)
 end
 Card.IsConcentratedMagitate=Card.IsConcentratedMagitate or function(c) return c:GetCode()>131792009 and c:GetCode()<131792017 and c:IsSetCard(0xd16) end
 function s.mfilter(c)
-	return c:IsLevelBelow(4) and c:IsNonAttribute(ATTRIBUTE_EARTH) and c:IsSetCard(0xd16)
+	return c:IsLevelBelow(4) and not c:IsLinkAttribute(ATTRIBUTE_EARTH) and c:IsSetCard(0xd16)
 end
 function s.cfilter(c)
 	return (not c:IsPreviousLocation(LOCATION_ONFIELD) or c:IsPreviousPosition(POS_FACEUP))
 		and c:GetPreviousLevelOnField()==5 and c:IsPreviousSetCard(0xd16)
 end
 function s.con(e,tp,eg)
-	return eg:IsExists(s.cfilter,1,nil)
+	return eg:FilterCount(s.cfilter,nil)==1
 end
 function s.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()

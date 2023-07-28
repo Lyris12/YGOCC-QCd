@@ -31,7 +31,7 @@ end
 function s.discon(e,tp,eg,ep,ev,re,r,rp)
 	if not re:IsHasProperty(EFFECT_FLAG_CARD_TARGET) then return false end
 	local g=Duel.GetChainInfo(ev,CHAININFO_TARGET_CARDS)
-	return rp==tp and g and g:IsExists(s.filter,1,nil,tp) and Duel.IsChainDisablable(ev)
+	return rp==1-tp and g and g:IsExists(s.filter,1,nil,tp) and Duel.IsChainDisablable(ev)
 end
 function s.cfilter(c)
 	return Card.IsConcentratedMagitate and c:IsConcentratedMagitate() and c:IsAbleToRemoveAsCost()

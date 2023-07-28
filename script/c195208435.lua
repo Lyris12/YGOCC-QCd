@@ -1,9 +1,7 @@
---created by Seth
+--created by Seth, coded by Lyris
 --Mextro Trick-or-Slayer
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--You can only use each effect of "Mextro Trick-or-Slayer" once per turn.
-	--You can discard this card, then target 2 "Mextro" Link Monsters you control; while both targets are face-up on the field, they are treated as being co-linked to each other.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_HAND)
@@ -13,11 +11,10 @@ function s.initial_effect(c)
 	e1:SetTarget(s.mltg)
 	e1:SetOperation(s.mlop)
 	c:RegisterEffect(e1)
-	--If this card is Special Summoned by the effect of a "Mextro" card: Target 1 face-up card your opponent controls; negate its effects.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
 	e2:SetCode(EVENT_SPSUMMON_SUCCESS)
-	e2:SetCountLimit(1,id+o)
+	e2:HOPT()
 	e2:SetProperty(EFFECT_FLAG_CARD_TARGET)
 	e2:SetCategory(CATEGORY_DISABLE)
 	e2:SetCondition(s.discon)

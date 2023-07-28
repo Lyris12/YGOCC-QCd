@@ -19,6 +19,7 @@ function s.initial_effect(c)
 	e2:SetProperty(EFFECT_FLAG_CARD_TARGET)
 	e2:SetType(EFFECT_TYPE_IGNITION)
 	e2:SetRange(LOCATION_GRAVE)
+	e2:HOPT()
 	e2:SetCondition(aux.exccon)
 	e2:SetCost(aux.bfgcost)
 	e2:SetTarget(s.tdtg)
@@ -29,7 +30,7 @@ function s.confilter(c,tp)
 	return c:IsFaceUp() and c:IsSetCard(ARCHE_DREAMY_FOREST)
 end
 function s.condition(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.GetTurnPlayer()==tp and Duel.IsExistingMatchingCard(s.confilter,tp,LOCATION_MMZONE,0,1,nil,tp)
+	return Duel.GetTurnPlayer()==tp and Duel.IsExistingMatchingCard(s.confilter,tp,LOCATION_MZONE,0,1,nil,tp)
 end
 function s.thfilter(c)
 	return c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToHand()
@@ -52,7 +53,7 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function s.limit(c)
-	return	function (e,lp,tp)
+	return  function (e,lp,tp)
 				return e:GetHandler()~=c
 			end
 end

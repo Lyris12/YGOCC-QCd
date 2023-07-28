@@ -19,7 +19,7 @@ function s.initial_effect(c)
 end
 Card.IsConcentratedMagitate=Card.IsConcentratedMagitate or function(c) return c:GetCode()>131792009 and c:GetCode()<131792017 and c:IsSetCard(0xd16) end
 function s.mfilter(c)
-	return c:IsLevelBelow(4) and c:IsNonAttribute(ATTRIBUTE_DARK) and c:IsSetCard(0xd16)
+	return c:IsLevelBelow(4) and not c:IsLinkAttribute(ATTRIBUTE_DARK) and c:IsSetCard(0xd16)
 end
 function s.cfilter(c,tp)
 	return c:IsPreviousLocation(LOCATION_ONFIELD) and c:IsPreviousPosition(POS_FACEUP)

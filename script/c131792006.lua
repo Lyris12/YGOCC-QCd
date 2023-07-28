@@ -16,7 +16,7 @@ function s.initial_effect(c)
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_IGNITION)
 	e2:SetRange(LOCATION_GRAVE)
-	e2:SetCountLimit(1,id+o)
+	e2:HOPT()
 	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
 	e2:SetCost(s.spcost)
 	e2:SetTarget(s.sptg)
@@ -54,7 +54,7 @@ function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 		and c:IsCanBeSpecialSummoned(e,0,tp,false,false) end
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,c,1,0,0)
 end
-function s.spop(e,tp,eg,ep,ev,re,r,rp)
+function s.spop(e,tp)
 	local c=e:GetHandler()
 	if c:IsRelateToEffect(e) and Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)>0 then
 		Duel.BreakEffect()
