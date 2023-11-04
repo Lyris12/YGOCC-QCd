@@ -2,7 +2,7 @@
 --Voidictator Rune - Origin's Realm
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--You can only activate 1 "Voidictator Rune - Origin's Realm" per turn. 1 When this card is activated, you can add 1 "Voidictator Energy" card and 1 "Voidictator" Ritual Monster from your Deck or GY to your hand. 2 Your opponent cannot apply or activate the effects of monsters with the same Card Type (Ritual, Fusion, Synchro, Xyz, Pendulum, Pandemonium, Link, Bigbang, Spatial, Time Leap.) as "Voidictator Deity" and "Voidictator Demon" monsters you control. 3 If this card is banished because of a "Voidictator" card you own: You can banish 1 "Voidictator" card from your hand or GY; Set this card.
+	--You can only activate 1 "Voidictator Rune - Origin's Realm" per turn. When this card is activated, you can add 1 "Voidictator Energy" card and 1 "Voidictator" Ritual Monster from your Deck or GY to your hand. Your opponent cannot apply or activate the effects of monsters with the same Card Type (Ritual, Fusion, Synchro, Xyz, Pendulum, Pandemonium, Link, Bigbang, Spatial, Time Leap.) as "Voidictator Deity" and "Voidictator Demon" monsters you control. If this card is banished because of a "Voidictator" card you own: You can banish 1 "Voidictator" card from your hand or GY; Set this card.
 	local tp=c:GetControler()
 	local ef=Effect.CreateEffect(c)
 	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

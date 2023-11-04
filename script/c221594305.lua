@@ -2,7 +2,7 @@
 --Voidictator Servant - Knight of Corvus
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--This card cannot be used as a material for the Summon of a monster from the Extra Deck while it is on the field. This effect cannot be negated. You can only use each effect of "Voidictator Servant - Knight of Corvus" once per turn. 1 If this card is Normal or Special Summoned: You can Special Summon 1 Level 4 "Voidictator Servant" monster from your hand or GY. 2 If this card is banished because of a "Voidictator" card you own, except "Voidictator Servant - Knight of Corvus": You can banish 1 "Voidictator" card from your GY; Special Summon this card, but shuffle it into the Deck when it leaves the field.
+	--This card cannot be used as a material for the Summon of a monster from the Extra Deck while it is on the field. This effect cannot be negated. You can only use each effect of "Voidictator Servant - Knight of Corvus" once per turn. If this card is Normal or Special Summoned: You can Special Summon 1 Level 4 "Voidictator Servant" monster from your hand or GY. If this card is banished because of a "Voidictator" card you own, except "Voidictator Servant - Knight of Corvus": You can banish 1 "Voidictator" card from your GY; Special Summon this card, but shuffle it into the Deck when it leaves the field.
 	local tp=c:GetControler()
 	local ef=Effect.CreateEffect(c)
 	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

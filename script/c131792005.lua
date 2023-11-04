@@ -34,7 +34,7 @@ function s.discon(e,tp,eg,ep,ev,re,r,rp)
 	return rp==1-tp and g and g:IsExists(s.filter,1,nil,tp) and Duel.IsChainDisablable(ev)
 end
 function s.cfilter(c)
-	return Card.IsConcentratedMagitate and c:IsConcentratedMagitate() and c:IsAbleToRemoveAsCost()
+	return c:IsSetCard({0xd16, "Concentrated"}) and c:IsAbleToRemoveAsCost()
 end
 function s.discost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.cfilter,tp,LOCATION_GRAVE,0,1,nil) end

@@ -1,18 +1,51 @@
---created by Swag
+--created by Swag, coded by XGlitchy30
 --Safety, Deep in the Dreary Forest's Lies
-local s,id,o=GetID()
+local s,id=GetID()
 function s.initial_effect(c)
-	--During your opponent's turn, when your opponent activates a card or effect while you control a "Dreary Forest" monster: You can send 1 other card from your hand or field to the GY; negate the activation, and if you do, banish that card. If a "Dreamy Forest" or "Dreary Forest" monster you control would be destroyed by battle or card effect, you can banish this card from your GY instead. You can only use each effect of "Safety, Deep in the Dreary Forest's Lies" once per turn.
-	local tp=c:GetControler()
-	local ef=Effect.CreateEffect(c)
-	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
-	ef:SetCode(EVENT_PHASE_START+PHASE_DRAW)
-	ef:SetCountLimit(1,5001+EFFECT_COUNT_CODE_DUEL)
-	ef:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
-	ef:SetOperation(function()
-		local tk=Duel.CreateToken(tp,5000)
-		Duel.SendtoDeck(tk,nil,SEQ_DECKBOTTOM,REASON_RULE)
-		c5000.ops(ef,tp)
-	end)
-	Duel.RegisterEffect(ef,tp)
+	aux.EnablePendulumAttribute(c)
+	local e0=Effect.CreateEffect(c)
+	e0:Desc(0)
+	e0:SetType(EFFECT_TYPE_SINGLE)
+	e0:SetCode(EFFECT_PENDULUM_SUMMON_WITH_ONE_SCALE)
+	e0:SetTarget(s.pendtg)
+	e0:SetValue(0)
+	c:RegisterEffect(e0)
+	local e1=Effect.CreateEffect(c)
+	e1:Desc(1)
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON|CATEGORIES_SEARCH)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetRange(LOCATION_PZONE)
+	e1:HOPT()
+	e1:SetFunctions(s.spcon,nil,s.sptg,s.spop)
+	c:RegisterEffect(e1)
+end
+function s.pendtg(e,c)
+	return c:IsSetCard(ARCHE_EPTAMAGI) or c:IsAttributeRace(ATTRIBUTE_EARTH,RACE_WARRIOR)
+end
+function s.cfilter(c)
+	return c:IsFaceup() and c:IsMonsterCard() and c:IsSetCard(ARCHE_EPTAMAGI) and not c:IsCode(id)
+end
+function s.spcon(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.IsExists(false,s.cfilter,tp,LOCATION_PZONE,0,1,e:GetHandler())
+end
+function s.penfilter(c,e,tp)
+	return c:IsFaceup() and c:IsMonsterCard() and c:IsSetCard(ARCHE_EPTAMAGI) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+end
+function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0 and Duel.IsExistingMatchingCard(s.penfilter,tp,LOCATION_PZONE,0,1,nil,e,tp) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_PZONE)
+	Duel.SetPossibleOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK)
+end
+function s.thfilter(c)
+	return c:IsMonster() and c:IsLevel(7) and c:IsAttributeRace(ATTRIBUTE_EARTH,RACE_WARRIOR) and c:IsAbleToHand()
+end
+function s.spop(e,tp,eg,ep,ev,re,r,rp)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local g=Duel.SelectMatchingCard(tp,s.penfilter,tp,LOCATION_PZONE,0,1,1,nil,e,tp)
+	if #g>0 and Duel.SpecialSummon(g,0,tp,tp,false,false,POS_FACEUP)>0 and Duel.IsExists(false,s.thfilter,tp,LOCATION_DECK,0,1,nil) and Duel.SelectYesNo(tp,STRING_ASK_SEARCH) then
+		local sg=Duel.Select(HINTMSG_ATOHAND,false,tp,s.thfilter,tp,LOCATION_DECK,0,1,1,nil)
+		if #sg>0 then
+			Duel.Search(sg,tp)
+		end
+	end
 end
