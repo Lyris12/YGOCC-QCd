@@ -2,7 +2,6 @@
 --Elysia, Magitate Pebble
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddOrigDoubleSidedType(c)
 	aux.AddDoubleSidedProc(c,SIDE_OBVERSE,131792003)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_IGNITION)
@@ -37,7 +36,7 @@ function s.tgtg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function s.tgop(e,tp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
-	local tc-Duel.SelectMatchingCard(tp,s.filter,tp,LOCATION_DECK,0,1,1,nil,Card.IsAbleToGrave):GetFirst()
+	local tc=Duel.SelectMatchingCard(tp,s.filter,tp,LOCATION_DECK,0,1,1,nil,Card.IsAbleToGrave):GetFirst()
 	if not (tc and Duel.SendtoGrave(tc,REASON_EFFECT)>0 and tc:IsLocation(LOCATION_GRAVE)) then return end
 	local g=Duel.GetMatchingGroup(s.filter,tp,LOCATION_GRAVE,0,1,nil,Card.IsAbleToRemove)
 	if #g>0 and Duel.SelectEffectYesNo(tp,e:GetHandler()) then

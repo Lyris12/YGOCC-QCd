@@ -2,7 +2,7 @@
 --Verdant Concentrated Magitate
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.RegisterSetCardString(c,"Concentrated",aux.FilterBoolFunction(Card["Is"..kind.."SetCard"],0xd16))
+	c:RegisterSetCardString({0xd16, "Concentrated"})
 	c:EnableReviveLimit()
 	aux.AddLinkProcedure(c,s.mfilter,1,1)
 	local e1=Effect.CreateEffect(c)
@@ -34,7 +34,7 @@ function s.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoDeck(c,nil,SEQ_DECKTOP,REASON_COST)
 end
 function s.tdtg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then Duel.IsExistingMatchingCard(Card.IsAbleToDeck,tp,0,LOCATION_HAND,1,nil) end
+	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToDeck,tp,0,LOCATION_HAND,1,nil) end
 	Duel.SetOperationInfo(0,CATEGORY_TODECK,nil,1,1-tp,LOCATION_HAND)
 end
 function s.tdop(e,tp)

@@ -2,7 +2,7 @@
 --Cloudy Concentrated Magitate
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.RegisterSetCardString(c,"Concentrated",aux.FilterBoolFunction(Card["Is"..kind.."SetCard"],0xd16))
+	c:RegisterSetCardString({0xd16, "Concentrated"})
 	c:EnableReviveLimit()
 	aux.AddLinkProcedure(c,s.mfilter,1,1)
 	local e1=Effect.CreateEffect(c)

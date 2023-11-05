@@ -2,6 +2,8 @@
 --Cindy, Magitate Infernum
 local s,id,o=GetID()
 function s.initial_effect(c)
+	aux.AddDoubleSidedProc(c,SIDE_REVERSE,131792006)
+	aux.AddReverseSideProc(c)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
 	e1:SetCode(EFFECT_PIERCE)
