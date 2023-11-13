@@ -1,18 +1,60 @@
---created by Zarc
+--created by Zarc, coded by Lyris
 --Elflair - Nihilis, Enhanced Elf Sorcerer
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--1 "Elflair" monster You cannot Special Summon monsters, except "Elflair" monsters. You can target 1 of your "Elflair" monsters that is banished or in your GY; Special Summon it to your zone that 2 or more "Elflair" Link Monsters point to. You can only use this effect of "Elflair - Nihilis, Enhanced Elf Sorcerer" once per turn. You can only Special Summon "Elflair - Nihilis, Enhanced Elf Sorcerer(s)" once per turn.
-	local tp=c:GetControler()
-	local ef=Effect.CreateEffect(c)
-	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
-	ef:SetCode(EVENT_PHASE_START+PHASE_DRAW)
-	ef:SetCountLimit(1,5001+EFFECT_COUNT_CODE_DUEL)
-	ef:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
-	ef:SetOperation(function()
-		local tk=Duel.CreateToken(tp,5000)
-		Duel.SendtoDeck(tk,nil,SEQ_DECKBOTTOM,REASON_RULE)
-		c5000.ops(ef,tp)
-	end)
-	Duel.RegisterEffect(ef,tp)
+	c:RegisterSetCardString("Elflair")
+	c:EnableReviveLimit()
+	aux.AddLinkProcedure(c,aux.FilterBoolFunction(Card.IsLinkSetCard,"Elflair"),1,1)
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_FIELD)
+	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e1:SetCode(EFFECT_CANNOT_SPECIAL_SUMMON)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetTargetRange(1,0)
+	e1:SetTarget(aux.TargetBoolFunction(aux.NOT(Card.IsSetCard),"Elflair"))
+	c:RegisterEffect(e1)
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_IGNITION)
+	e2:SetRange(LOCATION_MZONE)
+	e2:HOPT()
+	e2:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e2:SetTarget(s.sptg)
+	e2:SetOperation(s.spop)
+	c:RegisterEffect(e2)
+	c:SetSPSummonOnce(id)
+end
+function s.GetMultiLinkedZone(tp)
+	local f=function(c)
+		return c:IsFaceup() and c:IsType(TYPE_LINK) and c:IsSetCard("Elfair")
+	end
+	local lg=Duel.GetMatchingGroup(f,tp,LOCATION_MZONE,LOCATION_MZONE,nil)
+	local multi_linked_zone=0
+	local single_linked_zone=0
+	for tc in aux.Next(lg) do
+		local zone=tc:GetLinkedZone(tp)&0x7f
+		multi_linked_zone=single_linked_zone&zone|multi_linked_zone
+		single_linked_zone=single_linked_zone~zone
+	end
+	return multi_linked_zone
+end
+function s.filter(c,e,tp,zone)
+	return c:IsFaceupEx() and c:IsSetCard("Elflair")
+		and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP,tp,zone)
+end
+function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	local zone=s.GetMultiLinkedZone(tp)
+	if chkc then return chkc:IsLocation(LOCATION_GRAVE+LOCATION_REMOVED) and chkc:IsControler(tp) and s.filter(chkc,e,tp,zone) end
+	if chk==0 then return zone~=0 and Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsExistingTarget(s.filter,tp,LOCATION_GRAVE+LOCATION_REMOVED,0,1,nil,e,tp,zone) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local g=Duel.SelectTarget(tp,s.filter,tp,LOCATION_GRAVE+LOCATION_REMOVED,0,1,1,nil,e,tp,zone)
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,g,1,0,0)
+end
+function s.spop(e,tp,eg,ep,ev,re,r,rp)
+	local zone=s.GetMultiLinkedZone(tp)
+	local tc=Duel.GetFirstTarget()
+	if zone~=0 and tc:IsRelateToEffect(e) then
+		Duel.SpecialSummon(tc,0,tp,tp,false,false,POS_FACEUP,zone)
+	end
 end
