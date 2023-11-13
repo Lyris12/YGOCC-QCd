@@ -1,4 +1,4 @@
---created by Seth
+--created by Seth, coded by Lyris
 --Great London Clue - Bloody Footprints
 local s,id,o=GetID()
 function s.initial_effect(c)
@@ -7,7 +7,6 @@ function s.initial_effect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	c:RegisterEffect(e1)
-	--"Great London" monsters you control cannot be destroyed by battle.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_FIELD)
 	e2:SetCode(EFFECT_INDESTRUCTABLE_BATTLE)
@@ -15,7 +14,6 @@ function s.initial_effect(c)
 	e2:SetTargetRange(LOCATION_MZONE,0)
 	e2:SetTarget(aux.TargetBoolFunction(Card.IsSetCard,"Great London"))
 	c:RegisterEffect(e2)
-	--You can declare 1 card type (Monster, Spell or Trap); reveal the top card of your Deck, and if you do, and its type matches the declared type, destroy 1 card on the field. You can only use this effect of "Great London Clue - Bloody Footprints" once per turn.
 	local e3=Effect.CreateEffect(c)b
 	e3:SetType(EFFECT_TYPE_IGNITION)
 	e3:SetRange(LOCATION_SZONE)

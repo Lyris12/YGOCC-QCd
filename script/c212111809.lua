@@ -1,8 +1,7 @@
---created by Slick
+--created by Slick, coded by Lyris
 --Stars Over Belgrade
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--If "The City of Belgrade" is in your Field Zone: Reveal 1 "The City of Belgrade" in your hand; place it on the bottom of the Deck, and if you do, draw 3 cards. You can only activate 1 "Stars over Belgrade" per turn.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -13,7 +12,6 @@ function s.initial_effect(c)
 	e1:SetTarget(s.tg)
 	e1:SetOperation(s.act)
 	c:RegisterEffect(e1)
-	--If "The City of Belgrade" would be destroyed by a card effect, you can banish this card from your GY instead.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 	e2:SetCode(EFFECT_DESTROY_REPLACE)
