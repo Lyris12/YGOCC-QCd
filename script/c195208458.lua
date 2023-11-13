@@ -1,9 +1,8 @@
---created by Seth
+--created by Seth, coded by Lyris
 --Great London Clue - Murder Weapon
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--You can declare 1 card type (Monster, Spell or Trap); reveal the top card of your Deck, and if you do, and its type matches the declared type, destroy 1 card your opponent controls. If a face-up "Great London" card(s) you control leaves the field by an opponent's card effect: You can Special Summon 1 "Great London" monster from your hand or GY. You can only use each effect of "Great London Clue - Murder Weapon" once per turn.
-	c:RegisterSetCardString("Great London")
+	c:RegisterSetCardString({"Great London", "Clue"})
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)

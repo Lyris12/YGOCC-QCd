@@ -23,7 +23,7 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	local ph=Duel.GetCurrentPhase()
 	if ph==PHASE_DAMAGE or ph==PHASE_DAMAGE_CAL and 
 		e:SetLabel(1)
-		local g=Duel.GetMatchingGroup(Card.IsAbleToGrave,tp,0,LOCATION_ONFIELD,1,nil)
+		local g=Duel.GetMatchingGroup(Card.IsAbleToGrave,tp,0,LOCATION_ONFIELD,nil)
 		if #g>0 then Duel.SetOperationInfo(0,CATEGORY_TOGRAVE,g,1,0,0) end
 	else e:SetLabel(0) end
 end
