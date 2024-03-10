@@ -1,15 +1,8 @@
 --created by Walrus, coded by XGlitchy30
 --Voidictator Servant - Gate Sorceress
-Voidictator Servant - Gate Sorceress
-Servitore dei Vuotodespoti - Stregona del Cancello
-Card Author: Walrus
-Scripted by: XGlitchy30
-]]
 local s,id=GetID()
 function s.initial_effect(c)
 	aux.EnablePendulumAttribute(c)
-	your opponent cannot Pendulum Summon. While you control a "Voidictator Deity" or "Voidictator Demon" monster, your opponent cannot Special Summon monsters from their hand or GY,
-	except Level 4 or lower monsters.]]
 	local p1=Effect.CreateEffect(c)
 	p1:SetType(EFFECT_TYPE_FIELD)
 	p1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
@@ -42,7 +35,6 @@ function s.initial_effect(c)
 	e1:SetTarget(s.hsptg)
 	e1:SetOperation(s.hspop)
 	c:RegisterEffect(e1)
-	this card gains 400 ATK/200 DEF for each "Voidictator" card with different names that were banished by this effect.]]
 	local e2=Effect.CreateEffect(c)
 	e2:Desc(2)
 	e2:SetCategory(CATEGORY_REMOVE|CATEGORIES_ATKDEF)
