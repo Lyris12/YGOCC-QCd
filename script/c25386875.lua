@@ -1,7 +1,8 @@
---created by Jake, coded by XGlitchy30; updated by _
+--created by Jake
 --Steinitz's Tactics
 function c25386875.initial_effect(c)
 	local e1=Effect.CreateEffect(c)
+	--Once per turn, you can activate 1 of the following effects. ● Target 1 "Steinitz" monster you control; equip 1 "Steinitz" monster from your hand or GY to that target. ● Target 1 "Steinitz" card equipped to a monster on the field; Special Summon that target. When a "Steinitz" monster you control is targeted for an attack: You can target 1 "Steinitz" monster you control; move that target to an unoccupied Monster Zone. You can only use each effect of "Steinitz's Tactics" once per turn. During the End Phase: You can shuffle this card from your GY into the Deck, and if you do, your "Steinitz" monsters cannot be returned to the hand this turn.
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	c:RegisterEffect(e1)

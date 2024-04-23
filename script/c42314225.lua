@@ -1,8 +1,9 @@
---created by Jake, coded by XGlitchy30; edited by _
+--created by Jake
 --A Blader's Resting Place
 local s,id=GetID()
 s.original_category={}
-function s.initial_effect(c)
+	--You take no Battle Damage from attacks involving Warrior monsters. Once per turn: You can discard up to 3 "Dawn Blader" monsters and/or Spell/Trap cards that specifically list a "Dawn Blader" monster in its text; apply this effect, depending on the number of cards discarded. ● 1: Add 1 "Dawn Blader" monster from your Deck to your hand. ● 2: Shuffle up to 3 "Dawn Blader" monsters and/or Spell/Trap cards, except "A Blader's Resting Place", that specifically list a "Dawn Blader" monster in its card text from your GY to the Deck, then draw 1 card. ● 3: Special Summon 1 "Dawn Blader" monster from your Deck. When this card is destroyed by an opponent's card effect: You can draw 1 card.
+	function s.initial_effect(c)
 	c:Activate()
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
