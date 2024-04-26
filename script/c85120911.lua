@@ -1,4 +1,4 @@
---created by LeonDuvall, coded by Lyris
+--created by LeonDuvall, coded by Lyris, fixed by XGlitchy30
 --Praise the Immortal Sun
 local s,id,o=GetID()
 function s.initial_effect(c)

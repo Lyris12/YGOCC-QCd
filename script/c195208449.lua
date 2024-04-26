@@ -1,8 +1,7 @@
---created by Seth
+--created by Seth, coded by Lyris
 --Mextro Pistis Sophia
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--5 co-linked "Mextro" monsters Unaffected by your opponent's card effects. If this card is Link Summoned: Draw 2 cards. Level 8 or lower monsters your opponent controls cannot declare an attack. When your opponent activates a card or effect which would destroy a "Mextro" card(s) you control or add a card from the Deck to their hand (Quick Effect): You can negate the activation. If this card leaves the field: Special Summon 1 Link-3 or lower "Mextro" monster from your GY. You can only use each effect of "Mextro Pistis Sophia" once per turn.
 	local tp=c:GetControler()
 	local ef=Effect.CreateEffect(c)
 	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

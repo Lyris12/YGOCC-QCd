@@ -1,4 +1,4 @@
---created by LeonDuvall, coded by Lyris
+--created by LeonDuvall, coded by Lyris, fixed by XGlitchy30
 --Helios - Majesty of Dawn
 local s,id,o=GetID()
 function s.initial_effect(c)

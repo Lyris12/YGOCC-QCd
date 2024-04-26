@@ -1,4 +1,4 @@
---created by LeonDuvall, coded by Lyris
+--created by LeonDuvall, coded by Lyris, fixed by XGlitchy30
 --Alignment of the Cosmos
 local s,id,o=GetID()
 function s.initial_effect(c)
