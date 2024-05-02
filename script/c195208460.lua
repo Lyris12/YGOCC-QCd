@@ -36,8 +36,7 @@ end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.GetFieldGroupCount(tp,LOCATION_DECK,0)<1 then return end
 	Duel.ConfirmDecktop(tp,1)
-	local tc=Duel.GetDecktopGroup(tp,1):GetFirst()
-	if not tc:IsType(1<<Duel.GetChainInfo(0,CHAININFO_TARGET_PARAM))
+	if not Duel.GetDecktopGroup(tp,1):GetFirst():IsType(1<<Duel.GetChainInfo(0,CHAININFO_TARGET_PARAM))
 		or Duel.GetLocationCount(tp,LOCATION_MZONE)<1 then return end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 	local tc=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(s.filter),tp,LOCATION_GRAVE+LOCATION_HAND,0,1,1,nil,e,tp):GetFirst()
@@ -65,8 +64,7 @@ end
 function s.plop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.GetFieldGroupCount(tp,LOCATION_DECK,0)<1 then return end
 	Duel.ConfirmDecktop(tp,1)
-	local tc=Duel.GetDecktopGroup(tp,1):GetFirst()
 	local c=e:GetHandler()
-	if not tc:IsType(1<<Duel.GetChainInfo(0,CHAININFO_TARGET_PARAM)) or not c:IsRelateToEffect(e) then return end
+	if not Duel.GetDecktopGroup(tp,1):GetFirst():IsType(1<<Duel.GetChainInfo(0,CHAININFO_TARGET_PARAM)) or not c:IsRelateToEffect(e) then return end
 	Duel.MoveToField(c,tp,tp,LOCATION_SZONE,POS_FACEUP,true)
 end

@@ -77,11 +77,11 @@ function s.rfilter(c)
 	return c:IsFaceup() and c:IsSetCard{"Great London", "Clue"}
 end
 function s.descon(e,tp)
-	return Duel.IsExistingMatchingCard(s.rfilter,tp,LOCATION_ONFIELD,0,3,nil)
+	return Duel.GetAttacker()==e:GetHandler() and Duel.IsExistingMatchingCard(s.rfilter,tp,LOCATION_ONFIELD,0,3,nil)
 end
 function s.destg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local tc=Duel.GetAttackTarget()
-	if chk==0 then return tc and Duel.GetAttacker()==e:GetHandler() and tc:IsRelateToBattle() end
+	if chk==0 then return tc and tc:IsRelateToBattle() end
 	Duel.SetOperationInfo(0,CATEGORY_DESTROY,tc,1,0,0)
 end
 function s.sfilter(c,e,tp)

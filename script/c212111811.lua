@@ -1,18 +1,76 @@
---created by Slick
+--created by Slick, coded by Lyris
 --The City of Belgrade
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--When this card is activated: You can add 1 "Kronologistic" Drive monster from your Deck or GY to your hand. You can activate the Drive Effects of Engaged "Kronologistic" Drive monsters as Quick Effects. Engaged Monsters gain the following Drive Effect. ● [0]: If this card's Energy is equal to this card's Level (Quick Effect): You can Special Summon this card from your hand. (This is treated as a Drive Summon.) Once per turn, if you have an Engaged Monster: You can banish 1 Spell/Trap from your GY; increase or decrease its Energy by up to 2. You can only activate 1 "The City of Belgrade" per turn.
-	local tp=c:GetControler()
-	local ef=Effect.CreateEffect(c)
-	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
-	ef:SetCode(EVENT_PHASE_START+PHASE_DRAW)
-	ef:SetCountLimit(1,5001+EFFECT_COUNT_CODE_DUEL)
-	ef:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
-	ef:SetOperation(function()
-		local tk=Duel.CreateToken(tp,5000)
-		Duel.SendtoDeck(tk,nil,SEQ_DECKBOTTOM,REASON_RULE)
-		c5000.ops(ef,tp)
-	end)
-	Duel.RegisterEffect(ef,tp)
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:HOPT(true)
+	e1:SetCategory(CATEGORY_SEARCH+CATEGORY_TOHAND+CATEGORY_GRAVE_ACTION)
+	e1:SetOperation(s.activate)
+	c:RegisterEffect(e1)
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_FIELD)
+	e2:SetCode(id)
+	e2:SetRange(LOCATION_FZONE)
+	e2:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e2:SetTargetRange(1,0)
+	c:RegisterEffect(e2)
+	local e3=Effect.CreateEffect(c)
+	e3:SetType(EFFECT_TYPE_QUICK_O)
+	e3:SetCode(EVENT_FREE_CHAIN)
+	e3:SetRange(LOCATION_HAND)
+	e3:SetDescription(aux.Stringid(id,0))
+	e3:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e3:SetCondition(s.spcon)
+	e3:SetTarget(s.sptg)
+	e3:SetOperation(s.spop)
+	local e4=Effect.CreateEffect(c)
+	e4:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_GRANT)
+	e4:SetRange(LOCATION_FZONE)
+	e4:SetLabelObject(e3)
+	e4:SetTargetRange(LOCATION_HAND,LOCATION_HAND)
+	e4:SetTarget(aux.TargetBoolFunction(Card.IsEngaged))
+	c:RegisterEffect(e4)
+	local e5=Effect.CreateEffect(c)
+	e5:SetType(EFFECT_TYPE_IGNITION)
+	e5:SetRange(LOCATION_EXTRA)
+	e5:SetCountLimit(1)
+	e5:SetCost(s.cecost)
+	e5:SetTarget(s.cetg)
+	e5:SetOperation(s.ceop)
+	c:RegisterEffect(e5)
+end
+function s.spcon(e)
+	return e:GetHandler():IsEnergy(e:GetHandler():GetLevel())
+end
+function s.sptg(e,tp,_,_,_,_,_,_,chk)
+	local c=e:GetHandler()
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and c:IsCanBeSpecialSummoned(e,SUMMON_TYPE_DRIVE,tp,false,false) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,c,1,0,0)
+end
+function s.spop(e)
+	local c=e:GetHandler()
+	if c:IsRelateToEffect(e) then Duel.SpecialSummon(c,SUMMON_TYPE_DRIVE,tp,tp,false,false,POS_FACEUP) end
+end
+function s.filter(c)
+	return c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToRemoveAsCost()
+end
+function s.cecost(e,tp,_,_,_,_,_,_,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_GRAVE,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+	Duel.Remove(Duel.SelectMatchingCard(tp,s.filter,tp,LOCATION_GRAVE,0,1,1,nil),POS_FACEUP,REASON_COST)
+end
+function s.cetg(e,tp,_,_,_,_,_,_,chk)
+	local tc=Duel.GetEngagedCard(tp)
+	if chk==0 then return tc and tc:IsCanIncreaseOrDecreaseEnergy(1,tp,REASON_EFFECT) end
+end
+function s.ceop(e,tp)
+	local tc=Duel.GetEngagedCard(tp)
+	if not tc then return end
+	local t={}
+	for _,i in ipairs{-2,-1,1,2} do if tc:IsCanUpdateEnergy(i,tp,REASON_EFFECT) then table.insert(t,i) end end
+	tc:UpdateEnergy(Duel.AnnounceNumber(tp,table.unpack(t)),tp,REASON_EFFECT)
+	Duel.UpdateEnergyComplete()
 end
