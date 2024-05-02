@@ -1,20 +1,16 @@
---created by Zarc
+--created by Zarc, coded by Lyris
 --Elflair - Irene, Wellspring Elf Princess
 local s,id,o=GetID()
 function s.initial_effect(c)
 	c:RegisterSetCardString"Elflair"
 	c:EnableReviveLimit()
-	--mat=2 "Elflair" monsters
 	aux.AddFusionProcFunRep(c,aux.FilterBoolFunction(Card.IsSetCard,"Elflair"),2,true)
-	--This card can attack while in face-up Defense Position. If it does, apply its DEF for damage calculation.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE)
 	e1:SetCode(EFFECT_DEFENSE_ATTACK)
 	e1:SetValue(1)
 	c:RegisterEffect(e1)
-	--Must first be Special Summoned (from your Extra Deck) by sending the above cards from either field to the GY. (You do not use "Polymerization".)
 	aux.AddContactFusionProcedure(c,s.mfilter,LOCATION_ONFIELD,LOCATION_ONFIELD,Duel.SendtoGrave,REASON_COST)
-	--Once per turn, when a card or effect is activated (Quick Effect): You can remove 1 Elflair counter from anywhere on the field; negate the activation, and if you do, destroy that card, and if you do that, this card gains 1000 DEF. You can only use this effect of "Elflair - Irene, Wellspring Elf Princess" once per turn.
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_QUICK_O)
 	e2:SetCode(EVENT_CHAINING)
