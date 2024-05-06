@@ -1,18 +1,72 @@
---created by Jake
+--created by Jake, coded by Lyris
 --Dawn Blader - Swordsman of Flame
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--2 Level 6 Warrior monsters If a monster you control battles: You can detach 1 material; activate one of the following effects. ● That monster gains 600 ATK, and if it does, all other monsters you control gain 500 ATK. These changes last until the end of the Battle Phase. ● Discard 1 "Dawn Blader" monster, and if you do, that monster gains ATK equal to the discarded monster's Level x100 until the end of the Battle Phase. If this card is sent to the GY: You can Special Summon 1 "Dawn Blader" monster from your hand or GY. You can only use each effect of "Dawn Blader - Swordsman of Flame" once per turn.
-	local tp=c:GetControler()
-	local ef=Effect.CreateEffect(c)
-	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
-	ef:SetCode(EVENT_PHASE_START+PHASE_DRAW)
-	ef:SetCountLimit(1,5001+EFFECT_COUNT_CODE_DUEL)
-	ef:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
-	ef:SetOperation(function()
-		local tk=Duel.CreateToken(tp,5000)
-		Duel.SendtoDeck(tk,nil,SEQ_DECKBOTTOM,REASON_RULE)
-		c5000.ops(ef,tp)
-	end)
-	Duel.RegisterEffect(ef,tp)
+	c:EnableReviveLimit()
+	aux.AddXyzProcedure(c,aux.FilterBoolFunction(Card.IsRace,RACE_WARRIOR,6,2)
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
+	e1:SetCode(EVENT_ATTACK_ANNOUNCE)
+	e1:SetRange(LOCATION_MZONE)
+	e1:HOPT()
+	e1:SetCategory(CATEGORY_ATKCHANGE)
+	e1:SetCost(s.cost)
+	e1:SetTarget(s.target)
+	e1:SetOperation(s.operation)
+	c:RegisterEffect(e1)
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e2:SetCode(EVENT_TO_GRAVE)
+	e2:HOPT()
+	e2:SetProperty(EFFECT_FLAG_DELAY)
+	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e2:SetTarget(s.sptg)
+	e2:SetOperation(s.spop)
+	c:RegisterEffect(e2)
+end
+function s.cost(e,tp,_,_,_,_,_,_,chk)
+	if chk==0 then return Duel.CheckRemoveOverlayCard(tp,1,1,1,REASON_COST) end
+	Duel.RemoveOverlayCard(tp,1,1,1,1,REASON_COST)
+end
+function s.cfilter(c)
+	return c:IsSetCard(0x613) and c:IsLevelAbove(1) and c:IsDiscardable(REASON_EFFECT)
+end
+function s.target(e,tp,_,_,_,_,_,_,chk)
+	local tc=Duel.GetBattleMonster(tp)
+	local b1=Duel.IsExistingMatchingCard(Card.IsFaceup,tp,LOCATION_MZONE,0,1,tc)
+	local b2=Duel.IsExistingMatchingCard(s.cfilter,tp,LOCATION_HAND,0,1,nil)
+	if chk==0 then return tc and tc:IsRelateToBattle() and (b1 or b2) end
+	e:SetLabel(aux.SelectFromOptions(tp,{b1,1113},{b2,1106}))
+end
+function s.operation(e,tp)
+	local op=e:GetLabel()
+	local bc=Duel.GetBattleMonster(tp)
+	if op>1 and Duel.DiscardHand(tp,s.cfilter,1,1,REASON_EFFECT+REASON_DISCARD)<1 or not bc or bc:IsFacedown()
+		or bc:IsImmuneToEffect(e) then return end
+	local e1=Effect.CreateEffect(e:GetHandler())
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_UPDATE_ATTACK)
+	e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_BATTLE)
+	e1:SetValue(op>1 and Duel.GetOperatedGroup():GetFirst():GetLevel()*100 or 600)
+	bc:RegisterEffect(e1)
+	if op>1 then return end
+	for tc in aux.Next(Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_MZONE,0,bc)) do
+		local e2=e1:Clone()
+		e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+		e2:SetValue(500)
+		tc:RegisterEffect(e2)
+	end
+end
+function s.filter(c,e,tp)
+	return c:IsSetCard(0x613) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+end
+function s.sptg(e,tp,_,_,_,_,_,_,chk)
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_GRAVE+LOCATION_HAND,0,1,nil,e,tp) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_GRAVE+LOCATION_HAND)
+end
+function s.spop(e,tp)
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<1 then return end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	Duel.SpecialSummon(Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(s,fi;ter),tp,LOCATION_GRAVE+LOCATION_HAND,0,1,1,nil,e,tp),0,tp,tp,false,false,POS_FACEUP)
 end
