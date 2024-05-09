@@ -3,8 +3,16 @@
 local s,id,o=GetID()
 function s.initial_effect(c)
 	c:RegisterSetCardString"Kronologistic"
-	c:DriveEffect(2,nil,CATEGORY_COIN,nil,nil,nil,nil,nil,s.deutg,s.deuop)
-	c:DriveEffect(-8,nil,CATEGORY_DISABLE,nil,EFFECT_FLAG_CARD_TARGET,nil,s.discon,nil,s.distg,s.disop)
+	local d1=c:DriveEffect(2,nil,CATEGORY_COIN,nil,nil,nil,aux.NOT(s.qcon),nil,s.deutg,s.deuop)
+	local q1=d1:Clone()
+	q1:SetType(EFFECT_TYPE_QUICK_O)
+	q1:SetCondition(s.qcon)
+	c:RegisterEffect(q1)
+	local d2=c:DriveEffect(-8,nil,CATEGORY_DISABLE,nil,EFFECT_FLAG_CARD_TARGET,nil,aux.AND(s.discon,aux.NOT(s.qcon)),nil,s.distg,s.disop)
+	local q2=d2:Clone()
+	q2:SetType(EFFECT_TYPE_QUICK_O)
+	q2:SetCondition(aux.AND(s.discon,s.qcon))
+	c:RegisterEffect(q2)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE)
 	e1:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
@@ -37,6 +45,9 @@ end
 s.toss_coin=true
 function s.tnval(e,c)
 	return e:GetHandler():IsControler(c:GetControler())
+end
+function s.qcon(_,tp)
+	return Duel.IsPlayerAffectedByEffect(tp,212111811)
 end
 function s.deutg(e,tp,_,_,_,_,_,_,chk)
 	if chk==0 then return e:GetHandler():IsCanUpdateEnergy(2,tp,REASON_EFFECT) end
