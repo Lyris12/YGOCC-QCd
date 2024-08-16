@@ -2,7 +2,6 @@
 --Elflair - Defensive Song
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:RegisterSetCardString"Elflair"
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -14,7 +13,7 @@ function s.initial_effect(c)
 	e2:SetRange(LOCATION_SZONE)
 	e2:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
 	e2:SetTargetRange(LOCATION_MZONE,0)
-	e2:SetTarget(aux.TargetBoolFunction(Card.IsSetCard,"Elflair"))
+	e2:SetTarget(aux.TargetBoolFunction(Card.IsSetCard,0x355))
 	e2:SetValue(s.tgval)
 	c:RegisterEffect(e2)
 	local e3=Effect.CreateEffect(c)
@@ -42,7 +41,7 @@ function s.tgval(e,re)
 	return re:IsActiveType(TYPE_MONSTER) and re:GetHandler():IsSummonType(SUMMON_TYPE_SPECIAL)
 end
 function s.filter(c,tp)
-	return c:IsSummonPlayer(tp) and c:IsSummonType(SUMMON_TYPE_LINK) and c:IsSetCard"Elflair"
+	return c:IsSummonPlayer(tp) and c:IsSummonType(SUMMON_TYPE_LINK) and c:IsSetCard(0x355)
 end
 function s.decon(e,tp,eg)
 	return eg:FilterCount(s.filter,nil,tp)==1
@@ -94,7 +93,7 @@ function s.disop(e,tp,eg,ep,ev,re,r,rp)
 end
 function s.dbcon(e,tp)
 	local tc=Duel.GetBattleMonster(tp)
-	return tc and tc:IsFaceup() and tc:IsSetCard"Elflair"
+	return tc and tc:IsFaceup() and tc:IsSetCard(0x355)
 end
 function s.cfilter(c)
 	return c:IsDiscardable() and c:IsAbleToGraveAsCost()

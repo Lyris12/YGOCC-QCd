@@ -2,7 +2,6 @@
 --Great London Assassin Amy
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:RegisterSetCardString"Great London"
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_QUICK_O)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -42,26 +41,26 @@ function s.tpcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoGrave(c,REASON_COST+REASON_DISCARD)
 end
 function s.tptg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsSetCard,tp,LOCATION_DECK,0,1,nil,"Great London")
+	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsSetCard,tp,LOCATION_DECK,0,1,nil,0xd3f)
 		and Duel.GetFieldGroupCount(tp,LOCATION_DECK)>1 end
 end
 function s.tpop(e,tp)
 	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(id,0))
-	local tc=Duel.SelectMatchingCard(tp,Card.IsSetCard,tp,LOCATION_DECK,0,1,1,nil,"Great London"):GetFirst()
+	local tc=Duel.SelectMatchingCard(tp,Card.IsSetCard,tp,LOCATION_DECK,0,1,1,nil,0xd3f):GetFirst()
 	if not tc then return end
 	Duel.ShuffleDeck(tp)
 	Duel.MoveSequence(tc,SEQ_DECKTOP)
 	Duel.ConfirmDecktop(tp,1)
 end
 function s.cfilter(c)
-	return c:IsSetCard"Great London" and c:IsDiscardable()
+	return c:IsSetCard(0xd3f) and c:IsDiscardable()
 end
 function s.thcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.cfilter,tp,LOCATION_HAND,0,1,nil) end
 	Duel.DiscardHand(tp,s.cfilter,1,1,REASON_COST)
 end
 function s.filter(c)
-	return c:IsSetCard{"Great London", "Clue"} and c:IsAbleToHand()
+	return c:IsSetCard(0x1d3f) and c:IsAbleToHand()
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_GRAVE,0,1,nil) end
@@ -74,7 +73,7 @@ function s.thop(e,tp)
 	Duel.ConfirmCards(1-tp,g)
 end
 function s.rfilter(c)
-	return c:IsFaceup() and c:IsSetCard{"Great London", "Clue"}
+	return c:IsFaceup() and c:IsSetCard(0x1d3f)
 end
 function s.descon(e,tp)
 	return Duel.GetAttacker()==e:GetHandler() and Duel.IsExistingMatchingCard(s.rfilter,tp,LOCATION_ONFIELD,0,3,nil)
@@ -85,7 +84,7 @@ function s.destg(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SetOperationInfo(0,CATEGORY_DESTROY,tc,1,0,0)
 end
 function s.sfilter(c,e,tp)
-	return c:IsSetCard"Great London" and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP_DEFENSE)
+	return c:IsSetCard(0xd3f) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP_DEFENSE)
 end
 function s.desop(e,tp)
 	local tc=Duel.GetAttackTarget()

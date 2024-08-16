@@ -2,9 +2,8 @@
 --Elflair - Grover, Overgrown Vine King
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:RegisterSetCardString"Elflair"
 	c:EnableReviveLimit()
-	aux.AddLinkProcedure(c,aux.FilterBoolFunction(Card.IsSetCard,"Elflair"),3)
+	aux.AddLinkProcedure(c,aux.FilterBoolFunction(Card.IsSetCard,0x355),3)
 	c:SetUniqueOnField(1,0,id)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_IGNITION)
@@ -25,12 +24,12 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function s.filter(c,e,tp,chk)
-	return c:IsFaceup() and c:IsSetCard"Elflair" and c:IsAttackAbove(2000) and c:IsAbleToRemove() and (chk
+	return c:IsFaceup() and c:IsSetCard(0x355) and c:IsAttackAbove(2000) and c:IsAbleToRemove() and (chk
 		or not c:IsImmuneToEffect(e)
 		and Duel.IsExistingMatchingCard(s.sfilter,tp,LOCATION_EXTRA+LOCATION_GRAVE,0,1,nil,e,tp,c))
 end
 function s.sfilter(c,e,tp,tc)
-	return c:IsSetCard"Elflair" and c:IsCanBeSpecialSummoned(e,0,tp,false,false) and (c:IsLocation(LOCATION_EXTRA)
+	return c:IsSetCard(0x355) and c:IsCanBeSpecialSummoned(e,0,tp,false,false) and (c:IsLocation(LOCATION_EXTRA)
 		and Duel.GetLocationCountFromEx(tp,tp,tc,c)>0 or Duel.GetMZoneCount(tp,tc)>0)
 end
 function s.rmtg(e,tp,_,_,_,_,_,_,chk)
@@ -56,7 +55,7 @@ function s.afilter(c)
 	return c:IsFaceup() and c:IsAttackAbove(1)
 end
 function s.rfilter(c)
-	return c:IsSetCard"Elflair" and c:IsType(TYPE_LINK+TYPE_FUSION+TYPE_SYNCHRO+TYPE_XYZ) and c:IsAbleToExtra()
+	return c:IsSetCard(0x355) and c:IsType(TYPE_LINK+TYPE_FUSION+TYPE_SYNCHRO+TYPE_XYZ) and c:IsAbleToExtra()
 end
 function s.rttg(e,tp,_,_,_,_,_,_,chk,chkc)
 	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(1-tp) and s.afilter(chkc) end

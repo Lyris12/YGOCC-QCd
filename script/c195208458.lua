@@ -2,7 +2,6 @@
 --Great London Clue - Murder Weapon
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:RegisterSetCardString({"Great London", "Clue"})
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -43,14 +42,14 @@ function s.desop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Destroy(sg,REASON_EFFECT)
 end
 function s.filter(c,tp)
-	return c:IsPreviousPosition(POS_FACEUP) and c:IsPreviousSetCard("Great London") and c:IsPreviousControler(tp)
+	return c:IsPreviousPosition(POS_FACEUP) and c:IsPreviousSetCard(0xd3f) and c:IsPreviousControler(tp)
 		and c:GetReasonPlayer()==1-tp and c:IsReason(REASON_EFFECT)
 end
 function s.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(s.filter,1,nil,tp)
 end
 function s.sfilter(c,e,tp)
-	return c:IsSetCard("Great London") and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return c:IsSetCard(0xd3f) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0

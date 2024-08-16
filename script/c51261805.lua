@@ -2,9 +2,8 @@
 --Elflair - Irene, Wellspring Elf Princess
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:RegisterSetCardString"Elflair"
 	c:EnableReviveLimit()
-	aux.AddFusionProcFunRep(c,aux.FilterBoolFunction(Card.IsSetCard,"Elflair"),2,true)
+	aux.AddFusionProcFunRep(c,aux.FilterBoolFunction(Card.IsSetCard,0x355),2,true)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE)
 	e1:SetCode(EFFECT_DEFENSE_ATTACK)

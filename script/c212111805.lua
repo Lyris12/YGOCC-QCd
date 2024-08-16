@@ -3,7 +3,6 @@
 local s,id,o=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()
-	c:RegisterSetCardString"Kronologistic"
 	aux.AddSynchroMixProcedure(c,nil,nil,nil,aux.NonTuner(nil),1,99,s.mchk)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
@@ -51,7 +50,7 @@ function s.thcon(e)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_SYNCHRO)
 end
 function s.filter(c)
-	return (c:IsSetCard"Kronologistic" and c:IsType(TYPE_MONSTER) or c:IsCode(212111811)) and c:IsAbleToHand()
+	return (c:IsSetCard(0x44a) and c:IsType(TYPE_MONSTER) or c:IsCode(212111811)) and c:IsAbleToHand()
 end
 function s.thtg(e,tp,_,_,_,_,_,_,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil) end
@@ -67,13 +66,13 @@ function s.tnval(e,c)
 	return e:GetHandler():IsControler(c:GetControler())
 end
 function s.ndtg(e,c)
-	return c:IsEngaged() and c:IsSetCard"Kronologistic"
+	return c:IsEngaged() and c:IsSetCard(0x44a)
 end
 function s.efilter(e,ct)
 	local te=Duel.GetChainInfo(ct,CHAININFO_TRIGGERING_EFFECT)
 	local tc=te:GetHandler()
 	return te:IsDriveEffect() and te:GetHandlerPlayer()==e:GetHandlerPlayer() and tc:IsEngaged()
-		and tc:IsSetCard"Kronologistic"
+		and tc:IsSetCard(0x44a)
 end
 function s.zecon(_,tp)
 	return Duel.IsEnvironment(212111811,tp)

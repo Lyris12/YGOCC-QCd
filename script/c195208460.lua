@@ -2,7 +2,6 @@
 --Great London Clue - Witnesses
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:RegisterSetCardString({"Great London", "Clue"})
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -24,7 +23,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 function s.filter(c,e,tp)
-	return c:IsSetCard("Great London") and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return c:IsSetCard(0xd3f) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetFieldGroupCount(tp,LOCATION_DECK,0)>0

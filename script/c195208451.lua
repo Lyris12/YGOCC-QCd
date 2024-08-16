@@ -2,7 +2,6 @@
 --Great London Evil Professor Jack
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:RegisterSetCardString"Great London"
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_QUICK_O)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -52,7 +51,7 @@ function s.descon()
 	return ph==PHASE_MAIN1 or ph==PHASE_MAIN2
 end
 function s.filter(c)
-	return c:IsFaceup() and c:IsSetCard{"Great London", "Clue"}
+	return c:IsFaceup() and c:IsSetCard(0x1d3f)
 end
 function s.destg(e,tp,_,_,_,_,_,_,chk)
 	local g=Duel.GetFieldGroup(tp,LOCATION_ONFIELD,LOCATION_ONFIELD)
@@ -69,7 +68,7 @@ function s.desop(e,tp)
 	Duel.Destroy(g,REASON_EFFECT)
 end
 function s.sfilter(c)
-	return c:IsSetCard{"Great London", "Clue"} and c:IsAbleToHand()
+	return c:IsSetCard(0x1d3f) and c:IsAbleToHand()
 end
 function s.thtg(e,tp,_,_,_,_,_,_,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.sfilter,tp,LOCATION_DECK,0,1,nil) end

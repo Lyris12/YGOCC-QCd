@@ -2,7 +2,6 @@
 --Great London Clue - Bloody Message
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:RegisterSetCardString({"Great London", "Clue"})
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
@@ -21,7 +20,7 @@ function s.initial_effect(c)
 	e3:SetRange(LOCATION_SZONE)
 	e3:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
 	e3:SetTargetRange(LOCATION_MZONE,0)
-	e3:SetTarget(aux.TargetBoolFunction(Card.IsSetCard,"Great London"))
+	e3:SetTarget(aux.TargetBoolFunction(Card.IsSetCard,0xd3f))
 	e3:SetValue(aux.tgoval)
 	c:RegisterEffect(e3)
 end

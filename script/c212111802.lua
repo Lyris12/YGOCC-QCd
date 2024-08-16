@@ -2,7 +2,6 @@
 --Belgrade Security Force
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:RegisterSetCardString"Kronologistic"
 	local d1=c:DriveEffect(2,nil,CATEGORY_COIN,nil,nil,nil,aux.NOT(s.qcon),nil,s.deutg,s.deuop)
 	local q1=d1:Clone()
 	q1:SetType(EFFECT_TYPE_QUICK_O)
@@ -38,7 +37,7 @@ function s.initial_effect(c)
 	e4:SetRange(LOCATION_MZONE)
 	e4:SetTargetRange(LOCATION_MZONE,0)
 	e4:SetCondition(s.con)
-	e4:SetTarget(aux.TargetBoolFunction(Card.IsSetCard,"Kronologistic"))
+	e4:SetTarget(aux.TargetBoolFunction(Card.IsSetCard,0x44a))
 	e4:SetValue(s.indct)
 	c:RegisterEffect(e4)
 end

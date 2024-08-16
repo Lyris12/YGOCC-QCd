@@ -1,18 +1,88 @@
---created by Slick
+--created by Slick, coded by Lyris
 --Kronologistic Paradox
-local s,id,o=GetID()
+local s,id,o = GetID()
 function s.initial_effect(c)
-	--Special Summon this card as an Effect Monster (Machine/DARK/Level 8/ATK 2600/DEF 2600). (This card is NOT treated as a Trap.) You can only use 1 of the following effects of "Kronologistic Paradox" once per turn, and only once that turn. If you control "The City of Belgrade" and this card in the Monster Zone (Quick Effect): You can banish 1 Tuner from your hand or field, then send this card to the GY; Special Summon 1 "Kronologistics Tune Duelist" or "Kronologistic Fault Hunter" from your Extra Deck. (This is treated as a Synchro Summon.) You can banish this card from your GY; Special Summon 1 "Kronologistics Tune Duelist", "Kronologistic Fault Hunter", or "The Spirit of Belgrade" from your GY.
-	local tp=c:GetControler()
-	local ef=Effect.CreateEffect(c)
-	ef:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
-	ef:SetCode(EVENT_PHASE_START+PHASE_DRAW)
-	ef:SetCountLimit(1,5001+EFFECT_COUNT_CODE_DUEL)
-	ef:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
-	ef:SetOperation(function()
-		local tk=Duel.CreateToken(tp,5000)
-		Duel.SendtoDeck(tk,nil,SEQ_DECKBOTTOM,REASON_RULE)
-		c5000.ops(ef,tp)
-	end)
-	Duel.RegisterEffect(ef,tp)
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetTarget(s.target)
+	e1:SetOperation(s.activate)
+	c:RegisterEffect(e1)
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_QUICK_O)
+	e2:SetCode(EVENT_FREE_CHAIN)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SHOPT()
+	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e2:SetCondition(s.spcon)
+	e2:SetCost(s.spcost)
+	e2:SetTarget(s.sptg)
+	e2:SetOperation(s.spop)
+	c:RegisterEffect(e2)
+	local e3=Effect.CreateEffect(c)
+	e3:SetType(EFFECT_TYPE_QUICK_O)
+	e3:SetCode(EVENT_FREE_CHAIN)
+	e3:SetRange(LOCATION_GRAVE)
+	e3:SHOPT()
+	e3:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e3:SetCost(aux.bfgcost)
+	e3:SetTarget(s.rvtg)
+	e3:SetOperation(s.rvop)
+	c:RegisterEffect(e3)
+end
+function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return e:IsCostChecked() and Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsPlayerCanSpecialSummonMonster(tp,id,0x44a,TYPES_EFFECT_TRAP_MONSTER,2600,2600,8,RACE_MACHINE,ATTRIBUTE_DARK) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,e:GetHandler(),1,0,0)
+end
+function s.activate(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if not (c:IsRelateToEffect(e) and Duel.IsPlayerCanSpecialSummonMonster(tp,id,0x44a,TYPES_EFFECT_TRAP_MONSTER,2600,2600,8,RACE_MACHINE,ATTRIBUTE_DARK)) then return end
+	c:AddMonsterAttribute(TYPE_EFFECT)
+	Duel.SpecialSummon(c,0,tp,tp,true,false,POS_FACEUP)
+end
+function s.spcon(e,tp)
+	return Duel.IsEnvironment(212111811,tp)
+end
+function s.cfilter(c,tc,e,tp)
+	return c:IsFaceupEx() and c:IsType(TYPE_TUNER) and c:IsAbleToRemoveAsCost()
+		and Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_EXTRA,0,1,nil,e,tp,tc,c)
+end
+function s.filter(c,e,tp,...)
+	return c:IsCode(212111806,212111807) and c:IsCanBeSpecialSummoned(e,SUMMON_TYPE_SYNCHRO,tp,false,false)
+		and Duel.GetLocationCountFromEx(tp,tp,Group.CreateGroup(...),TYPE_SYNCHRO)>0
+end
+function s.spcost(e,tp,_,_,_,_,_,_,chk)
+	local c=e:GetHandler()
+	if chk==0 then return Duel.IsExistingMatchingCard(s.cfilter,tp,LOCATION_HAND+LOCATION_MZONE,0,1,c,c,e,tp)
+		and c:IsAbleToGraveAsCost() end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+	Duel.Remove(Duel.SelectMatchingCard(tp,s.cfilter,tp,LOCATION_HAND+LOCATION_MZONE,0,1,1,c,c,e,tp),POS_FACEUP,REASON_COST)
+	Duel.BreakEffect()
+	Duel.SendtoGrave(c,REASON_COST)
+end
+function s.sptg(e,tp,_,_,_,_,_,_,chk)
+	if chk==0 then return e:IsCostChecked()
+		or Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_EXTRA,0,1,nil,e,tp) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_EXTRA)
+end
+function s.spop(e,tp)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local tc=Duel.SelectMatchingCard(tp,s.filter,tp,LOCATION_EXTRA,0,1,1,nil,e,tp):GetFirst()
+	if not tc or Duel.SpecialSummon(tc,SUMMON_TYPE_SYNCHRO,tp,tp,false,false,POS_FACEUP)<1 then return end
+	tc:CompleteProcedure()
+end
+function s.rfilter(c,e,tp)
+	return c:IsCode(212111806,212111807,212111808) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+end
+function s.rvtg(e,tp,_,_,_,_,_,_,chk)
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsExistingMatchingCard(s.rfilter,tp,LOCATION_GRAVE,0,1,nil,e,tp) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_GRAVE)
+end
+function s.rvop(e,tp)
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<1 then return end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	Duel.SpecialSummon(Duel.SelectMatchingCard(tp,s.rfilter,tp,LOCATION_GRAVE,0,1,1,nil,e,tp),0,tp,tp,false,false,POS_FACEUP)
 end

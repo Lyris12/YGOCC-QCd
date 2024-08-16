@@ -3,7 +3,6 @@
 local s,id,o=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()
-	c:RegisterSetCardString"Kronologistic"
 	aux.AddSynchroMixProcedure(c,nil,nil,nil,aux.NonTuner(nil),1,99,s.mchk)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
@@ -57,7 +56,7 @@ function s.imval(e,te)
 	local c=te:GetOwner()
 	local tp=te:GetOwnerPlayer()
 	local chkp=tp==e:GetOwnerPlayer()
-	if c:IsType(TYPE_DRIVE) then return not (c:IsSetCard"Kronologistic" and chkp) end
+	if c:IsType(TYPE_DRIVE) then return not (c:IsSetCard(0x44a) and chkp) end
 	if chkp then return false end
 	if not re:IsHasProperty(EFFECT_FLAG_CARD_TARGET) then return true end
 	local g=Duel.GetChainInfo(0,CHAININFO_TARGET_CARDS)
