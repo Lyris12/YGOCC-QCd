@@ -1,9 +1,7 @@
---created by Seth
+--created by Seth, coded by Lyris
 --Mextro Dark Empress
 local s,id,o = GetID()
 function s.initial_effect(c)
-	--You can only use each effect of "Mextro Dark Empress" once per turn.
-	--If this card is Normal or Special Summoned: You can Tribute 1 "Mextro" Link Monster you control; this card gains ATK equal to that monster's ATK in the GY.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e1:SetCode(EVENT_SUMMON_SUCCESS)
@@ -17,7 +15,6 @@ function s.initial_effect(c)
 	local e2=e1:Clone()
 	e2:SetCode(EVENT_SPSUMMON_SUCCESS)
 	c:RegisterEffect(e2)
-	--If this face-up card leaves the field: You can Special Summon 1 "Mextro" Link Monster from your GY, and if you do, that monster gains ATK equal to the ATK this monster had on the field.
 	local e3=Effect.CreateEffect(c)
 	e3:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e3:SetCode(EVENT_LEAVE_FIELD)
@@ -28,7 +25,6 @@ function s.initial_effect(c)
 	e3:SetTarget(s.sptg)
 	e3:SetOperation(s.spop)
 	c:RegisterEffect(e3)
-	--If this card is in your GY, except the turn this card was sent to the GY (Quick Effect): You can banish this card from your GY, then target 1 Link Monster your opponent controls; until the End Phase, it is treated as a "Mextro" monster, also you can use it as material for the Link Summon of your "Mextro" Link Monster, as if you controlled it.
 	local e4=Effect.CreateEffect(c)
 	e4:SetType(EFFECT_TYPE_QUICK_O)
 	e4:SetCode(EVENT_FREE_CHAIN)
