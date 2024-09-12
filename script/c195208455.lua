@@ -50,7 +50,7 @@ function s.sdtg(e,tp,_,_,_,_,_,_,chk)
 		and Duel.IsExistingMatchingCard(Card.IsSetCard,tp,LOCATION_DECK,0,1,nil,0xd3f) end
 end
 function s.sdop(e,tp)
-	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(id//10,1))
+	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(id//10,0))
 	local tc=Duel.SelectMatchingCard(tp,Card.IsSetCard,tp,LOCATION_DECK,0,1,1,nil,0xd3f):GetFirst()
 	if not tc then return end
 	Duel.ShuffleDeck(tp)
