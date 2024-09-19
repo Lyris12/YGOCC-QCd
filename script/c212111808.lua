@@ -1,20 +1,76 @@
---created by Slick
+--created by Slick, coded by Lyris
 --The Spirit of Belgrade
 local s,id,o = GetID()
 function s.initial_effect(c)
-	--(This card is always treated as a "Kronologistic" card.) "The City of Belgrade" is face-up on your field or in your GY, and a monster has been Drive Summoned this turn - 1 Drive Monster While "The City of Belgrade" is in your GY, you can also Time Leap Summon this card by using any Level 5 or higher Drive monster you control or "The Spirit of Belgrade". If this card is Time Leap Summoned: You can place 1 "The City of Belgrade" from your Deck or GY face-up in your Field Zone. If "The City of Belgrade" is in your Field Zone, you can apply this effect instead. ● Your opponent selects 1 monster they control. All cards on the field are banished, except the selected monster, this card, and any Field Spells on the field. Cannot be targeted by your opponent's card effects. Cannot be destroyed by battle with a monster that has the same ATK.
-	local tp = c:GetControler()
-	local e = Effect.CreateEffect(c)
-	e:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
-	e:SetCode(EVENT_PHASE_START+PHASE_DRAW)
-	e:SetCountLimit(1,5001+EFFECT_COUNT_CODE_DUEL)
-	e:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
-	e:SetOperation(function()
-		local tk = Duel.CreateToken(tp,5000)
-		Duel.SendtoDeck(tk,nil,SEQ_DECKBOTTOM,REASON_RULE)
-		local ef = Effect.CreateEffect(tk)
-		tk:RegisterEffect(ef,true)
-		c5000.ops(ef,tp)
-	end)
-	Duel.RegisterEffect(e,tp)
+	c:EnableReviveLimit()
+	aux.AddOrigTimeleapType(c)
+	aux.AddTimeleapProc(c,9,s.TLcon,{s.TLmat,true})
+	Duel.AddCustomActivityCounter(id,ACTIVITY_SPSUMMON,aux.FilterBoolFunction(aux.NOT(Card.IsSummonType),SUMMON_TYPE_DRIVE))
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_CANNOT_BE_EFFECT_TARGET)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e1:SetValue(aux.tgoval)
+	c:RegisterEffect(e1)
+	local e2=e1:Clone()
+	e2:SetCode(EFFECT_INDESTRUCTABLE_BATTLE)
+	e2:SetValue(s.indval)
+	c:RegisterEffect(e2)
+	local e3=Effect.CreateEffect(c)
+	e3:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e3:SetCode(EVENT_SPSUMMON_SUCCESS)
+	e3:SetProperty(EFFECT_FLAG_DELAY)
+	e3:SetCategory(CATEGORY_REMOVE)
+	e3:SetCondition(s.condition)
+	e3:SetTarget(s.target)
+	e3:SetOperation(s.operation)
+	c:RegisterEffect(e3)
+end
+function s.TLcon(e,c,tp)
+	return Duel.IsEnvironment(212111811,tp,LOCATION_ONFIELD|LOCATION_GRAVE) and Duel.GetCustomActivityCount(id,tp,ACTIVITY_SPSUMMON)+Duel.GetCustomActivityCount(id,1-tp,ACTIVITY_SPSUMMON)>0
+end
+function s.TLmat(c,e,mg,tl,tp)
+	local alternate_material_check=false
+	local isDriveMonster=c:IsMonster(TYPE_DRIVE)
+	if Duel.IsExistingMatchingCard(Card.IsCode,tp,LOCATION_GRAVE,0,1,nil,212111811) then
+		alternate_material_check = c:IsCode(id) or (isDriveMonster and c:IsLevelAbove(5))
+	end
+	return alternate_material_check or (isDriveMonster and aux.TimeleapMaterialFutureRequirement(c,tl))
+end
+function s.indval(e,c)
+	return c:IsAttack(e:GetHandler():GetAttack())
+end
+function s.condition(e)
+	return e:GetHandler():IsSummonType(SUMMON_TYPE_TIMELEAP)
+end
+function s.filter(c,tp)
+	return c:IsCode(212111811) and not c:IsForbidden() and c:CheckUniqueOnField(tp)
+end
+function s.cfilter(c,tp,tc)
+	return Duel.IsExistingMatchingCard(aux.NOT(Card.IsType),tp,LOCATION_ONFIELD,LOCATION_ONFIELD,1,Group.FromCards(c,tc),TYPE_FIELD)
+end
+function s.target(e,tp,_,_,_,_,_,_,chk)
+	local b1=Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil,tp)
+	local b2=Duel.IsEnvironment(212111811,tp,LOCATION_FZONE) and Duel.IsExistingMatchingCard(s.cfilter,tp,0,LOCATION_MZONE,1,nil,tp,e:GetHandler())
+	if chk==0 then return b1 or b2 end
+end
+function s.operation(e,tp)
+	local g1=Duel.GetMatchingGroup(aux.NecroValleyFilter(s.filter),tp,LOCATION_DECK+LOCATION_GRAVE,0,nil,tp)
+	local g2=Duel.IsEnvironment(212111811,tp,LOCATION_FZONE) and Duel.GetMatchingGroup(s.cfilter,tp,0,LOCATION_MZONE,nil,tp,e:GetHandler())
+	local op=aux.SelectFromOptions(tp,{#g1>0,aux.Stringid(id,0)},{g2 and #g2>0,1192})
+	if op==1 then
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOFIELD)
+		local sg=g1:Select(tp,1,1,nil):GetFirst()
+		if not tc then return end
+		local fc=Duel.GetFieldCard(tp,LOCATION_FZONE,0)
+		if fc then
+			Duel.SendtoGrave(fc,REASON_RULE)
+			Duel.BreakEffect()
+		end
+		Duel.MoveToField(tc,tp,tp,LOCATION_FZONE,POS_FACEUP,true)
+	elseif op==2 then
+		Duel.Hint(HINT_SELECTMSG,1-tp,HINTMSG_TARGET)
+		Duel.Remove(Duel.GetMatchingGroup(aux.NOT(Card.IsType),tp,LOCATION_ONFIELD,LOCATION_ONFIELD,g2:Select(1-tp,1,1,nil)+e:GetHandler(),TYPE_FIELD),POS_FACEUP,REASON_EFFECT)
+	end
 end
