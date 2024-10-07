@@ -1,18 +1,16 @@
---created by Seth
+--created by Seth, coded by Lyris
 --Great London Police Inspector Melvin
 local s,id,o = GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()
-	--1 "Great London" monster, except "Great London Police Inspector Melvin"
 	aux.AddLinkProcedure(c,s.lfilter,1,1)
-	--You can only use 1 "Great London Police Inspector Melvin" effect per turn, and only once that turn.
-	--During the Main Phase, when your opponent activates a card or effect by sending a card(s) from their hand to the GY (Quick Effect): You can declare 1 card type (Monster, Spell or Trap); reveal the top card of your Deck, and if you do, and its type matches the declared type, negate that activated effect, and if you do that, place it face-up in your Spell/Trap Zone as a Continuous Spell. While it is face-up in your Spell/Trap Zone, its name becomes "Great London Clue - Prisoner".
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_QUICK_O)
 	e1:SetCode(EVENT_CHAINING)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCategory(CATEGORY_DISABLE)
 	e1:SHOPT()
+	e1:SetDescription(1131)
 	e1:SetCondition(s.discon)
 	e1:SetTarget(s.distg)
 	e1:SetOperation(s.disop)
@@ -26,8 +24,17 @@ function s.initial_effect(c)
 		ge1:SetOperation(s.checkop)
 		Duel.RegisterEffect(ge1,0)
 	end
-	--During the Main Phase (Quick Effect): You can banish 1 "Great London Clue" card you control; activate 1 "Great London Clue" card directly from your Deck or GY.
-
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_QUICK_O)
+	e2:SetCode(EVENT_FREE_CHAIN)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SHOPT()
+	e2:SetDescription(1150)
+	e2:SetCondition(s.actcon)
+	e2:SetCost(s.actcost)
+	e2:SetTarget(s.acttg)
+	e2:SetOperation(s.actop)
+	c:RegisterEffect(e2)
 end
 function s.lfilter(c)
 	return c:IsSetCard(0xd3f) and not c:IsCode(id)
@@ -71,4 +78,43 @@ function s.disop(e,tp)
 	e2:SetValue(id//10-1)
 	e2:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_CONTROL)
 	ec:RegisterEffect(e2)
+end
+function s.actcon()
+	local ph=Duel.GetCurrentPhase()
+	return ph==PHASE_MAIN1 or ph==PHASE_MAIN2
+end
+function s.cfilter(c,tp)
+	return c:IsFaceup() and c:IsSetCard(0x1d3f) and c:IsAbleToRemoveAsCost() and (c:IsLocation(LOCATION_SZONE)
+		and c:GetSequence()<5 or Duel.GetLocationCount(tp,LOCATION_SZONE)>0)
+end
+function s.actcost(e,tp,_,_,_,_,_,_,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(s.cfilter,tp,LOCATION_ONFIELD,0,1,nil,tp) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+	Duel.Remove(Duel.SelectMatchingCard(tp,s.cfilter,tp,LOCATION_ONFIELD,0,1,1,nil,tp),POS_FACEUP,REASON_COST)
+end
+function s.afilter(c,tp)
+	if not c:IsSetCard(0x1d3f) then return false end
+	for _,e in ipairs{c:GetActivateEffect()} do if e:IsActivatable(tp,true,true) then return true end end
+	return false
+end
+function s.acttg(e,tp,_,_,_,_,_,_,chk)
+	if chk==0 then return (e:IsCostChecked() or Duel.GetLocationCount(tp,LOCATION_SZONE)>0)
+		and Duel.IsExistingMatchingCard(s.afilter,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil,tp) end
+end
+function s.actop(e,tp)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_OPERATECARD)
+	local tc=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(s.afilter),tp,LOCATION_DECK+LOCATION_GRAVE,0,1,1,nil,tp):GetFirst()
+	if not tc then return end
+	local t,te={tc:GetActivateEffect()}
+	if #t>1 then
+		local ops={}
+		for i,ef in ipairs(t) do table.insert(ops,{ef:IsActivatable(),ef:GetDescription(),ef}) end
+		te=aux.SelectFromOptions(tp,table.unpack(ops))
+	else te=t[1]:IsActivatable() and t[1] end
+	if not te then return end
+	Duel.MoveToField(tc,tp,tp,LOCATION_FZONE,POS_FACEUP,true)
+	te:UseCountLimit(tp,1,true)
+	local tep=tc:GetControler()
+	local cost=te:GetCost()
+	if cost then cost(te,tep,eg,ep,ev,re,r,rp,1) end
 end
