@@ -3,10 +3,10 @@
 local s,id,o = GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()
-	--mat=1 "Great London" monster
+	--1 "Great London" monster, except "Great London Police Inspector Melvin"
 	aux.AddLinkProcedure(c,s.lfilter,1,1)
 	--You can only use 1 "Great London Police Inspector Melvin" effect per turn, and only once that turn.
-	--During the Main Phase, when your opponent activates a card or effect by sending a card(s) from their hand to the GY (Quick Effect): You can declare 1 card type (Monster, Spell or Trap); reveal the top card of your Deck, and if you do, and its type matches the declared type, negate that card or effect, and if you do that, it is placed face-up in your Spell/Trap Zone as a Continuous Spell. While it's face-up in your Spell/Trap Zone, it's name becomes "Great London Clue - Prisoner".
+	--During the Main Phase, when your opponent activates a card or effect by sending a card(s) from their hand to the GY (Quick Effect): You can declare 1 card type (Monster, Spell or Trap); reveal the top card of your Deck, and if you do, and its type matches the declared type, negate that activated effect, and if you do that, place it face-up in your Spell/Trap Zone as a Continuous Spell. While it is face-up in your Spell/Trap Zone, its name becomes "Great London Clue - Prisoner".
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_QUICK_O)
 	e1:SetCode(EVENT_CHAINING)
@@ -26,21 +26,8 @@ function s.initial_effect(c)
 		ge1:SetOperation(s.checkop)
 		Duel.RegisterEffect(ge1,0)
 	end
-	--During the Main Phase (Quick Effect): You can banish 1 "Great London Clue" card you control; activate 1 "Great London Clue" card directly from your Deck or GY. You can only use 1 "Great London Police Inspector Melvin" effect per turn, and only once that turn.
-	local tp = c:GetControler()
-	local e = Effect.CreateEffect(c)
-	e:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
-	e:SetCode(EVENT_PHASE_START+PHASE_DRAW)
-	e:SetCountLimit(1,5001+EFFECT_COUNT_CODE_DUEL)
-	e:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
-	e:SetOperation(function()
-		local tk = Duel.CreateToken(tp,5000)
-		Duel.SendtoDeck(tk,nil,SEQ_DECKBOTTOM,REASON_RULE)
-		local ef = Effect.CreateEffect(tk)
-		tk:RegisterEffect(ef,true)
-		c5000.ops(ef,tp)
-	end)
-	Duel.RegisterEffect(e,tp)
+	--During the Main Phase (Quick Effect): You can banish 1 "Great London Clue" card you control; activate 1 "Great London Clue" card directly from your Deck or GY.
+
 end
 function s.lfilter(c)
 	return c:IsSetCard(0xd3f) and not c:IsCode(id)
@@ -58,8 +45,30 @@ function s.discon(e,tp,eg,ep,ev,re,r,rp)
 		and Duel.IsChainDisablable(ev)
 end
 function s.distg(e,tp,_,_,_,_,_,_,chk)
-	if chk==0 then return Duel.GetFieldGroupCount(tp,LOCATION_DECK,0)>0 end
+	if chk==0 then return Duel.GetFieldGroupCount(tp,LOCATION_DECK,0)>0
+		and eg:IsExists(Card.IsAbleToChangeControler,1,nil) and Duel.GetLocationCount(tp,LOCATION_SZONE,tp,LOCATION_REASON_CONTROL)>0 end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_CARDTYPE)
+	e:SetLabel(Duel.AnnounceType(tp))
 end
-function s.disop()
-	
+function s.disop(e,tp)
+	if Duel.GetFieldGroupCount(tp,LOCATION_DECK,0)<1 then return end
+	local tc=Duel.GetDecktopGroup(tp,1):GetFirst()
+	Duel.ConfirmDecktop(tp,1)
+	if not (tc:IsType(1<<e:GetLabel()) and Duel.NegateEffect(ev))
+		or Duel.GetLocationCount(tp,LOCATION_SZONE)<1 then return end
+	local c=e:GetHandler()
+	local ec=eg:GetFirst()
+	if ec:IsImmuneToEffect(e) or not Duel.MoveToField(ec,tp,tp,LOCATION_SZONE,POS_FACEUP,true) then return end
+	local e1=Effect.CreateEffect(c)
+	e1:SetCode(EFFECT_CHANGE_TYPE)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+	e1:SetReset(RESET_EVENT+RESETS_STANDARD-RESET_TURN_SET)
+	e1:SetValue(TYPE_SPELL+TYPE_CONTINUOUS)
+	ec:RegisterEffect(e1)
+	local e2=e1:Clone()
+	e2:SetCode(EFFECT_CHANGE_CODE)
+	e2:SetValue(id//10-1)
+	e2:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_CONTROL)
+	ec:RegisterEffect(e2)
 end
